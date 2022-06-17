@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const LoginSection = styled.div`
+export const SignupSection = styled.div`
     width: 100%;
     height: 100%;
     background-image: url("/backgroundImages/seoulnight.jpg");
@@ -10,13 +10,14 @@ export const LoginSection = styled.div`
     justify-content: center;
     padding: 178px;
 ` 
-export const LoginArticle = styled.div`
+export const SignupArticle = styled.div`
     width: 800px;
-    height: 600px;
+    padding: 70px 0;
     background-color: #FFFFFF;
     border-radius: 30px;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 ` 
@@ -25,7 +26,7 @@ export const Title = styled.div`
     font-weight: 600;
     text-align: center;
     padding-bottom: 20px;
-` 
+`  
 
 export const InputContainer = styled.div`
     padding-bottom: 30px;

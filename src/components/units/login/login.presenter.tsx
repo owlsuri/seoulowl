@@ -7,8 +7,9 @@ export default function LoginUI(props){
     return(
         <>
         {props.alertModal && (
-            <BasicModal onClickExit={props.onClickRoutingModal} 
-                        contents={props.modalContents} />
+            <BasicModal 
+                onClickExit={props.onClickRoutingModal} 
+                contents={props.modalContents} />
         )}
 
         {props.errorAlertModal && (

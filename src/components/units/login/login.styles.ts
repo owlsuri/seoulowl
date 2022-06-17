@@ -12,7 +12,7 @@ export const LoginSection = styled.div`
 ` 
 export const LoginArticle = styled.div`
     width: 800px;
-    height: 600px;
+    padding: 120px 0;
     background-color: #FFFFFF;
     border-radius: 30px;
 
