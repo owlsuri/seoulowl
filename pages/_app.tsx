@@ -2,12 +2,19 @@ import { Global } from '@emotion/react'
 import { globalStyles } from '../src/commons/styles/globalStyles'
 import { RecoilRoot} from 'recoil';
 import '../styles/globals.css'
+import ApolloSetting from '../src/commons/apollo';
+import { AppProps } from 'next/app';
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
+
   return(
   <RecoilRoot> 
-    <Global styles={globalStyles} />
-    <Component {...pageProps} />
+    <ApolloSetting>
+      <Global styles={globalStyles} />
+      {/* <Layout> */}
+        <Component {...pageProps} />
+      {/* </Layout> */}
+    </ApolloSetting>
   </RecoilRoot>
   )
 }
