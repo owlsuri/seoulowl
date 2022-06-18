@@ -8,7 +8,6 @@ export interface FormValues {
 
 export interface ILoginUIProps {
     onClickLogin: (data: IMutationLoginUserArgs) => Promise<void>;
-    onClickToSignup: () => void;
     register: UseFormRegister<FormValues>;
     handleSubmit: UseFormHandleSubmit<FieldValues>;
     formState: UseFormStateReturn<FieldValues>;

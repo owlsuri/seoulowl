@@ -6,9 +6,8 @@ export interface FormValues {
     password?: string;
 }
 
-export interface ISingupUIProps {
+export interface ISignupUIProps {
     onClickSignup: (data: IMutationCreateUserArgs) => Promise<void>;
-    onClickToLogin: () => void;
     register: UseFormRegister<FormValues>;
     handleSubmit: UseFormHandleSubmit<FieldValues>;
     formState: UseFormStateReturn<FieldValues>;

@@ -85,14 +85,9 @@ export default function Login(){
         }
     }
 
-    const onClickToSignup = () =>{
-        router.push('/signup')
-    }
-
     return (
     <LoginUI 
         onClickLogin={onClickLogin}
-        onClickToSignup={onClickToSignup}
         register={register}
         handleSubmit={handleSubmit}
         formState={formState}

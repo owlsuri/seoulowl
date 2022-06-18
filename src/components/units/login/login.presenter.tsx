@@ -1,8 +1,11 @@
+import { useMoveToPage } from '../../../commons/hooks/useMoveToPage'
 import BasicModal from '../../commons/modal/basic/basicModal'
 import ErrorModal from '../../commons/modal/error/errorModal'
 import * as S from './login.styles'
 
 export default function LoginUI(props){
+
+    const {onClickMoveToPage} = useMoveToPage() 
 
     return(
         <>
@@ -42,7 +45,7 @@ export default function LoginUI(props){
                 <S.LoginBtn isActive={props.formState.isValid}>LOGIN</S.LoginBtn>
                 <S.ToSignup>
                     <S.Desc>아직 멤버가 아니신가요?</S.Desc>
-                    <S.SignupBtn type='button' onClick={props.onClickToSignup}>SIGN UP</S.SignupBtn>
+                    <S.SignupBtn type='button' onClick={onClickMoveToPage("/signup")}>SIGN UP</S.SignupBtn>
                 </S.ToSignup>
                 </form>
             </S.LoginArticle>      

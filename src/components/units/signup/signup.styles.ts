@@ -1,81 +1,83 @@
 import styled from "@emotion/styled";
 
 export const SignupSection = styled.div`
-    width: 100%;
-    height: 100%;
-    background-image: url("/backgroundImages/seoulnight.jpg");
-    background-size : cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 178px;
-` 
+  width: 100%;
+  height: 100%;
+  background-image: url("/backgroundImages/seoulnight.jpg");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 178px;
+`;
 export const SignupArticle = styled.div`
-    width: 800px;
-    padding: 70px 0;
-    background-color: #FFFFFF;
-    border-radius: 30px;
+  width: 800px;
+  padding: 70px 0;
+  background-color: #ffffff;
+  border-radius: 30px;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-` 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 export const Title = styled.div`
-    font-size: 23px;
-    font-weight: 600;
-    text-align: center;
-    padding-bottom: 20px;
-`  
+  font-size: 23px;
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 20px;
+`;
 
 export const InputContainer = styled.div`
-    padding-bottom: 30px;
-`
+  padding-bottom: 30px;
+`;
 
 export const Box = styled.div`
-    padding-top: 30px;
-`
+  padding-top: 30px;
+`;
 export const Error = styled.div`
-    color: red;
-    font-size: 11px;
-    padding: 5px 0 0 5px;
-`
+  color: red;
+  font-size: 11px;
+  padding: 5px 0 0 5px;
+`;
 export const Label = styled.div`
-    padding-bottom: 5px;
-`
+  padding-bottom: 5px;
+`;
 export const Input = styled.input`
-    width: 400px;
-    height: 40px;
-    border: none;
-    border-bottom: 1px solid #E5E5E5;
-    padding-left: 10px;
-`
-export const LoginBtn = styled.button`
-    width: 400px;
-    height: 45px;
-    border: none;
-    background-color: ${(props) => (props.isActive ? "#213E6D" : "#E5E5E5")};
-    color: #FFFFFF;
-    cursor: pointer;
-`
-export const ToSignup = styled.div`
-    padding-top: 30px;
-`
-export const Desc = styled.div`
-    padding-bottom: 20px;
-    color: gray;
-    font-size: smaller;
-`
-
+  width: 400px;
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
+  padding-left: 10px;
+`;
 export const SignupBtn = styled.button`
-    width: 400px;
-    height: 45px;
-    border: none;
-    background-color: #E5E5E5;
-    cursor: pointer;
+  width: 400px;
+  height: 45px;
+  border: none;
+  background-color: ${(props) => (props.isActive ? "#213E6D" : "#E5E5E5")};
+  color: #ffffff;
+  cursor: pointer;
+  letter-spacing: 1px;
+`;
+export const ToSignup = styled.div`
+  padding-top: 30px;
+`;
+export const Desc = styled.div`
+  padding-bottom: 20px;
+  color: gray;
+  font-size: smaller;
+`;
 
-    :hover{
-        background-color: #213E6D;
-        color: #FFFFFF;
-    }
-`
+export const LoginBtn = styled.button`
+  width: 400px;
+  height: 45px;
+  border: none;
+  background-color: #e5e5e5;
+  cursor: pointer;
+  letter-spacing: 1px;
+
+  :hover {
+    background-color: #213e6d;
+    color: #ffffff;
+  }
+`;
