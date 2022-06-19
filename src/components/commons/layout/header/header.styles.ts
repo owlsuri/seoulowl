@@ -51,7 +51,7 @@ export const UserArticlePoint = styled.span`
 export const MenuArticle = styled.span`
   padding: 10px;
   :hover {
-    color: #ffcd2f;
+    color: #e5f8ff;
     text-shadow: 0 0 2px, 0 0 5px;
   }
   cursor: pointer;
