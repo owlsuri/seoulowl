@@ -1,3 +1,3 @@
-export default function BoardListUI() {
-  return <>보드리스트</>;
+export default function BoardDetailUI() {
+  return <>여기는 디테일</>;
 }

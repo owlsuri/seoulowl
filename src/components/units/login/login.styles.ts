@@ -56,6 +56,7 @@ export const LoginBtn = styled.button`
   background-color: ${(props) => (props.isActive ? "#213E6D" : "#E5E5E5")};
   color: #ffffff;
   letter-spacing: 1px;
+  font-weight: 600;
   cursor: pointer;
 `;
 export const ToSignup = styled.div`
@@ -73,6 +74,7 @@ export const SignupBtn = styled.button`
   border: none;
   background-color: #e5e5e5;
   letter-spacing: 1px;
+  font-weight: 600;
   cursor: pointer;
 
   :hover {

@@ -1,5 +1,5 @@
-import BoardListUI from "./boardDetail.presenter";
+import BoardDetailUI from "./boardDetail.presenter";
 
-export default function BoardList() {
-  return <BoardListUI />;
+export default function BoardDetail() {
+  return <BoardDetailUI />;
 }

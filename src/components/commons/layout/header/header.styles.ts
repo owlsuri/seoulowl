@@ -22,6 +22,7 @@ export const HeaderMenu = styled.div`
 `;
 export const HeaderLogoSection = styled.div``;
 export const HeaderLogo = styled.img`
+  width: 250px;
   cursor: pointer;
 `;
 export const HeaderUserSection = styled.div`
@@ -38,14 +39,20 @@ export const UserArticle = styled.span`
   padding: 10px;
   cursor: pointer;
   :hover {
-    font-weight: 600;
+    text-shadow: 0 0 2px, 0 0 5px;
   }
+`;
+export const UserArticlePoint = styled.span`
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #ffcd2f;
 `;
 export const MenuArticle = styled.span`
   padding: 10px;
   :hover {
     color: #ffcd2f;
-    font-weight: 600;
+    text-shadow: 0 0 2px, 0 0 5px;
   }
   cursor: pointer;
 `;

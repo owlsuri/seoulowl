@@ -11,16 +11,13 @@ export const ModalWrapper = styled.div`
   top: 50%;
   padding: 45px 96px;
   background: white;
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
   transform: translate(-50%, -50%);
 `;
 
-export const Logo = styled.div`
-  padding-bottom: 15px;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 35px;
-  text-align: center;
+export const Logo = styled.img`
+  width: 250px;
+  padding: 20px;
 `;
 
 export const ModalText = styled.div`

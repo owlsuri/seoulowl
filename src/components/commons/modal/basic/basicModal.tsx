@@ -9,16 +9,11 @@ interface IPropsAlert {
 }
 
 export default function BasicModal(props: IPropsAlert) {
-
   return (
     <>
-      <Modal
-        visible={true}
-        closable={false}
-        footer={null}
-      >
+      <Modal visible={true} closable={false} footer={null}>
         <S.ModalWrapper>
-          <S.Logo> SeoulOwl </S.Logo>
+          <S.Logo src="/images/logo2.png" />
           <S.ModalText>{props.contents ? props.contents : ""}</S.ModalText>
           <S.ConfirmBtn onClick={props.onClickExit}>확인</S.ConfirmBtn>
         </S.ModalWrapper>
