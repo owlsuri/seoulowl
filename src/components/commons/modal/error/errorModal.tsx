@@ -7,13 +7,22 @@ interface IPropsErrorAlert {
 }
 
 export default function ErrorModal(props: IPropsErrorAlert) {
-
   return (
     <>
       <Modal
         visible={true}
         closable={false}
+        maskStyle={{
+          width: "100%",
+          height: "100%",
+        }}
+        bodyStyle={{
+          width: "10px",
+          height: "0px",
+          backgroundColor: "#FFFFFF",
+        }}
         footer={null}
+        centered={true}
       >
         <S.ModalWrapper>
           <S.Logo src="/images/remove.png" />

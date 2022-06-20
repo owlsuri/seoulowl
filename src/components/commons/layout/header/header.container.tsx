@@ -1,8 +1,7 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 import { useRecoilState } from "recoil";
-import { accessTokenState, userInfoState } from "../../../../commons/store";
+import { accessTokenState } from "../../../../commons/store";
 import LayoutHeaderUI from "./header.presenter";
 import { FETCH_USER_LOGGED_IN, LOGOUT_USER } from "./header.queries";
 
@@ -15,8 +14,8 @@ export default function LayoutHeader() {
 
   const onClickLogout = () => {
     logoutUser();
-    router.push("/");
     location.reload();
+    router.push("/");
   };
   return (
     <LayoutHeaderUI

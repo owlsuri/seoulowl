@@ -21,11 +21,22 @@ export const BoardTitleArticle = styled.div`
   font-size: 40px;
   font-weight: 700;
   color: #ffffff;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
+`;
+export const BoardNew = styled.div`
+  font-size: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  text-align: center;
+  padding: 10px 0 0 7px;
+  cursor: pointer;
 `;
 export const BestBoardArticle = styled.div`
   width: 100%;
   max-width: 1200px;
+  padding-top: 40px;
 `;
 export const SearchBarArticle = styled.div`
   width: 100%;

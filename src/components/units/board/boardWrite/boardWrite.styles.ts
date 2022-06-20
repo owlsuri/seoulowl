@@ -81,6 +81,9 @@ export const ZipcodeBtn = styled.button`
   background-color: #213e6d;
   cursor: pointer;
 `;
+export const ImgBox = styled.div`
+  display: flex;
+`;
 export const Submit = styled.div`
   display: flex;
   align-items: center;
@@ -92,5 +95,13 @@ export const SubmitBtn = styled.button`
   height: 60px;
   border: none;
   border-radius: 10px;
+  color: ${(props) => (props.isActive ? "#FFFFFF" : "#000000")};
+  background-color: ${(props) => (props.isActive ? "#213E6D" : "#E5E5E5")};
   font-size: 17px;
+  cursor: pointer;
+`;
+export const Error = styled.div`
+  font-size: 13px;
+  color: red;
+  padding-left: 10px;
 `;

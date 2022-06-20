@@ -7,7 +7,10 @@ export default function LayoutHeaderUI(props) {
     <S.Header>
       <S.HeaderWrapper>
         <S.HeaderLogoSection>
-          <S.HeaderLogo src="/images/logo.png" />
+          <S.HeaderLogo
+            onClick={onClickMoveToPage("/")}
+            src="/images/logo.png"
+          />
         </S.HeaderLogoSection>
         <S.HeaderMenu>
           {props.accessToken ? (
@@ -39,7 +42,7 @@ export default function LayoutHeaderUI(props) {
               수다방
             </S.MenuArticle>
             <S.MenuArticle onClick={onClickMoveToPage("/market")}>
-              중고장터
+              중고마켓
             </S.MenuArticle>
             <S.MenuArticle>따릉이</S.MenuArticle>
             <S.MenuArticle>한줄맛집</S.MenuArticle>

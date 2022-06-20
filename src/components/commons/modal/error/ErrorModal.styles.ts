@@ -9,9 +9,9 @@ export const ModalWrapper = styled.div`
   position: fixed;
   left: 50%;
   top: 50%;
-  padding: 45px 96px;
+  padding: 45px 120px;
   background: white;
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
   transform: translate(-50%, -50%);
 `;
 

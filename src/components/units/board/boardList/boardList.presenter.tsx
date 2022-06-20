@@ -5,12 +5,15 @@ import BestBoard from "./boardListSrc/bestBoard/bestBoard.container";
 import { v4 as uuidv4 } from "uuid";
 import Pagination from "../../../commons/pagination/Pagination";
 import { IBoardListUIProps } from "./boardList.types";
+import { useMoveToPage } from "../../../../commons/hooks/useMoveToPage";
 
 export default function BoardListUI(props: IBoardListUIProps) {
+  const { onClickMoveToPage } = useMoveToPage();
   return (
     <S.BoardListSection>
       <S.BoardSubTitleArticle>😁🤬🥰😥</S.BoardSubTitleArticle>
       <S.BoardTitleArticle>수다방</S.BoardTitleArticle>
+      <S.BoardNew onClick={onClickMoveToPage("/board/new")}>📝</S.BoardNew>
       <S.BestBoardArticle>
         <BestBoard />
       </S.BestBoardArticle>
