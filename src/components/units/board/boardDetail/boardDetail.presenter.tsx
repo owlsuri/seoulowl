@@ -8,8 +8,10 @@ import BasicModal from "../../../commons/modal/basic/basicModal";
 import ErrorModal from "../../../commons/modal/error/errorModal";
 import { useState } from "react";
 import BoardWrite from "../boardWrite/boardWrite.container";
+import { IBoardDetailProps } from "./boardDetail.types";
+import BoardCommentWrite from "../boardComment/commentWrite/commentWrite.container";
 
-export default function BoardDetailUI(props) {
+export default function BoardDetailUI(props: IBoardDetailProps) {
   const [isEdit, setIsEdit] = useState(false);
   const { onClickMoveToPage } = useMoveToPage();
   return (
@@ -106,6 +108,9 @@ export default function BoardDetailUI(props) {
             <S.Btn onClick={onClickMoveToPage("/board")}>목록으로</S.Btn>
           </S.Buttons>
         </S.BoardDetailArticle>
+        <S.BoardCommentArticle>
+          <BoardCommentWrite data={props.data} />
+        </S.BoardCommentArticle>
       </S.BoardDetailSection>
       {isEdit && (
         <BoardWrite isEdit={true} data={props.data} setIsEdit={setIsEdit} />

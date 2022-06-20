@@ -40,7 +40,7 @@ export const SubTitle = styled.span`
 export const Title = styled.div`
   font-size: 16px;
   font-weight: 600;
-  padding: 0 0 10px 5px;
+  padding: 0 0 5px 5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -65,7 +65,7 @@ export const WriterName = styled.div`
 export const CreatedAt = styled.div`
   font-size: 12px;
   color: #828282;
-  padding-top: 10px;
+  padding-top: 5px;
 `;
 export const Like = styled.div`
   color: #6888b2;

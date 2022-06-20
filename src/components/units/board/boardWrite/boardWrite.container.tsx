@@ -43,7 +43,7 @@ const editSchema = yup.object({
   youtubeUrl: yup.string(),
 });
 
-export default function BoardWrite(props) {
+export default function BoardWrite(props: any) {
   const router = useRouter();
 
   const [fileUrls, setFileUrls] = useState(["", "", ""]);

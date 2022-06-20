@@ -137,3 +137,10 @@ export const DisLikeIcon = styled(DislikeOutlined)`
   font-size: 30px;
   color: #828282;
 `;
+export const BoardCommentArticle = styled.div`
+  max-width: 1200px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 30px;
+  margin-top: 20px;
+`;

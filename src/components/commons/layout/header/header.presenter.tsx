@@ -44,7 +44,9 @@ export default function LayoutHeaderUI(props) {
             <S.MenuArticle onClick={onClickMoveToPage("/market")}>
               중고마켓
             </S.MenuArticle>
-            <S.MenuArticle>따릉이</S.MenuArticle>
+            <S.MenuArticle onClick={onClickMoveToPage("/publicBike")}>
+              따릉이
+            </S.MenuArticle>
             <S.MenuArticle>한줄맛집</S.MenuArticle>
             <S.MenuArticle onClick={onClickMoveToPage("/mypage")}>
               마이페이지
