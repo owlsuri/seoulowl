@@ -1,5 +1,6 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
+import { useState } from "react";
 import {
   IMutation,
   IMutationDeleteBoardArgs,
@@ -18,6 +19,11 @@ import {
 
 export default function BoardDetail() {
   const router = useRouter();
+
+  const [alertModal, setAlertModal] = useState(false);
+  const [modalContents, setModalContents] = useState("");
+  const [errorAlertModal, setErrorAlertModal] = useState(false);
+
   const { data } = useQuery<Pick<IQuery, "fetchBoard">, IQueryFetchBoardArgs>(
     FETCH_BOARD,
     {
@@ -33,10 +39,22 @@ export default function BoardDetail() {
     Pick<IMutation, "likeBoard">,
     IMutationLikeBoardArgs
   >(LIKE_BOARD);
+
   const [dislikeBoard] = useMutation<
     Pick<IMutation, "dislikeBoard">,
     IMutationDislikeBoardArgs
   >(DISLIKE_BOARD);
+
+  // 이동모달
+  const onClickRoutingModal = () => {
+    router.push("/board");
+    setAlertModal(false);
+  };
+
+  // 에러모달
+  const onClickErrorModal = () => {
+    setErrorAlertModal(false);
+  };
 
   const onClickLike = async () => {
     try {
@@ -60,7 +78,8 @@ export default function BoardDetail() {
         },
       });
     } catch (error) {
-      alert(error.message);
+      setModalContents(error.message);
+      setErrorAlertModal(true);
     }
   };
 
@@ -86,12 +105,13 @@ export default function BoardDetail() {
         },
       });
     } catch (error) {
-      alert(error.message);
+      setModalContents(error.message);
+      setErrorAlertModal(true);
     }
   };
 
   const onClickToEdit = () => {
-    router.push(`/boards/${router.query.boardId}/edit`);
+    router.push(`/board/${router.query.boardId}/edit`);
   };
 
   const onClickDelete = async () => {
@@ -99,10 +119,12 @@ export default function BoardDetail() {
       await deleteBoard({
         variables: { boardId: String(router.query.boardId) },
       });
-      alert("성공");
-      router.push("/board");
+
+      setAlertModal(true);
+      setModalContents("삭제되었습니다!");
     } catch (error) {
-      alert(error.message);
+      setModalContents(error.message);
+      setErrorAlertModal(true);
     }
   };
   return (
@@ -112,6 +134,11 @@ export default function BoardDetail() {
       onClickDisLike={onClickDisLike}
       onClickToEdit={onClickToEdit}
       onClickDelete={onClickDelete}
+      onClickRoutingModal={onClickRoutingModal}
+      onClickErrorModal={onClickErrorModal}
+      alertModal={alertModal}
+      modalContents={modalContents}
+      errorAlertModal={errorAlertModal}
     />
   );
 }

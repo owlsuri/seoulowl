@@ -61,10 +61,11 @@ export const Images = styled.div`
 `;
 export const Img = styled.img`
   width: 100%;
+  margin: 10px 0;
 `;
 export const Contents = styled.div`
   width: 100%;
-  padding: 30px 0;
+  padding: 20px 0;
   font-size: 16px;
   word-break: break-all;
 `;

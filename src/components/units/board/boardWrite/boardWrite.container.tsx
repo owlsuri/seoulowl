@@ -2,15 +2,20 @@ import BoardWriteUI from "./boardWrite.presenter";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { useState } from "react";
-import { useMutation } from "@apollo/client";
-import { CREATE_BOARD } from "./boardWrite.queries";
+import { useEffect, useState } from "react";
+import { useMutation, useQuery } from "@apollo/client";
+import { CREATE_BOARD, UPDATE_BOARD } from "./boardWrite.queries";
 import {
   ICreateBoardInput,
   IMutation,
   IMutationCreateBoardArgs,
+  IMutationUpdateBoardArgs,
+  IQuery,
+  IQueryFetchBoardArgs,
+  IUpdateBoardInput,
 } from "../../../../commons/types/generated/types";
 import { useRouter } from "next/router";
+import { FETCH_BOARD } from "../boardDetail/boardDetail.queries";
 
 const schema = yup.object({
   writer: yup
@@ -40,6 +45,7 @@ const editSchema = yup.object({
 
 export default function BoardWrite(props) {
   const router = useRouter();
+
   const [fileUrls, setFileUrls] = useState(["", "", ""]);
   const [address, setAddress] = useState("");
   const [zipcode, setZipcode] = useState("");
@@ -55,6 +61,18 @@ export default function BoardWrite(props) {
     Pick<IMutation, "createBoard">,
     IMutationCreateBoardArgs
   >(CREATE_BOARD);
+
+  const { data } = useQuery<Pick<IQuery, "fetchBoard">, IQueryFetchBoardArgs>(
+    FETCH_BOARD,
+    {
+      variables: { boardId: String(router.query.boardId) },
+    }
+  );
+
+  const [updateBoard] = useMutation<
+    Pick<IMutation, "updateBoard">,
+    IMutationUpdateBoardArgs
+  >(UPDATE_BOARD);
 
   // 이동모달
   const onClickRoutingModal = () => {
@@ -137,6 +155,46 @@ export default function BoardWrite(props) {
     }
   };
 
+  const onClickEdit = async (data: IUpdateBoardInput) => {
+    const currentFiles = JSON.stringify(fileUrls);
+    const defaultFiles = JSON.stringify(data.fetchBoard?.images);
+    const isChangedFiles = currentFiles !== defaultFiles;
+
+    try {
+      const updateBoardResult = await updateBoard({
+        variables: {
+          boardId: String(router.query.boardId),
+          password: data.password,
+          updateBoardInput: {
+            title: data.title,
+            contents: data.contents,
+            images: fileUrls,
+            youtubeUrl: data.youtubeUrl,
+            boardAddress: {
+              zipcode,
+              address,
+              addressDetail: data.addressDetail,
+            },
+          },
+        },
+      });
+      setAlertModal(true);
+      setModalContents("수다글 수정이 완료되었습니다!");
+      setBoardId(updateBoardResult.data.updateBoard._id);
+    } catch (error) {
+      setModalContents(error.message);
+      setErrorAlertModal(true);
+    }
+  };
+
+  useEffect(() => {
+    if (data?.fetchBoard.images?.length) {
+      setFileUrls([...data?.fetchBoard.images]);
+    }
+    setZipcode(data?.fetchBoard?.boardAddress.zipcode);
+    setAddress(data?.fetchBoard?.boardAddress.address);
+  }, [data]);
+
   return (
     <BoardWriteUI
       register={register}
@@ -160,6 +218,9 @@ export default function BoardWrite(props) {
       alertModal={alertModal}
       modalContents={modalContents}
       errorAlertModal={errorAlertModal}
+      isEdit={props.isEdit}
+      onClickEdit={onClickEdit}
+      data={data}
     />
   );
 }

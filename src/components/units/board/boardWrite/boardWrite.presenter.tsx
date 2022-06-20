@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Uploads01 from "../../../commons/uploads/01/Uploads01.container";
 import * as S from "./boardWrite.styles";
 import { v4 as uuidv4 } from "uuid";
@@ -6,11 +6,13 @@ import { Modal } from "antd";
 import DaumPostcode from "react-daum-postcode";
 import BasicModal from "../../../commons/modal/basic/basicModal";
 import ErrorModal from "../../../commons/modal/error/errorModal";
+import { IBoardWriteProps } from "./boardWrite.types";
 
-export default function BoardWriteUI(props) {
+export default function BoardWriteUI(props: IBoardWriteProps) {
+  console.log(props.data);
   useEffect(() => {
-    props.reset({ contents: props.data?.fetchProject.projectDetailIntro });
-  }, [props.data?.fetchProject.projectDetailIntro]);
+    props.reset({ contents: props.data?.fetchBoard.contents });
+  }, [props.data?.fetchBoard.contents]);
 
   return (
     <>
@@ -28,8 +30,14 @@ export default function BoardWriteUI(props) {
         />
       )}
       <S.BoardWriteSection>
-        <form onSubmit={props.handleSubmit(props.onClickSubmit)}>
-          <S.BoardWriteTitleArticle>수다글 작성하기</S.BoardWriteTitleArticle>
+        <form
+          onSubmit={props.handleSubmit(
+            props.isEdit ? props.onClickEdit : props.onClickSubmit
+          )}
+        >
+          <S.BoardWriteTitleArticle>
+            {props.isEdit ? "수다글 수정하기" : "수다글 작성하기"}
+          </S.BoardWriteTitleArticle>
           <S.BoardWriteArticle>
             <S.WriterInfo>
               <div>
@@ -38,6 +46,7 @@ export default function BoardWriteUI(props) {
                   type="text"
                   placeholder="이름을 입력해주세요."
                   {...props.register("writer")}
+                  defaultValue={props.data?.fetchBoard.writer}
                 />
                 <S.Error>{props.formState.errors.writer?.message}</S.Error>
               </div>
@@ -58,6 +67,7 @@ export default function BoardWriteUI(props) {
                   type="text"
                   placeholder="제목을 입력해주세요."
                   {...props.register("title")}
+                  defaultValue={props.data?.fetchBoard.title}
                 />
                 <S.Error>{props.formState.errors.title?.message}</S.Error>
               </S.Block>
@@ -85,7 +95,11 @@ export default function BoardWriteUI(props) {
                 <S.ZipcodeInput
                   id="zipcode"
                   placeholder="Click ➡➡"
-                  value={props.zipcode}
+                  value={
+                    props.zipcode ||
+                    props.data?.fetchBoard?.boardAddress?.zipcode ||
+                    ""
+                  }
                   readOnly
                 />
                 <S.ZipcodeBtn type="button" onClick={props.showModal}>
@@ -94,13 +108,20 @@ export default function BoardWriteUI(props) {
                 <S.ContentInput
                   id="address"
                   type="text"
-                  value={props.address}
+                  defaultValue={
+                    props.address ||
+                    props.data?.fetchBoard?.boardAddress?.address ||
+                    ""
+                  }
                   readOnly
                 />
                 <S.ContentInput
                   id="addressDetail"
                   type="text"
                   {...props.register("addressDetail")}
+                  defaultValue={
+                    props.data?.fetchBoard.boardAddress.addressDetail
+                  }
                 />
               </S.Block>
               <S.Block>
@@ -109,12 +130,13 @@ export default function BoardWriteUI(props) {
                   type="text"
                   placeholder="링크를 입력해주세요."
                   {...props.register("youtubeUrl")}
+                  defaultValue={props.data?.fetchBoard.youtubeUrl}
                 />
               </S.Block>
               <S.Block>
                 <S.Label>사진</S.Label>
                 <S.ImgBox>
-                  {props.fileUrls.map((el, index) => (
+                  {props.fileUrls.map((el: any, index: number) => (
                     <Uploads01
                       type="button"
                       key={uuidv4()}
@@ -127,7 +149,7 @@ export default function BoardWriteUI(props) {
               </S.Block>
               <S.Submit>
                 <S.SubmitBtn isActive={props.formState.isValid}>
-                  등록하기
+                  {props.isEdit ? "수정하기" : "등록하기"}
                 </S.SubmitBtn>
               </S.Submit>
             </S.BoardContents>
