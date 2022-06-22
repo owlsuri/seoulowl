@@ -1,27 +1,27 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import PublicBikeUI from "./publicBike.presenter";
+import { useRecoilState } from "recoil";
+import { publicBikeState } from "../../../commons/store";
 
 export default function PublicBike() {
-  const [station, setStation] = useState<string[]>([]);
-  const [bikeCnt, setBikeCnt] = useState<string[]>([]);
+  const [publicBike, setPublicBike] = useRecoilState(publicBikeState);
+
+  const bikeData = async () => {
+    await axios
+      .get(
+        "http://openapi.seoul.go.kr:8088/524a4b4b536f776c33336d65514c65/json/bikeList/1/1000/"
+      )
+      .then((res) => {
+        setPublicBike(res);
+      });
+  };
 
   useEffect(() => {
-    const aaa = async () => {
-      const result: any = await axios.get(
-        "http://spartacodingclub.shop/sparta_api/seoulbike"
-      );
-      const kk = result.data.getStationList.row;
-      kk.map(
-        (el: any) => (
-          setStation((prev) => [...prev, el.stationName]),
-          setBikeCnt((prev) => [...prev, el.parkingBikeTotCnt])
-        )
-      );
-      console.log(result);
-    };
-    aaa();
+    bikeData();
   }, []);
 
-  return <PublicBikeUI station={station} bikeCnt={bikeCnt} />;
+  console.log(publicBike.data?.getStationOpenApiJson.row.map((el) => el));
+
+  return <PublicBikeUI />;
 }

@@ -28,11 +28,11 @@ export interface IBoardWriteProps {
   onClickSubmit: (data: ICreateBoardInput) => void;
   onChangeContents: (value: any) => void;
   onChangeFileUrls: (fileUrl: string, index: number) => void;
-  fileUrls: string;
+  fileUrls: string[];
   showModal: () => void;
   handleOk: () => void;
   handleCancel: () => void;
-  handleComplete: () => void;
+  handleComplete: (data: any) => void;
   isOpen: boolean;
   zipcode?: any;
   address?: any;

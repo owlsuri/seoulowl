@@ -1,15 +1,15 @@
 import { atom } from "recoil";
+import { recoilPersist } from "recoil-persist";
+
+const { persistAtom } = recoilPersist();
 
 export const accessTokenState = atom({
   key: "accessTokenState",
   default: "",
 });
 
-export const userInfoState = atom({
-  key: "userInfoState",
-  default: {
-    email: "",
-    name: "",
-    userPoint: { amount: 0 },
-  },
+export const publicBikeState = atom({
+  key: "publicBikeState",
+  default: [],
+  effects_UNSTABLE: [persistAtom],
 });

@@ -9,7 +9,6 @@ import ErrorModal from "../../../commons/modal/error/errorModal";
 import { IBoardWriteProps } from "./boardWrite.types";
 
 export default function BoardWriteUI(props: IBoardWriteProps) {
-  console.log(props.data);
   useEffect(() => {
     props.reset({ contents: props.data?.fetchBoard.contents });
   }, [props.data?.fetchBoard.contents]);

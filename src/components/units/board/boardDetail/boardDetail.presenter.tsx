@@ -10,6 +10,7 @@ import { useState } from "react";
 import BoardWrite from "../boardWrite/boardWrite.container";
 import { IBoardDetailProps } from "./boardDetail.types";
 import BoardCommentWrite from "../boardComment/commentWrite/commentWrite.container";
+import BoardCommentRead from "../boardComment/commentRead/commentRead.container";
 
 export default function BoardDetailUI(props: IBoardDetailProps) {
   const [isEdit, setIsEdit] = useState(false);
@@ -109,7 +110,8 @@ export default function BoardDetailUI(props: IBoardDetailProps) {
           </S.Buttons>
         </S.BoardDetailArticle>
         <S.BoardCommentArticle>
-          <BoardCommentWrite data={props.data} />
+          <BoardCommentWrite />
+          <BoardCommentRead />
         </S.BoardCommentArticle>
       </S.BoardDetailSection>
       {isEdit && (
