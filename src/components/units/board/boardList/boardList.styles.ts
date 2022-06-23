@@ -3,7 +3,8 @@ import styled from "@emotion/styled";
 export const BoardListSection = styled.div`
   background-image: url(/backgroundImages/night.jpg);
   background-size: cover;
-  /* background-color: #213e6d; */
+  background-attachment: fixed;
+
   padding: 150px;
 
   display: flex;

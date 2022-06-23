@@ -4,6 +4,8 @@ export const PublicBike = styled.div`
   width: 100%;
   background-image: url(/backgroundImages/hanriver.jpg);
   background-size: cover;
+  background-attachment: fixed;
+
   padding: 150px;
 
   display: flex;

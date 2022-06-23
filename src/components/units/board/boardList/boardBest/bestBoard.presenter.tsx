@@ -1,4 +1,4 @@
-import { getDate } from "../../../../../../commons/libraries/getDate";
+import { getDate } from "../../../../../commons/libraries/getDate";
 import * as S from "./bestBoard.styles";
 import { IBoardBestProps } from "./bestBoard.types";
 export default function BestBoardUI(props: IBoardBestProps) {

@@ -8,6 +8,7 @@ export const BoardWriteSection = styled.div`
   padding: 150px;
   background-image: url(/backgroundImages/night.jpg);
   background-size: cover;
+  background-attachment: fixed;
 
   display: flex;
   flex-direction: column;

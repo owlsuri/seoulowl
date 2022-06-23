@@ -1,11 +1,11 @@
 import { getDate } from "../../../../commons/libraries/getDate";
 import SearchBars01 from "../../../commons/searchBars/01/searchBars01.container";
 import * as S from "./boardList.styles";
-import BestBoard from "./boardListSrc/bestBoard/bestBoard.container";
 import { v4 as uuidv4 } from "uuid";
 import Pagination from "../../../commons/pagination/Pagination";
 import { IBoardListUIProps } from "./boardList.types";
 import { useMoveToPage } from "../../../../commons/hooks/useMoveToPage";
+import BestBoard from "./boardBest/bestBoard.container";
 
 export default function BoardListUI(props: IBoardListUIProps) {
   const { onClickMoveToPage } = useMoveToPage();

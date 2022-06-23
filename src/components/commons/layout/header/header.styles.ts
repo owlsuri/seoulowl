@@ -7,6 +7,7 @@ export const Header = styled.div`
   justify-content: center;
   align-items: center;
   position: fixed;
+  z-index: 3;
 `;
 export const HeaderWrapper = styled.div`
   width: 1200px;

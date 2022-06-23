@@ -21,7 +21,5 @@ export default function PublicBike() {
     bikeData();
   }, []);
 
-  console.log(publicBike.data?.getStationOpenApiJson.row.map((el) => el));
-
   return <PublicBikeUI />;
 }

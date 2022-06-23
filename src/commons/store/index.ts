@@ -13,3 +13,8 @@ export const publicBikeState = atom({
   default: [],
   effects_UNSTABLE: [persistAtom],
 });
+
+export const basket = atom({
+  key: "basketItems",
+  default: [],
+});

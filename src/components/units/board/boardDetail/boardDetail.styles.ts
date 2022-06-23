@@ -6,6 +6,7 @@ export const BoardDetailSection = styled.div`
   padding: 150px;
   background-image: url(/backgroundImages/night.jpg);
   background-size: cover;
+  background-attachment: fixed;
 `;
 export const BoardDetailArticle = styled.div`
   max-width: 1200px;
