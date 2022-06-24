@@ -6,6 +6,8 @@ import { useMoveToPage } from "../../../../commons/hooks/useMoveToPage";
 import BasicModal from "../../../commons/modal/basic/basicModal";
 import ErrorModal from "../../../commons/modal/error/errorModal";
 import { IMarketReadProps } from "./marketDeatil.types";
+import MarketQnaWrite from "../marketComment/marketQnaWrite/QnaWrite.container";
+import MarketQnAList from "../marketComment/marketQnaList/QnaList.container";
 
 export default function MarketDetailUI(props: IMarketReadProps) {
   const { onClickMoveToPage } = useMoveToPage();
@@ -60,8 +62,10 @@ export default function MarketDetailUI(props: IMarketReadProps) {
                   ADD TO CART
                 </S.Btn>
                 <S.Btn onClick={props.onClickPick}>
-                  <S.Heart pick={props.pick} />
-                  PICK
+                  <S.HeartBox heart={props.heart}>
+                    <S.Heart />
+                    PICK
+                  </S.HeartBox>
                 </S.Btn>
               </S.Buttons>
             </S.MarketDetailInfoArticle>
@@ -74,13 +78,13 @@ export default function MarketDetailUI(props: IMarketReadProps) {
               상품정보 자세히 보기
             </S.Detail>
             <S.Qna qnaColor={props.qnaColor} onClick={props.onClickQnA}>
-              Q&A
+              Q & A
             </S.Qna>
 
             {props.isShowQnA ? (
               <div>
-                {/* <QnaWrite />
-              <MarketQnAList /> */}
+                <MarketQnaWrite />
+                <MarketQnAList />
               </div>
             ) : (
               <>

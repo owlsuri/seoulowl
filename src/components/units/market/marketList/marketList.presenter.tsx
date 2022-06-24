@@ -38,7 +38,9 @@ export default function MarketListUI(props: IMarketListProps) {
                           : "/images/noimage.jpg"
                       }
                     />
-                    <S.Heart id={el?._id} />
+                    <S.HeartBox>
+                      <S.Heart id={el?._id} />
+                    </S.HeartBox>
                     <S.PickedCount>{el.pickedCount}</S.PickedCount>
                   </S.ImageArticle>
                   <S.TitleArticle>

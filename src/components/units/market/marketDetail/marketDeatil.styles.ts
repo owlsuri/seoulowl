@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { HeartFilled } from "@ant-design/icons";
-import { IMarktetReadStyleProps } from "./marketDeatil.types";
+import { IMarketReadStyleProps } from "./marketDeatil.types";
 
 export const MarketDetail = styled.div`
   width: 100%;
@@ -98,12 +98,15 @@ export const Btn = styled.button`
     background-color: #213e6d;
   }
 `;
+export const HeartBox = styled.div`
+  color: ${(props: IMarketReadStyleProps) => (props.heart ? "red" : "#a6a6a6")};
+`;
 export const Heart = styled(HeartFilled)`
   padding-right: 7px;
-  /* color: #a6a6a6; */
-  color: ${(props: IMarktetReadStyleProps) => (props.pick ? "red" : "#a6a6a6")};
 `;
-export const MarketMoreDetailArticle = styled.div``;
+export const MarketMoreDetailArticle = styled.div`
+  width: 1140px;
+`;
 export const Detail = styled.button`
   width: 565px;
   height: 52px;
@@ -112,9 +115,9 @@ export const Detail = styled.button`
   border: none;
   margin-bottom: 30px;
   cursor: pointer;
-  background-color: ${(props: IMarktetReadStyleProps) =>
+  background-color: ${(props: IMarketReadStyleProps) =>
     props.detailColor ? "#6888B2" : ""};
-  color: ${(props: IMarktetReadStyleProps) =>
+  color: ${(props: IMarketReadStyleProps) =>
     props.detailColor ? "white" : "black"};
 `;
 export const Qna = styled.button`
@@ -125,9 +128,9 @@ export const Qna = styled.button`
   border: none;
   margin-bottom: 30px;
   cursor: pointer;
-  background-color: ${(props: IMarktetReadStyleProps) =>
+  background-color: ${(props: IMarketReadStyleProps) =>
     props.qnaColor ? "#6888B2" : ""};
-  color: ${(props: IMarktetReadStyleProps) =>
+  color: ${(props: IMarketReadStyleProps) =>
     props.qnaColor ? "white" : "black"};
 `;
 export const DetailImg = styled.img`

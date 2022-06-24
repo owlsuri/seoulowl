@@ -1,4 +1,5 @@
 import { useMutation } from "@apollo/client";
+import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { ChangeEvent, useEffect, useState } from "react";
 
@@ -106,7 +107,9 @@ export default function BoardCommentWrite(props: any) {
           },
         ],
       });
-      alert("댓글 수정이 완료되었습니다!");
+      Modal.success({
+        content: "댓글 수정이 완료되었습니다!",
+      });
       props.setIsCommentEdit(false);
     } catch (error) {
       setModalContents(error.message);

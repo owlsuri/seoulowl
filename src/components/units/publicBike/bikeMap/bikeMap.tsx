@@ -27,7 +27,7 @@ export default function BikeMap() {
 
         const positions = [];
 
-        publicBike.data?.getStationOpenApiJson.row.map((el) =>
+        publicBike.data?.rentBikeStatus.row.map((el) =>
           positions.push({
             parkingBike: el.parkingBikeTotCnt,
             stationName: el.stationName,
@@ -58,7 +58,7 @@ export default function BikeMap() {
             image: markerImage, // 마커 이미지
           });
 
-          const content = `<div><div style="width:250px;text-align:center;font-weight:600;">${positions[i].stationName}</div><div style="text-align:center;">남은 따릉이 <span style="font-weight:700; font-size:large;color:red">${positions[i].parkingBike}</span>대</div></div>`;
+          const content = `<div style="padding:10px 0;background-color:#213e6d;"><div style="width:250px;text-align:center;font-size:16px;font-weight:600;color:#ffcd2f;">${positions[i].stationName}</div><div style="text-align:center;color:#ffffff">남은 따릉이 <span style="font-weight:700; font-size:large;color:red">${positions[i].parkingBike}</span>대</div></div>`;
 
           // 마커에 표시할 인포윈도우를 생성합니다
           const infowindow = new window.kakao.maps.InfoWindow({

@@ -71,12 +71,15 @@ export const ItemImg = styled.img`
   width: 230px;
   height: 200px;
 `;
+export const HeartBox = styled.div`
+  color: red;
+  cursor: pointer;
+`;
 export const Heart = styled(HeartFilled)`
   position: relative;
   z-index: 1;
   font-size: 25px;
   padding: 18px 0 0 195px;
-  color: red;
   cursor: pointer;
 `;
 export const PickedCount = styled.div`

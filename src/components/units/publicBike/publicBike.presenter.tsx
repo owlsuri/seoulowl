@@ -10,24 +10,6 @@ export default function PublicBikeUI(props) {
         <S.PublicBikeMapArticle>
           <BikeMap />
         </S.PublicBikeMapArticle>
-        <S.PublicBikeInfoArticle>
-          <S.Station>
-            {/* <S.Label>따릉이 위치</S.Label>
-            {props.station?.map((el, index) => (
-              <S.Column key={index}>
-                <div>{el.slice(5, 20)}</div>
-              </S.Column>
-            ))} */}
-          </S.Station>
-          <S.Bike>
-            {/* <S.Label>이용가능한 따릉이</S.Label>
-            {props.bikeCnt.map((el, index) => (
-              <S.Column key={index}>
-                <div>{el}</div>
-              </S.Column>
-            ))} */}
-          </S.Bike>
-        </S.PublicBikeInfoArticle>
       </S.PublicBikeSection>
     </S.PublicBike>
   );

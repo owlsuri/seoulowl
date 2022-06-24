@@ -15,11 +15,9 @@ export const PublicBike = styled.div`
 `;
 export const PublicBikeSection = styled.div`
   max-width: 1200px;
-  /* min-width: 1000px; */
   padding: 30px;
   background-color: #ffffff;
   border-radius: 20px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,25 +42,4 @@ export const PublicBikeMapArticle = styled.div`
 `;
 export const PublicBikeInfoArticle = styled.div`
   display: flex;
-`;
-export const Station = styled.div`
-  width: 300px;
-`;
-
-export const Label = styled.div`
-  font-size: 17px;
-  font-weight: 600;
-  text-align: center;
-  padding: 5px;
-  border-bottom: 1px solid #dbdbdb;
-`;
-
-export const Bike = styled.div`
-  width: 300px;
-`;
-export const Column = styled.div`
-  display: flex;
-  justify-content: center;
-  padding: 3px;
-  border-bottom: 1px solid lightgray;
 `;

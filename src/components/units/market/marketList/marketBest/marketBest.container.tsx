@@ -10,28 +10,15 @@ import { FETCH_USED_ITEMS_BEST } from "./marketBestqueries";
 
 export default function MarketBest() {
   const router = useRouter();
-  const [checked, setChecked] = useState(false);
 
   const { data } = useQuery<
     Pick<IQuery, "fetchUseditemsOfTheBest">,
     IQueryFetchUseditemsArgs
   >(FETCH_USED_ITEMS_BEST);
 
-  const onClickHeart = () => {
-    setChecked(!checked);
-  };
-
   const onClickToDetail = (event) => {
-    console.log("sdsdsd");
     router.push(`/market/${event.currentTarget.id}`);
   };
 
-  return (
-    <MarketBestUI
-      data={data}
-      onClickHeart={onClickHeart}
-      checked={checked}
-      onClickToDetail={onClickToDetail}
-    />
-  );
+  return <MarketBestUI data={data} onClickToDetail={onClickToDetail} />;
 }

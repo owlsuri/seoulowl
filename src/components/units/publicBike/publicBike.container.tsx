@@ -5,7 +5,7 @@ import { useRecoilState } from "recoil";
 import { publicBikeState } from "../../../commons/store";
 
 export default function PublicBike() {
-  const [publicBike, setPublicBike] = useRecoilState(publicBikeState);
+  const [, setPublicBike] = useRecoilState(publicBikeState);
 
   const bikeData = async () => {
     await axios

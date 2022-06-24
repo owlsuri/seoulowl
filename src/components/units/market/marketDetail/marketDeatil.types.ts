@@ -4,7 +4,7 @@ export interface IMarketReadProps {
   isShowQnA: boolean;
   detailColor: boolean;
   qnaColor: boolean;
-  pick: boolean;
+  heart: boolean;
   onClickPay: () => void;
   onClickPick: () => void;
   onClickBasket: (el: any) => () => void;
@@ -21,8 +21,8 @@ export interface IMarketReadProps {
   isRoute: boolean;
 }
 
-export interface IMarktetReadStyleProps {
-  pick: boolean;
+export interface IMarketReadStyleProps {
+  heart: boolean;
   detailColor: boolean;
   qnaColor: boolean;
 }

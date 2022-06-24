@@ -18,11 +18,9 @@ export default function MarketBestUI(props) {
                   : "/images/noimage.jpg"
               }
             />
-            <S.Heart
-              id={el?._id}
-              onClick={props.onClickHeart}
-              checked={props.checked}
-            />
+            <S.HeartBox>
+              <S.Heart id={el?._id} />
+            </S.HeartBox>
             <S.PickedCount>{el.pickedCount}</S.PickedCount>
           </S.ImageArticle>
           <S.TitleArticle>

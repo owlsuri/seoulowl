@@ -27,7 +27,7 @@ export default function MarketDetail() {
 
   const [detailColor, setDetailColor] = useState(true);
   const [qnaColor, setQnaColor] = useState(false);
-  const [pick, setPick] = useState(false);
+  const [heart, setHeart] = useState(false);
   const [isShowQnA, setIsShowQnA] = useState(false);
   const [, setIsLoad] = useState(false);
 
@@ -123,7 +123,7 @@ export default function MarketDetail() {
           },
         ],
       });
-      setPick((prev) => !prev);
+      setHeart((prev) => !prev);
     } catch (error) {
       setModalContents(error.message);
       setErrorAlertModal(true);
@@ -178,7 +178,7 @@ export default function MarketDetail() {
       isShowQnA={isShowQnA}
       detailColor={detailColor}
       qnaColor={qnaColor}
-      pick={pick}
+      heart={heart}
       onClickPay={onClickPay}
       onClickPick={onClickPick}
       onClickBasket={onClickBasket}
