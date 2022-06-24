@@ -1,8 +1,9 @@
 import * as S from "./QnaAnswerWrite.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
+import { IMarketQnaAnswerWriteProps } from "./QnaAnswerWrite.types";
 
-export default function QnaAnswerWriteUI(props) {
+export default function QnaAnswerWriteUI(props: IMarketQnaAnswerWriteProps) {
   return (
     <S.QnaAnswerWrite>
       <S.QnaAnswerWriteSection>
@@ -21,7 +22,7 @@ export default function QnaAnswerWriteUI(props) {
             placeholder="개인정보를 공유 및 요청하거나 명예회손, 무단광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 이에대한 책임은 게시자에게 있습니다."
           />
           <S.CommentInputBottom>
-            <S.CommentCount>{props.qnaAnswer.length}/100</S.CommentCount>
+            <S.CommentCount>{props.contents.length}/100</S.CommentCount>
             <S.CommentInputBtn
               onClick={props.isEdit ? props.onClickUpdate : props.onClickAnswer}
             >

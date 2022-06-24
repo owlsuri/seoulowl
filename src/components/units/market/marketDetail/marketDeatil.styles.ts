@@ -1,3 +1,4 @@
+import { accessTokenState } from "./../../../../commons/store/index";
 import styled from "@emotion/styled";
 import { HeartFilled } from "@ant-design/icons";
 import { IMarketReadStyleProps } from "./marketDeatil.types";
@@ -5,7 +6,7 @@ import { IMarketReadStyleProps } from "./marketDeatil.types";
 export const MarketDetail = styled.div`
   width: 100%;
   padding: 150px;
-  background-image: url(/backgroundImages/wall.jpg);
+  background-image: url(/backgroundImages/night.jpg);
   background-size: cover;
   background-attachment: fixed;
 
@@ -42,6 +43,16 @@ export const Name = styled.div`
   font-size: 22px;
   font-weight: 700;
 `;
+export const Seller = styled.div`
+  font-size: 15px;
+  color: #a6a6a6;
+  padding-top: 5px;
+`;
+export const SellerName = styled.span`
+  font-size: 16px;
+  font-weight: 600;
+  padding-left: 5px;
+`;
 export const Tags = styled.div`
   display: flex;
   flex-direction: row;
@@ -60,7 +71,7 @@ export const Tag = styled.div`
   margin-right: 10px;
 `;
 export const Price = styled.div`
-  font-size: 18px;
+  font-size: 20px;
   color: #213e6d;
   font-weight: 600;
   padding-top: 10px;

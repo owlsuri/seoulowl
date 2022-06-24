@@ -1,6 +1,8 @@
 import { ChangeEvent, RefObject } from "react";
 
 export interface IUploads01Props {
+  type: any;
+  key: any;
   index: number;
   fileUrl: string;
   defaultFileUrl?: string;

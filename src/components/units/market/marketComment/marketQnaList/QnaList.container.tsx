@@ -1,7 +1,7 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { Modal } from "antd";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { MouseEvent } from "react";
 import {
   IMutation,
   IMutationDeleteUseditemQuestionArgs,
@@ -54,7 +54,9 @@ export default function MarketQnAList() {
     });
   };
 
-  const onClickDelete = async (event) => {
+  const onClickDelete = async (
+    event: MouseEvent<SVGSVGElement, MouseEvent>
+  ) => {
     try {
       await deleteUseditemQuestion({
         variables: {

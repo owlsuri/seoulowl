@@ -5,9 +5,14 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useState } from "react";
 import QnaAnswerWrite from "../marketQnaAnswerWrite/QnaAnswerWrite.container";
 import { getDate } from "../../../../../commons/libraries/getDate";
+import {
+  IMarketQnaAnswerListItemProps,
+  IMarketQnaAnswerListProps,
+} from "./QnaAnswerList.types";
 
-export default function QnaAnswerListItem(props) {
-  props.setUseditemQuestionId(props.el._id);
+export default function QnaAnswerListItem(
+  props: IMarketQnaAnswerListItemProps
+) {
   const [isEdit, setIsEdit] = useState(false);
 
   const onClicktoUpdate = () => {

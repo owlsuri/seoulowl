@@ -7,8 +7,9 @@ import QnaWrite from "../marketQnaWrite/QnaWrite.container";
 import { getDate } from "../../../../../commons/libraries/getDate";
 import QnaAnswerWrite from "../marketQnaAnswerWrite/QnaAnswerWrite.container";
 import QnaAnswerList from "../marketQnaAnswerList/QnaAnswerList.container";
+import { IMarketQnaListItemProps } from "./QnaList.types";
 
-export default function MarketQnAListItem(props) {
+export default function MarketQnAListItem(props: IMarketQnaListItemProps) {
   const [isEdit, setIsEdit] = useState(false);
   const [isAnswer, setIsAnswer] = useState(false);
 

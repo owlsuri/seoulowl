@@ -17,8 +17,6 @@ import {
 } from "./QnaAnswerList.queries";
 
 export default function QnaAnswerList(props: any) {
-  const [useditemQuestionId, setUseditemQuestionId] = useState("");
-
   const { data: qadata, fetchMore } = useQuery<
     Pick<IQuery, "fetchUseditemQuestionAnswers">,
     IQueryFetchUseditemQuestionAnswersArgs
@@ -34,7 +32,9 @@ export default function QnaAnswerList(props: any) {
   const { data: userData } =
     useQuery<Pick<IQuery, "fetchUserLoggedIn">>(FETCH_USER_LOGGED_IN);
 
-  const onClickDelete = async (event: MouseEvent<HTMLDivElement>) => {
+  const onClickDelete = async (
+    event: MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
     try {
       await deleteUseditemQuestionAnswer({
         variables: {
@@ -92,7 +92,6 @@ export default function QnaAnswerList(props: any) {
       qael={props.el}
       onClickDelete={onClickDelete}
       userData={userData}
-      setUseditemQuestionId={setUseditemQuestionId}
     />
   );
 }

@@ -1,7 +1,7 @@
 import BikeMap from "./bikeMap/bikeMap";
 import * as S from "./publicBike.styles";
 
-export default function PublicBikeUI(props) {
+export default function PublicBikeUI() {
   return (
     <S.PublicBike>
       <S.PublicBikeSubTitleSection>🚲🌉🚴‍♀️</S.PublicBikeSubTitleSection>

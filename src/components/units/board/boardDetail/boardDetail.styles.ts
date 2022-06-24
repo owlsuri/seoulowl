@@ -4,7 +4,7 @@ import { LikeOutlined, DislikeOutlined } from "@ant-design/icons";
 export const BoardDetailSection = styled.div`
   width: 100%;
   padding: 150px;
-  background-image: url(/backgroundImages/night.jpg);
+  background-image: url(/backgroundImages/wall.jpg);
   background-size: cover;
   background-attachment: fixed;
 `;

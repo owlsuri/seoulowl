@@ -1,7 +1,8 @@
 import QnaAnswerListItem from "./QnaAnswerList.presenterItem";
 import InfiniteScroll from "react-infinite-scroller";
+import { IMarketQnaAnswerListProps } from "./QnaAnswerList.types";
 
-export default function QnaAnswerListUI(props) {
+export default function QnaAnswerListUI(props: IMarketQnaAnswerListProps) {
   return (
     <>
       <InfiniteScroll pageStart={0} loadMore={props.loadMore} hasMore={true}>
@@ -13,7 +14,6 @@ export default function QnaAnswerListUI(props) {
             onClickDelete={props.onClickDelete}
             qael={props.qael}
             userData={props.userData}
-            setUseditemQuestionId={props.setUseditemQuestionId}
           />
         ))}
       </InfiniteScroll>

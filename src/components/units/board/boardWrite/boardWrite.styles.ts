@@ -1,12 +1,13 @@
 import styled from "@emotion/styled";
 import "react-quill/dist/quill.snow.css";
 import dynamic from "next/dynamic";
+import { IBoardWriteStyleProps } from "./boardWrite.types";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 export const BoardWriteSection = styled.div`
   width: 100%;
   padding: 150px;
-  background-image: url(/backgroundImages/night.jpg);
+  background-image: url(/backgroundImages/wall.jpg);
   background-size: cover;
   background-attachment: fixed;
 
@@ -97,7 +98,8 @@ export const SubmitBtn = styled.button`
   height: 60px;
   border: none;
   border-radius: 10px;
-  color: ${(props) => (props.isActive ? "#FFFFFF" : "#000000")};
+  color: ${(props: IBoardWriteStyleProps) =>
+    props.isActive ? "#FFFFFF" : "#000000"};
   background-color: ${(props) => (props.isActive ? "#213E6D" : "#E5E5E5")};
   font-size: 17px;
   cursor: pointer;

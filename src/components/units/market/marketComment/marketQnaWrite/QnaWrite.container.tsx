@@ -1,12 +1,13 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { Modal } from "antd";
 import { useRouter } from "next/router";
-import { ChangeEvent, useState } from "react";
 import { useForm } from "react-hook-form";
 import {
+  ICreateUseditemQuestionInput,
   IMutation,
   IMutationCreateUseditemQuestionArgs,
   IMutationUpdateUseditemQuestionArgs,
+  IUpdateUseditemQuestionInput,
 } from "../../../../../commons/types/generated/types";
 import QnaWriteUI from "./QnaWrite.presenter";
 import {
@@ -32,11 +33,11 @@ export default function MarketQnaWrite(props) {
     variables: { useditemId: router.query.useditemId },
   });
 
-  const { register, handleSubmit, setValue, reset, watch } = useForm({
+  const { register, handleSubmit, reset, watch } = useForm({
     mode: "onChange",
   });
 
-  const onClickAsk = async (data) => {
+  const onClickAsk = async (data: ICreateUseditemQuestionInput) => {
     try {
       await createUseditemQuestion({
         variables: {
@@ -66,7 +67,7 @@ export default function MarketQnaWrite(props) {
     }
   };
 
-  const onClickUpdateQna = async (data) => {
+  const onClickUpdateQna = async (data: IUpdateUseditemQuestionInput) => {
     if (!data.contents) {
       Modal.error({ content: "수정된 내용이 없습니다." });
       return;

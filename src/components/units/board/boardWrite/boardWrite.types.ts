@@ -45,3 +45,6 @@ export interface IBoardWriteProps {
   onClickEdit: (data: IUpdateBoardInput) => void;
   data?: any;
 }
+export interface IBoardWriteStyleProps {
+  isActive: boolean;
+}

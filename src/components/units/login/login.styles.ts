@@ -1,10 +1,12 @@
 import styled from "@emotion/styled";
+import { ILoginStyleProps } from "./login.types";
 
 export const LoginSection = styled.div`
   width: 100%;
   height: 100%;
   background-image: url("/backgroundImages/seoulnight.jpg");
   background-size: cover;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,7 +55,8 @@ export const LoginBtn = styled.button`
   width: 400px;
   height: 45px;
   border: none;
-  background-color: ${(props) => (props.isActive ? "#213E6D" : "#E5E5E5")};
+  background-color: ${(props: ILoginStyleProps) =>
+    props.isActive ? "#213E6D" : "#E5E5E5"};
   color: #ffffff;
   letter-spacing: 1px;
   font-weight: 600;

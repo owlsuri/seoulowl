@@ -1,10 +1,12 @@
 import styled from "@emotion/styled";
+import { ISignupStyleProps } from "./signup.types";
 
 export const SignupSection = styled.div`
   width: 100%;
   height: 100%;
   background-image: url("/backgroundImages/seoulnight.jpg");
   background-size: cover;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,7 +56,8 @@ export const SignupBtn = styled.button`
   width: 400px;
   height: 45px;
   border: none;
-  background-color: ${(props) => (props.isActive ? "#213E6D" : "#E5E5E5")};
+  background-color: ${(props: ISignupStyleProps) =>
+    props.isActive ? "#213E6D" : "#E5E5E5"};
   color: #ffffff;
   cursor: pointer;
   letter-spacing: 1px;

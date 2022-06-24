@@ -12,7 +12,7 @@ import { useState } from "react";
 import MarketWrite from "../marketWrite/marketWrite.container";
 
 export default function MarketDetailUI(props: IMarketReadProps) {
-  console.log(props.data);
+  console.log(props.data?.fetchUseditem.seller.name);
   const [isEdit, setIsEdit] = useState(false);
 
   const { onClickMoveToPage } = useMoveToPage();
@@ -45,6 +45,12 @@ export default function MarketDetailUI(props: IMarketReadProps) {
             <S.MarketDetailInfoArticle>
               <S.Remarks>{props.data?.fetchUseditem.remarks}</S.Remarks>
               <S.Name>{props.data?.fetchUseditem.name}</S.Name>
+              <S.Seller>
+                판매자 :
+                <S.SellerName>
+                  {props.data?.fetchUseditem.seller.name}
+                </S.SellerName>
+              </S.Seller>
               <S.Price>{props.data?.fetchUseditem.price}원</S.Price>
               <S.Tags>
                 {props.data?.fetchUseditem.tags.map((el: any, i: number) => (

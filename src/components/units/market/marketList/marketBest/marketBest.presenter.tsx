@@ -1,6 +1,7 @@
 import * as S from "./marketBest.styles";
+import { IMarketBestProps } from "./marketBest.types";
 
-export default function MarketBestUI(props) {
+export default function MarketBestUI(props: IMarketBestProps) {
   return (
     <S.MarketBest>
       {props.data?.fetchUseditemsOfTheBest.map((el: any) => (

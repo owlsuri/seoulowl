@@ -1,6 +1,8 @@
 import { useMoveToPage } from "../../../../commons/hooks/useMoveToPage";
 import * as S from "./header.styles";
-export default function LayoutHeaderUI(props) {
+import { IHeaderProps } from "./header.types";
+import ChargePayment from "./paymentModal/payment.container";
+export default function LayoutHeaderUI(props: IHeaderProps) {
   const { onClickMoveToPage } = useMoveToPage();
 
   return (
@@ -19,7 +21,10 @@ export default function LayoutHeaderUI(props) {
                 {props.userInfo?.fetchUserLoggedIn.name}님의 포인트 :{" "}
                 {props.userInfo?.fetchUserLoggedIn.userPoint?.amount}P
               </S.UserArticlePoint>
-              <S.UserArticle>CHARGE</S.UserArticle>
+              <S.UserArticle onClick={props.onClickCharge}>
+                CHARGE
+              </S.UserArticle>
+              <ChargePayment clickRef={props.clickRef} />
               <S.UserArticle>CART</S.UserArticle>
               <S.UserArticle onClick={props.onClickLogout}>
                 LOGOUT
@@ -33,7 +38,6 @@ export default function LayoutHeaderUI(props) {
               <S.UserArticle onClick={onClickMoveToPage("/signup")}>
                 SIGN UP
               </S.UserArticle>
-              <S.UserArticle>CHARGE</S.UserArticle>
               <S.UserArticle>CART</S.UserArticle>
             </S.HeaderUserSection>
           )}

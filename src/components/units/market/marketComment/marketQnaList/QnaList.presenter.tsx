@@ -1,7 +1,8 @@
 import InfiniteScroll from "react-infinite-scroller";
 import MarketQnAListItem from "./QnaList.presenteritem";
+import { IMarketQnaListProps } from "./QnaList.types";
 
-export default function MarketQnAListUI(props) {
+export default function MarketQnAListUI(props: IMarketQnaListProps) {
   return (
     <>
       <div style={{ height: "700px", overflow: "auto" }}>

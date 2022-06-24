@@ -1,8 +1,9 @@
 import * as S from "./QnaWrite.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
+import { IMarketQnaWriteProps } from "./QnaWrite.types";
 
-export default function QnaWriteUI(props) {
+export default function QnaWriteUI(props: IMarketQnaWriteProps) {
   return (
     <S.MarketQnA>
       <form

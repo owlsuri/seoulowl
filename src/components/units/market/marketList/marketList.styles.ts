@@ -4,7 +4,7 @@ import { HeartFilled } from "@ant-design/icons";
 export const MarketList = styled.div`
   width: 100%;
   padding: 150px;
-  background-image: url(/backgroundImages/wall.jpg);
+  background-image: url(/backgroundImages/night.jpg);
   background-size: cover;
   background-attachment: fixed;
 
@@ -31,7 +31,7 @@ export const MarketNew = styled.div`
   text-align: center;
   padding: 10px 0 0 7px;
   cursor: pointer;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 `;
 export const MarketListSection = styled.div`
   max-width: 1200px;

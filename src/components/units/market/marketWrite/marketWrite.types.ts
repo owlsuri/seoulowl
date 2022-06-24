@@ -31,7 +31,9 @@ export interface IMarketWriteProps {
   fileUrls: string[];
   hashArr: string[];
   onKeyUpHash: (event) => void;
-  onClickDeleteHash: (event: MouseEvent<SVGAElement>) => void;
+  onClickDeleteHash: (
+    event: MouseEvent<SVGAElement, MouseEvent<Element, MouseEvent>>
+  ) => void;
   showModal: () => void;
   handleOk: () => void;
   handleCancel: () => void;
@@ -49,4 +51,7 @@ export interface IMarketWriteProps {
   onClickEdit: (data: IUpdateUseditemInput) => void;
   isEdit: boolean;
   data: any;
+}
+export interface IMarketWriteStyleProps {
+  isActive: boolean;
 }

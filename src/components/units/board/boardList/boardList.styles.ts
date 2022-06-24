@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const BoardListSection = styled.div`
-  background-image: url(/backgroundImages/night.jpg);
+  background-image: url(/backgroundImages/wall.jpg);
   background-size: cover;
   background-attachment: fixed;
 

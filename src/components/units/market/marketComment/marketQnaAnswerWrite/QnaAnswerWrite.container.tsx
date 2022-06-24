@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import { Modal } from "antd";
 import { ChangeEvent, useState } from "react";
 import {
@@ -25,10 +25,10 @@ export default function QnaAnswerWrite(props) {
     IMutationUpdateUseditemQuestionAnswerArgs
   >(UPDATE_USEDITEM_QUESTION_ANSWER);
 
-  const [qnaAnswer, setQnaAnswer] = useState("");
+  const [contents, setContents] = useState("");
 
-  const OnChangeAnswer = (event: ChangeEvent<HTMLInputElement>) => {
-    setQnaAnswer(event.target.value);
+  const OnChangeAnswer = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    setContents(event.target.value);
   };
 
   const onClickAnswer = async () => {
@@ -37,7 +37,7 @@ export default function QnaAnswerWrite(props) {
       const result = await createUseditemQuestionAnswer({
         variables: {
           createUseditemQuestionAnswerInput: {
-            contents: qnaAnswer,
+            contents,
           },
           useditemQuestionId: String(props.el._id),
         },
@@ -48,7 +48,7 @@ export default function QnaAnswerWrite(props) {
           },
         ],
       });
-      setQnaAnswer("");
+      setContents("");
       Modal.success({
         content: "답글 등록이 완료되었습니다!",
       });
@@ -62,7 +62,7 @@ export default function QnaAnswerWrite(props) {
   };
 
   const onClickUpdate = async () => {
-    if (!qnaAnswer) {
+    if (!contents) {
       Modal.error({ content: "수정된 내용이 없습니다." });
       return;
     }
@@ -71,7 +71,7 @@ export default function QnaAnswerWrite(props) {
       await updateUseditemQuestionAnswer({
         variables: {
           updateUseditemQuestionAnswerInput: {
-            contents: qnaAnswer,
+            contents,
           },
           useditemQuestionAnswerId: String(props.qnaAnswerEl._id),
         },
@@ -96,7 +96,7 @@ export default function QnaAnswerWrite(props) {
 
   return (
     <QnaAnswerWriteUI
-      qnaAnswer={qnaAnswer}
+      contents={contents}
       OnChangeAnswer={OnChangeAnswer}
       onClickAnswer={onClickAnswer}
       isEdit={props.isEdit}
