@@ -36,6 +36,7 @@ export const WriterInfo = styled.div`
   padding: 10px 0;
 `;
 export const Label = styled.div`
+  font-size: 16px;
   width: 100%;
   max-width: 1200px;
   padding-bottom: 15px;

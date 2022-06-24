@@ -17,7 +17,6 @@ export default function MarketQnAListItem(props) {
   };
 
   const onClickAnswer = () => {
-    // !isAnswer ? setIsAnswer(true) : setIsAnswer(false);
     setIsAnswer((prev) => !prev);
   };
 

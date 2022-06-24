@@ -1,16 +1,22 @@
 import UsedItemImages from "./imageSlick/imageSlick";
 import * as S from "./marketDeatil.styles";
 import Dompurify from "dompurify";
-import KakaoMapFetchPage from "./kakaomapfetch/kakaomapFetch";
+import KakaoMapPage from "../../../commons/kakaomap/kakaomap";
 import { useMoveToPage } from "../../../../commons/hooks/useMoveToPage";
 import BasicModal from "../../../commons/modal/basic/basicModal";
 import ErrorModal from "../../../commons/modal/error/errorModal";
 import { IMarketReadProps } from "./marketDeatil.types";
 import MarketQnaWrite from "../marketComment/marketQnaWrite/QnaWrite.container";
 import MarketQnAList from "../marketComment/marketQnaList/QnaList.container";
+import { useState } from "react";
+import MarketWrite from "../marketWrite/marketWrite.container";
 
 export default function MarketDetailUI(props: IMarketReadProps) {
+  console.log(props.data);
+  const [isEdit, setIsEdit] = useState(false);
+
   const { onClickMoveToPage } = useMoveToPage();
+
   return (
     <>
       {props.alertModal && (
@@ -117,7 +123,7 @@ export default function MarketDetailUI(props: IMarketReadProps) {
                   <S.Pin src="/images/pin.png" />
                   거래장소
                 </S.Label>
-                <KakaoMapFetchPage data={props.data} />
+                <KakaoMapPage data={props.data} />
               </>
             )}
           </S.MarketMoreDetailArticle>
@@ -137,6 +143,7 @@ export default function MarketDetailUI(props: IMarketReadProps) {
           </S.MoveBtnArticle>
         </S.MarketDetailSection>
       </S.MarketDetail>
+      {isEdit && <MarketWrite isEdit={true} setIsEdit={setIsEdit} />}
     </>
   );
 }

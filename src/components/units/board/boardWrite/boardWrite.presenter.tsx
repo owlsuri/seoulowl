@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Uploads01 from "../../../commons/uploads/01/Uploads01.container";
 import * as S from "./boardWrite.styles";
 import { v4 as uuidv4 } from "uuid";

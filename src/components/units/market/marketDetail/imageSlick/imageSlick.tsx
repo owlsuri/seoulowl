@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import styled from "@emotion/styled";
 
 const Img = styled.img`
-  width: 600px;
+  width: 550px;
   height: 450px;
 `;
 const PreImg = styled.img`

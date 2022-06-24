@@ -146,10 +146,12 @@ export default function MarketDetail() {
         setModalContents("결제가 완료되었습니다!");
         setIsRoute(true);
       } catch (error) {
-        alert(error.message);
+        setModalContents(error.message);
+        setErrorAlertModal(true);
       }
     } else {
-      alert("충전을 먼저 해주세요");
+      setModalContents("충전을 먼저 해주세요.");
+      setErrorAlertModal(true);
     }
   };
 

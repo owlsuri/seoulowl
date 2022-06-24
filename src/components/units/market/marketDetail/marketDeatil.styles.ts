@@ -17,13 +17,13 @@ export const MarketDetailSection = styled.div`
   max-width: 1200px;
   background-color: #ffffff;
   border-radius: 10px;
-  padding: 30px;
+  padding: 50px;
 `;
 export const MarketDetailSectionDiv = styled.div`
   display: flex;
 `;
 export const MarketDetailImgArticle = styled.div`
-  width: 600px;
+  width: 550px;
   height: 450px;
   background-image: url(/images/noimages.jpg);
   background-size: cover;
@@ -33,8 +33,10 @@ export const MarketDetailInfoArticle = styled.div`
   padding-left: 40px;
 `;
 export const Remarks = styled.div`
+  width: 540px;
   color: #a6a6a6;
   font-size: 18px;
+  word-break: break-all;
 `;
 export const Name = styled.div`
   font-size: 22px;
@@ -70,10 +72,11 @@ export const Contents = styled.div`
   text-overflow: ellipsis;
 `;
 export const Buttons = styled.div`
+  max-width: 550px;
   padding: 20px 0;
 `;
 export const BuyBtn = styled.button`
-  width: 180px;
+  width: 190px;
   height: 50px;
   border: none;
   font-size: 16px;
@@ -108,7 +111,7 @@ export const MarketMoreDetailArticle = styled.div`
   width: 1140px;
 `;
 export const Detail = styled.button`
-  width: 565px;
+  width: 550px;
   height: 52px;
   font-size: 16px;
   font-weight: 600;
@@ -121,7 +124,7 @@ export const Detail = styled.button`
     props.detailColor ? "white" : "black"};
 `;
 export const Qna = styled.button`
-  width: 565px;
+  width: 550px;
   height: 52px;
   font-size: 16px;
   font-weight: 600;
@@ -134,11 +137,11 @@ export const Qna = styled.button`
     props.qnaColor ? "white" : "black"};
 `;
 export const DetailImg = styled.img`
-  width: 1130px;
+  width: 1100px;
   padding: 5px 0;
 `;
 export const DetailContents = styled.div`
-  max-width: 1120px;
+  max-width: 1100px;
   padding: 5px 0;
   word-break: break-all;
 `;

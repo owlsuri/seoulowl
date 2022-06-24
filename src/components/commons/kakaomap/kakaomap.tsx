@@ -1,11 +1,9 @@
-// 카카오지도
 import { useEffect } from "react";
 
 declare const window: typeof globalThis & {
   kakao: any;
 };
-export default function KakaoMapFetchPage(props: any) {
-  console.log(props.data);
+export default function KakaoMapPage(props: any) {
   useEffect(() => {
     const script = document.createElement("script"); // <script></script>
     script.src =
@@ -28,7 +26,7 @@ export default function KakaoMapFetchPage(props: any) {
 
         // 주소로 좌표를 검색합니다
         geocoder.addressSearch(
-          props.data?.fetchUseditem.useditemAddress.address,
+          props.address || props.data?.fetchUseditem.useditemAddress.address,
           function (result, status) {
             // 정상적으로 검색이 완료됐으면
             if (status === window.kakao.maps.services.Status.OK) {
@@ -55,15 +53,12 @@ export default function KakaoMapFetchPage(props: any) {
                 image: markerImage, // 마커 이미지
               });
 
-              // // 결과값으로 받은 위치를 마커로 표시합니다
-              // const marker = new window.kakao.maps.Marker({
-              //   map: map,
-              //   position: coords,
-              // });
-
               // 인포윈도우로 장소에 대한 설명을 표시합니다
               const infowindow = new window.kakao.maps.InfoWindow({
-                content: `<div style="padding:6px 0;background-color:#213e6d;"><div style="width:200px;text-align:center;font-size:17px;font-weight:600;color:#ffe004;">거래장소</div><div style="text-align:center;font-size=15px;color:#FFFFFF">${props.data?.fetchUseditem.useditemAddress.address}</div></div>`,
+                content: `<div style="padding:6px 0;background-color:#213e6d;"><div style="width:200px;text-align:center;font-size:17px;font-weight:600;color:#ffe004;">거래장소</div><div style="text-align:center;font-size=15px;color:#FFFFFF">${
+                  props.address ||
+                  props.data?.fetchUseditem.useditemAddress.address
+                }</div></div>`,
               });
               infowindow.open(map, marker);
 
@@ -74,11 +69,11 @@ export default function KakaoMapFetchPage(props: any) {
         );
       });
     };
-  }, [props.data?.fetchUseditem?.useditemAddress?.address]);
+  }, [props.data?.fetchUseditem?.useditemAddress?.address, props.address]);
 
   return (
     <div>
-      <div id="map" style={{ width: "1140px", height: "548px" }}></div>
+      <div id="map" style={{ width: "1100px", height: "548px" }}></div>
     </div>
   );
 }
