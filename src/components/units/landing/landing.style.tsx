@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const LandingPageSection = styled.div`
   width: 100%;
-  height: 1100px;
+  height: 1000px;
   background-image: url("/backgroundImages/seoul3.jpg");
   background-size: cover;
   background-attachment: fixed;
@@ -12,16 +12,17 @@ export const LandingPageSection = styled.div`
   align-items: center;
 `;
 export const LandingPageLogoArticle = styled.div`
-  padding: 100px 0;
+  padding: 100px 0 20px 0;
 `;
 export const Logo = styled.img`
   width: 700px;
 `;
 export const LandingPageIntroArticle = styled.div`
   .container {
-    width: 600px;
-    height: 220px;
+    width: 450px;
+    /* height: 100px; */
     position: relative;
+    text-align: center;
   }
 
   h1,
