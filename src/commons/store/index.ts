@@ -14,7 +14,7 @@ export const publicBikeState = atom({
   effects_UNSTABLE: [persistAtom],
 });
 
-export const basket = atom({
+export const basketItemState = atom({
   key: "basketItems",
   default: [],
 });

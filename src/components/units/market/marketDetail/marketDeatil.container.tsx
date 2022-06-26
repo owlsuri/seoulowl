@@ -2,7 +2,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
-import { basket } from "../../../../commons/store";
+import { basketItemState } from "../../../../commons/store";
 import {
   IMutation,
   IMutationCreatePointTransactionOfBuyingAndSellingArgs,
@@ -23,7 +23,7 @@ import {
 export default function MarketDetail() {
   const router = useRouter();
 
-  const [, setBasketItems] = useRecoilState(basket);
+  const [, setBasketItems] = useRecoilState(basketItemState);
 
   const [detailColor, setDetailColor] = useState(true);
   const [qnaColor, setQnaColor] = useState(false);

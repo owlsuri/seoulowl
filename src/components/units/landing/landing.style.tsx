@@ -20,7 +20,6 @@ export const Logo = styled.img`
 export const LandingPageIntroArticle = styled.div`
   .container {
     width: 450px;
-    /* height: 100px; */
     position: relative;
     text-align: center;
   }
@@ -28,9 +27,12 @@ export const LandingPageIntroArticle = styled.div`
   h1,
   h2 {
     font-size: 60px;
+    font-weight: 600;
+    text-shadow: 5px 5px 10px rgba(3, 3, 3, 0.5);
     text-transform: uppercase;
 
     span {
+      /* font-family: "jalnan"; */
       width: 100%;
       float: left;
       color: #ffffff;
@@ -40,7 +42,7 @@ export const LandingPageIntroArticle = styled.div`
       opacity: 0;
       animation-name: titleAnimation;
       animation-timing-function: ease;
-      animation-duration: 3s;
+      animation-duration: 10s;
     }
   }
   h1 span {
@@ -62,17 +64,17 @@ export const LandingPageIntroArticle = styled.div`
     position: absolute;
 
     span {
-      animation-delay: 4.1s;
+      animation-delay: 10.1s;
       -webkit-animation-fill-mode: forwards;
 
       &:first-child {
-        animation-delay: 4.2s;
+        animation-delay: 10.2s;
       }
 
       &:last-child {
         color: #ffcd2f;
-        animation-delay: 4s;
       }
+      animation-iteration-count: infinite;
     }
   }
   @keyframes titleAnimation {
@@ -109,11 +111,78 @@ export const LandingPageMenuArticle = styled.div`
   justify-content: center;
   padding-top: 50px;
 `;
-export const Menu = styled.div`
+export const MenuContainer = styled.div`
   width: 200px;
   height: 200px;
   background-color: #ffffff;
   margin: 30px;
   border-radius: 10px;
   opacity: 0.9;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  cursor: pointer;
+  overflow: hidden;
+  /* :hover {
+    transform: translateY(-100%);
+  } */
+`;
+export const Menu = styled.div`
+  width: 200px;
+  height: 200px;
+  :hover {
+    transform: translateY(-100%);
+  }
+`;
+export const UpperBox = styled.div`
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+`;
+export const BottomBox = styled.div`
+  width: 200px;
+  height: 200px;
+  color: #fff;
+  background-color: #213e6d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+`;
+export const MenuImage = styled.img`
+  width: 100px;
+  opacity: 1;
+`;
+export const MenuName = styled.div`
+  font-size: 25px;
+  font-weight: 600;
+  opacity: 1;
+  padding-bottom: 20px;
+`;
+export const MenuSubName = styled.div`
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 1;
+`;
+export const MoveBtn = styled.div`
+  width: 40px;
+  height: 40px;
+  opacity: 1;
+  font-size: 16px;
+  font-weight: 600;
+  color: #213e6d;
+  background-color: #fff;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  :hover {
+    background-color: #ffcd2f;
+  }
 `;

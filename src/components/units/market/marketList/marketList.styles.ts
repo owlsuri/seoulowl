@@ -64,6 +64,7 @@ export const MarketLists = styled.div`
 export const ImageArticle = styled.div`
   width: 230px;
   height: 200px;
+  overflow: hidden;
 `;
 export const ItemImg = styled.img`
   padding-top: 5px;
@@ -72,21 +73,26 @@ export const ItemImg = styled.img`
   height: 200px;
 `;
 export const HeartBox = styled.div`
+  position: relative;
+  height: 50px;
+  font-size: 25px;
   color: red;
+  z-index: 1;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  left: 10px;
 `;
 export const Heart = styled(HeartFilled)`
-  position: relative;
-  z-index: 1;
-  font-size: 25px;
-  padding: 18px 0 0 195px;
   cursor: pointer;
 `;
 export const PickedCount = styled.div`
   position: relative;
+  width: 20px;
+  text-align: center;
   z-index: 2;
-  top: -27px;
-  left: 204px;
+  right: 22px;
   font-size: 15px;
   font-weight: 600;
   color: white;

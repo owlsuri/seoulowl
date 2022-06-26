@@ -10,3 +10,7 @@ export interface IBoardListUIProps {
   dataBoardsCount: any;
   onClickDetail: (event: MouseEvent<HTMLDivElement>) => void;
 }
+
+export interface IBoardListStylePorps {
+  isMatched: boolean;
+}

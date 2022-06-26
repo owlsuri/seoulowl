@@ -30,21 +30,45 @@ export const HeaderUserSection = styled.div`
   color: #ffffff;
   padding: 10px 0;
   letter-spacing: 1px;
+  display: flex;
+  align-items: center;
 `;
 export const HeaderMenuSection = styled.div`
   color: #ffffff;
   font-size: large;
   letter-spacing: 0.5px;
 `;
-export const UserArticle = styled.span`
+export const UserArticle = styled.div`
   padding: 10px;
   cursor: pointer;
   :hover {
     text-shadow: 0 0 2px, 0 0 5px;
   }
 `;
-export const UserArticlePoint = styled.span`
+export const UserArticleCart = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding-right: 7px;
+`;
+export const CartCount = styled.div`
+  width: 12px;
+  height: 15px;
+  font-size: 13px;
+  color: #213e6d;
+  font-weight: 600;
+  background-color: #ffcd2f;
+  border-radius: 5px;
+  margin-left: -7px;
+  padding-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+export const UserArticlePoint = styled.div`
   padding: 10px;
+  font-size: 15px;
   cursor: pointer;
   font-weight: 600;
   color: #ffcd2f;

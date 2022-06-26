@@ -4,4 +4,5 @@ export interface IHeaderProps {
   onClickLogout: () => void;
   onClickCharge: () => void;
   clickRef: any;
+  basketItems: any[];
 }

@@ -2,7 +2,7 @@ import MarketWriteUI from "./marketWrite.presenter";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { KeyboardEvent, MouseEvent, useEffect, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useMutation, useQuery } from "@apollo/client";
 import {

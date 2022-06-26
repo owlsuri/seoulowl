@@ -1,8 +1,12 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useRecoilState } from "recoil";
-import { accessTokenState, publicBikeState } from "../../../../commons/store";
+import {
+  accessTokenState,
+  basketItemState,
+  publicBikeState,
+} from "../../../../commons/store";
 import LayoutHeaderUI from "./header.presenter";
 import { FETCH_USER_LOGGED_IN, LOGOUT_USER } from "./header.queries";
 
@@ -15,6 +19,14 @@ export default function LayoutHeader() {
 
   const [logoutUser] = useMutation(LOGOUT_USER);
   const { data: userInfo } = useQuery(FETCH_USER_LOGGED_IN);
+
+  // 장바구니아이템 갯수
+  const [basketItems, setBasketItems] = useRecoilState(basketItemState);
+
+  useEffect(() => {
+    const baskets = JSON.parse(localStorage.getItem("baskets") || "[]");
+    setBasketItems(baskets);
+  }, []);
 
   const onClickLogout = () => {
     setPublicBike("");
@@ -34,6 +46,7 @@ export default function LayoutHeader() {
       onClickLogout={onClickLogout}
       onClickCharge={onClickCharge}
       clickRef={clickRef}
+      basketItems={basketItems}
     />
   );
 }

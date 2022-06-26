@@ -4,6 +4,7 @@ import InfiniteScroll from "react-infinite-scroller";
 import { BackTop } from "antd";
 import { useMoveToPage } from "../../../../commons/hooks/useMoveToPage";
 import { IMarketListProps } from "./marketList.types";
+import SearchBars01 from "../../../commons/searchBars/01/searchBars01.container";
 
 export default function MarketListUI(props: IMarketListProps) {
   const { onClickMoveToPage } = useMoveToPage();
@@ -40,8 +41,8 @@ export default function MarketListUI(props: IMarketListProps) {
                     />
                     <S.HeartBox>
                       <S.Heart id={el?._id} />
+                      <S.PickedCount>{el.pickedCount}</S.PickedCount>
                     </S.HeartBox>
-                    <S.PickedCount>{el.pickedCount}</S.PickedCount>
                   </S.ImageArticle>
                   <S.TitleArticle>
                     <S.Title>{el.name}</S.Title>

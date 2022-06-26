@@ -8,7 +8,7 @@ export default function Searchbars01UI(props: ISearchBarProps) {
       <S.SearchBox
         type="text"
         onChange={props.onChangeSearch}
-        placeholder="제목을 검색해주세요"
+        placeholder="제목을 검색해주세요."
       />
     </S.Search>
   );

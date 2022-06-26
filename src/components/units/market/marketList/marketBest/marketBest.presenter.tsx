@@ -21,8 +21,8 @@ export default function MarketBestUI(props: IMarketBestProps) {
             />
             <S.HeartBox>
               <S.Heart id={el?._id} />
+              <S.PickedCount>{el.pickedCount}</S.PickedCount>
             </S.HeartBox>
-            <S.PickedCount>{el.pickedCount}</S.PickedCount>
           </S.ImageArticle>
           <S.TitleArticle>
             <S.BestMark>BEST</S.BestMark>
