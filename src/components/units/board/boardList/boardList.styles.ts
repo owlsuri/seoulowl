@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { IBoardListStylePorps } from "./boardList.types";
+import { IBoardListStyleProps } from "./boardList.types";
 
 export const BoardListSection = styled.div`
   background-image: url(/backgroundImages/wall.jpg);
@@ -116,7 +116,7 @@ export const ColumnDate = styled.div`
   text-align: center;
 `;
 export const Word = styled.span`
-  color: ${(props: IBoardListStylePorps) => (props.isMatched ? "orange" : "")};
+  color: ${(props: IBoardListStyleProps) => (props.isMatched ? "orange" : "")};
 `;
 export const Pagination = styled.div`
   max-width: 1200px;

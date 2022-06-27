@@ -11,14 +11,16 @@ export default function MarketBestUI(props: IMarketBestProps) {
           onClick={props.onClickToDetail}
         >
           <S.ImageArticle>
-            <S.BestItemImg
-              id={el._id}
-              src={
-                el.images[0]
-                  ? `https://storage.googleapis.com/${el.images?.[0]}`
-                  : "/images/noimages.jpg"
-              }
-            />
+            <S.ImgBox>
+              <S.BestItemImg
+                id={el._id}
+                src={
+                  el.images[0]
+                    ? `https://storage.googleapis.com/${el.images?.[0]}`
+                    : "/images/noimages.jpg"
+                }
+              />
+            </S.ImgBox>
             <S.HeartBox>
               <S.Heart id={el?._id} />
               <S.PickedCount>{el.pickedCount}</S.PickedCount>

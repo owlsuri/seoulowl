@@ -26,7 +26,9 @@ export default function LayoutHeaderUI(props: IHeaderProps) {
               </S.UserArticle>
               <ChargePayment clickRef={props.clickRef} />
               <S.UserArticleCart>
-                <S.UserArticle>CART</S.UserArticle>
+                <S.UserArticle onClick={onClickMoveToPage("/mypage")}>
+                  CART
+                </S.UserArticle>
                 <S.CartCount>{props.basketItems.length}</S.CartCount>
               </S.UserArticleCart>
               <S.UserArticle onClick={props.onClickLogout}>
@@ -42,7 +44,9 @@ export default function LayoutHeaderUI(props: IHeaderProps) {
                 SIGN UP
               </S.UserArticle>
               <S.UserArticleCart>
-                <S.UserArticle>CART</S.UserArticle>
+                <S.UserArticle onClick={onClickMoveToPage("/mypage")}>
+                  CART
+                </S.UserArticle>
                 <S.CartCount>5</S.CartCount>
               </S.UserArticleCart>
             </S.HeaderUserSection>

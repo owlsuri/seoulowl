@@ -1,7 +1,20 @@
 import * as S from "./pagination.style";
 import { useEffect, useState } from "react";
+import { ApolloQueryResult } from "@apollo/client";
 
-export default function Pagination(props) {
+interface IPropsPagination {
+  refetch: (
+    variables?:
+      | Partial<{
+          page: number;
+        }>
+      | undefined
+  ) => Promise<ApolloQueryResult<any>>;
+  lastPage: number;
+  data?: any;
+}
+
+export default function Pagination(props: IPropsPagination) {
   const [startPage, setStartPage] = useState(1);
   const [current, setCurrent] = useState(1);
   const [idNum, setIdNum] = useState(0);

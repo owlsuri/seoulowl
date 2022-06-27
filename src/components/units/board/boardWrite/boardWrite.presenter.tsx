@@ -135,15 +135,44 @@ export default function BoardWriteUI(props: IBoardWriteProps) {
               <S.Block>
                 <S.Label>사진</S.Label>
                 <S.ImgBox>
-                  {props.fileUrls.map((el: any, index: number) => (
-                    <Uploads01
-                      type="button"
-                      key={uuidv4()}
-                      index={index}
-                      fileUrl={el}
-                      onChangeFileUrls={props.onChangeFileUrls}
-                    />
-                  ))}
+                  {props.fileUrls.map((el: any, index: number) => {
+                    if (index !== 0 && props.fileUrls[index - 1] !== "")
+                      return (
+                        <S.UploadWrapper>
+                          <Uploads01
+                            type="button"
+                            key={uuidv4()}
+                            index={index}
+                            fileUrl={el}
+                            onChangeFileUrls={props.onChangeFileUrls}
+                          />
+                          <S.DeleteBtn
+                            type="button"
+                            onClick={props.onClickImageDelete(index)}
+                          >
+                            x
+                          </S.DeleteBtn>
+                        </S.UploadWrapper>
+                      );
+                    if (index === 0)
+                      return (
+                        <S.UploadWrapper>
+                          <Uploads01
+                            type="button"
+                            key={uuidv4()}
+                            index={index}
+                            fileUrl={el}
+                            onChangeFileUrls={props.onChangeFileUrls}
+                          />
+                          <S.DeleteBtn
+                            type="button"
+                            onClick={props.onClickImageDelete(index)}
+                          >
+                            x
+                          </S.DeleteBtn>
+                        </S.UploadWrapper>
+                      );
+                  })}
                 </S.ImgBox>
               </S.Block>
               <S.Submit>

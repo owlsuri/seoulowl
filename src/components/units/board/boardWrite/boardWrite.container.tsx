@@ -46,7 +46,7 @@ const editSchema = yup.object({
 export default function BoardWrite(props: any) {
   const router = useRouter();
 
-  const [fileUrls, setFileUrls] = useState(["", "", ""]);
+  const [fileUrls, setFileUrls] = useState(["", "", "", ""]);
   const [address, setAddress] = useState("");
   const [zipcode, setZipcode] = useState("");
   const [isOpen, setIsOpen] = useState(false);
@@ -123,6 +123,12 @@ export default function BoardWrite(props: any) {
   const onChangeFileUrls = (fileUrl: string, index: number) => {
     const newFileUrls = [...fileUrls];
     newFileUrls[index] = fileUrl;
+    setFileUrls(newFileUrls);
+  };
+
+  const onClickImageDelete = (index: number) => () => {
+    const newFileUrls = [...fileUrls];
+    newFileUrls.splice(index, 1);
     setFileUrls(newFileUrls);
   };
 
@@ -205,6 +211,7 @@ export default function BoardWrite(props: any) {
       onClickSubmit={onClickSubmit}
       onChangeContents={onChangeContents}
       onChangeFileUrls={onChangeFileUrls}
+      onClickImageDelete={onClickImageDelete}
       fileUrls={fileUrls}
       showModal={showModal}
       handleOk={handleOk}

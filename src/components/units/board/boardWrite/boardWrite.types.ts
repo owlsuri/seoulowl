@@ -28,6 +28,7 @@ export interface IBoardWriteProps {
   onClickSubmit: (data: ICreateBoardInput) => void;
   onChangeContents: (value: any) => void;
   onChangeFileUrls: (fileUrl: string, index: number) => void;
+  onClickImageDelete: (index: number) => () => void;
   fileUrls: string[];
   showModal: () => void;
   handleOk: () => void;

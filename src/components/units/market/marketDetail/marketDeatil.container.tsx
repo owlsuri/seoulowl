@@ -2,6 +2,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
+import { useAuth } from "../../../../commons/hooks/useAuth";
 import { basketItemState } from "../../../../commons/store";
 import {
   IMutation,
@@ -21,6 +22,7 @@ import {
 } from "./marketDeatil.queries";
 
 export default function MarketDetail() {
+  useAuth();
   const router = useRouter();
 
   const [, setBasketItems] = useRecoilState(basketItemState);

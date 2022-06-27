@@ -28,6 +28,7 @@ export interface IMarketWriteProps {
   reset: UseFormReset<FormValues>;
   onChangeContents: (value: any) => void;
   onChangeFileUrls: (fileUrl: string, index: number) => void;
+  onClickImageDelete: (index: number) => () => void;
   fileUrls: string[];
   hashArr: string[];
   onKeyUpHash: (event) => void;

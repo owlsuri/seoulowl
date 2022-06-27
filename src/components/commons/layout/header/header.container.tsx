@@ -14,7 +14,7 @@ export default function LayoutHeader() {
   const router = useRouter();
   const clickRef = useRef<HTMLInputElement>(null);
 
-  const [accessToken] = useRecoilState(accessTokenState);
+  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
   const [, setPublicBike] = useRecoilState(publicBikeState);
 
   const [logoutUser] = useMutation(LOGOUT_USER);
@@ -28,10 +28,14 @@ export default function LayoutHeader() {
     setBasketItems(baskets);
   }, []);
 
-  const onClickLogout = () => {
+  const onClickLogout = async () => {
     setPublicBike("");
-    logoutUser();
-    location.reload();
+    try {
+      await logoutUser();
+    } catch (error) {
+      alert(error);
+    }
+    setAccessToken("");
     router.push("/");
   };
 

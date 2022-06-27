@@ -11,6 +11,6 @@ export interface IBoardListUIProps {
   onClickDetail: (event: MouseEvent<HTMLDivElement>) => void;
 }
 
-export interface IBoardListStylePorps {
+export interface IBoardListStyleProps {
   isMatched: boolean;
 }

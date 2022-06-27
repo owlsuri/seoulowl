@@ -1,15 +1,17 @@
-import { useRouter } from "next/router"
-import { useEffect} from "react"
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import { useRecoilState } from "recoil";
+import { accessTokenState } from "../store";
 
-export function useAuth(){
+export function useAuth() {
+  const [accessToken] = useRecoilState(accessTokenState);
 
-    const router = useRouter()
+  const router = useRouter();
 
-    useEffect(()=>{
-        if(!localStorage.getItem("accessToken")){
-            alert("로그인 후 이용이 가능 합니다!")
-            router.push("/login")
-        }
-    }, [])
-
+  useEffect(() => {
+    if (!accessToken) {
+      alert("로그인 후 이용이 가능 합니다!");
+      router.push("/login");
+    }
+  }, []);
 }

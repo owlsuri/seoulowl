@@ -87,6 +87,32 @@ export const ZipcodeBtn = styled.button`
 export const ImgBox = styled.div`
   display: flex;
 `;
+export const UploadWrapper = styled.div`
+  margin-right: 30px;
+  position: relative;
+  width: 150px;
+  height: 150px;
+
+  div:last-of-type {
+    position: absolute;
+    top: 0;
+    right: 10px;
+  }
+
+  &:last-of-type {
+    div:last-of-type {
+      display: none;
+    }
+  }
+`;
+export const DeleteBtn = styled.div`
+  font-size: 22px;
+  font-weight: 700;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  cursor: pointer;
+`;
+
 export const Submit = styled.div`
   display: flex;
   align-items: center;

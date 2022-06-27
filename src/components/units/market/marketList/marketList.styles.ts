@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { HeartFilled } from "@ant-design/icons";
+import { IMarketListStyleProps } from "./marketList.types";
 
 export const MarketList = styled.div`
   width: 100%;
@@ -42,6 +43,10 @@ export const MarketListBestArticle = styled.div`
   max-width: 1200px;
   padding-top: 20px;
 `;
+export const MarketListSearch = styled.div`
+  max-width: 1120px;
+  padding: 20px 20px 0 20px;
+`;
 export const MarketListArticle = styled.div`
   max-width: 1200px;
 `;
@@ -62,37 +67,44 @@ export const MarketLists = styled.div`
   }
 `;
 export const ImageArticle = styled.div`
+  position: relative;
+  width: 230px;
+  height: 200px;
+  padding-top: 5px;
+`;
+export const ImgBox = styled.div`
   width: 230px;
   height: 200px;
   overflow: hidden;
 `;
 export const ItemImg = styled.img`
-  padding-top: 5px;
-  position: absolute;
   width: 230px;
   height: 200px;
+  transition: all 0.2s linear;
+  :hover {
+    transform: scale(1.2);
+  }
 `;
 export const HeartBox = styled.div`
-  position: relative;
+  position: absolute;
   height: 50px;
   font-size: 25px;
   color: red;
   z-index: 1;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  left: 10px;
+  top: 5px;
+  left: 200px;
 `;
 export const Heart = styled(HeartFilled)`
   cursor: pointer;
 `;
 export const PickedCount = styled.div`
-  position: relative;
+  position: absolute;
   width: 20px;
   text-align: center;
   z-index: 2;
-  right: 22px;
+  top: 5px;
+  right: 3px;
   font-size: 15px;
   font-weight: 600;
   color: white;
@@ -106,6 +118,9 @@ export const TitleArticle = styled.div`
   border-bottom: 1px solid #bdbdbd;
   width: 230px;
   font-size: larger;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 export const Title = styled.span`
   width: 220px;
@@ -115,6 +130,9 @@ export const Title = styled.span`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+`;
+export const Word = styled.span`
+  color: ${(props: IMarketListStyleProps) => (props.isMatched ? "orange" : "")};
 `;
 export const RemarkArticle = styled.div`
   width: 220px;
