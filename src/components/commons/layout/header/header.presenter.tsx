@@ -18,8 +18,8 @@ export default function LayoutHeaderUI(props: IHeaderProps) {
           {props.accessToken ? (
             <S.HeaderUserSection>
               <S.UserArticlePoint>
-                {props.userInfo?.fetchUserLoggedIn.name}님의 포인트 :{" "}
-                {props.userInfo?.fetchUserLoggedIn.userPoint?.amount}P
+                {props.userInfo?.name}님의 포인트 :{" "}
+                {props.userInfo?.userPoint?.amount}P
               </S.UserArticlePoint>
               <S.UserArticle onClick={props.onClickCharge}>
                 CHARGE

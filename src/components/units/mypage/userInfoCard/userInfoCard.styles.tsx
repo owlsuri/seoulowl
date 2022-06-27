@@ -29,10 +29,7 @@ export const UserEmail = styled.div`
   color: #a6a6a6;
 `;
 export const UserNavigationArticle = styled.div`
-  padding: 10px 0;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
+  padding: 10px 0 205px 0;
 `;
 export const Menu = styled.div`
   width: 200px;
@@ -40,9 +37,6 @@ export const Menu = styled.div`
   text-align: center;
   padding: 10px 0;
   font-weight: 600;
-  background-color: ${(props) => (props.isSelected ? "#213e6d" : "")};
-  /* color: #213e6d; */
-  /* #ffcd2f */
   cursor: pointer;
   :hover {
     color: #ffcd2f;

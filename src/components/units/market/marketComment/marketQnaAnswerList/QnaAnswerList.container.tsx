@@ -2,6 +2,8 @@ import { useMutation, useQuery } from "@apollo/client";
 import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { MouseEvent, useState } from "react";
+import { useRecoilState } from "recoil";
+import { userInfoState } from "../../../../../commons/store";
 import {
   IMutation,
   IMutationDeleteUseditemQuestionAnswerArgs,
@@ -13,10 +15,11 @@ import QnaAnswerListUI from "./QnaAnswerList.presenter";
 import {
   DELETE_USEDITEM_QUESTION_ANSWER,
   FETCH_USEDITEM_QUESTION_ANSWERS,
-  FETCH_USER_LOGGED_IN,
 } from "./QnaAnswerList.queries";
 
 export default function QnaAnswerList(props: any) {
+  const [userInfo] = useRecoilState(userInfoState);
+
   const { data: qadata, fetchMore } = useQuery<
     Pick<IQuery, "fetchUseditemQuestionAnswers">,
     IQueryFetchUseditemQuestionAnswersArgs
@@ -28,9 +31,6 @@ export default function QnaAnswerList(props: any) {
     Pick<IMutation, "deleteUseditemQuestionAnswer">,
     IMutationDeleteUseditemQuestionAnswerArgs
   >(DELETE_USEDITEM_QUESTION_ANSWER);
-
-  const { data: userData } =
-    useQuery<Pick<IQuery, "fetchUserLoggedIn">>(FETCH_USER_LOGGED_IN);
 
   const onClickDelete = async (
     event: MouseEvent<HTMLDivElement, MouseEvent>
@@ -91,7 +91,7 @@ export default function QnaAnswerList(props: any) {
       loadMore={loadMore}
       qael={props.el}
       onClickDelete={onClickDelete}
-      userData={userData}
+      userInfo={userInfo}
     />
   );
 }

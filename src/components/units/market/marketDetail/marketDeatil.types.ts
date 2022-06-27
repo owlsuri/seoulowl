@@ -1,6 +1,6 @@
 export interface IMarketReadProps {
   data: any;
-  userData: any;
+  userInfo: any;
   isShowQnA: boolean;
   detailColor: boolean;
   qnaColor: boolean;

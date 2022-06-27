@@ -1,11 +1,9 @@
-import { useQuery } from "@apollo/client";
-import { IQuery } from "../../../../commons/types/generated/types";
-import { FETCH_USER_LOGGED_IN } from "../mypage.queries";
+import { useRecoilState } from "recoil";
+import { userInfoState } from "../../../../commons/store";
 import UserInfoCardUI from "./userInfoCard.presenter";
 
-export default function UserInfoCard(props) {
-  const { data: userData } =
-    useQuery<Pick<IQuery, "fetchUserLoggedIn">>(FETCH_USER_LOGGED_IN);
+export default function UserInfoCard(props: any) {
+  const [userInfo] = useRecoilState(userInfoState);
 
   const onClickSelectMenu = (event) => {
     props.setIsSelected(event.target.id);
@@ -14,7 +12,7 @@ export default function UserInfoCard(props) {
 
   return (
     <UserInfoCardUI
-      userData={userData}
+      userInfo={userInfo}
       onClickSelectMenu={onClickSelectMenu}
       isSelected={props.isSelected}
     />

@@ -5,10 +5,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useState } from "react";
 import QnaAnswerWrite from "../marketQnaAnswerWrite/QnaAnswerWrite.container";
 import { getDate } from "../../../../../commons/libraries/getDate";
-import {
-  IMarketQnaAnswerListItemProps,
-  IMarketQnaAnswerListProps,
-} from "./QnaAnswerList.types";
+import { IMarketQnaAnswerListItemProps } from "./QnaAnswerList.types";
 
 export default function QnaAnswerListItem(
   props: IMarketQnaAnswerListItemProps
@@ -40,8 +37,7 @@ export default function QnaAnswerListItem(
                       </S.CommentUserName>
                     </S.CommentUserProfile>
                     <S.CommentIcon>
-                      {props.userData?.fetchUserLoggedIn.email ===
-                      props.el?.user.email ? (
+                      {props.userInfo.email === props.el?.user.email ? (
                         <>
                           <FontAwesomeIcon
                             onClick={onClicktoUpdate}

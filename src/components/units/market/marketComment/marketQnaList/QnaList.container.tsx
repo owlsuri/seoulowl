@@ -2,6 +2,8 @@ import { useMutation, useQuery } from "@apollo/client";
 import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { MouseEvent } from "react";
+import { useRecoilState } from "recoil";
+import { userInfoState } from "../../../../../commons/store";
 import {
   IMutation,
   IMutationDeleteUseditemQuestionArgs,
@@ -13,11 +15,12 @@ import MarketQnAListUI from "./QnaList.presenter";
 import {
   FETCH_USEDITEM_QUESTIONS,
   DELETE_USEDITEM_QUESTION,
-  FETCH_USER_LOGGED_IN,
 } from "./QnaList.queries";
 
 export default function MarketQnAList() {
   const router = useRouter();
+
+  const [userInfo] = useRecoilState(userInfoState);
 
   const { data, fetchMore } = useQuery<
     Pick<IQuery, "fetchUseditemQuestions">,
@@ -30,9 +33,6 @@ export default function MarketQnAList() {
     Pick<IMutation, "deleteUseditemQuestion">,
     IMutationDeleteUseditemQuestionArgs
   >(DELETE_USEDITEM_QUESTION);
-
-  const { data: userData } =
-    useQuery<Pick<IQuery, "fetchUserLoggedIn">>(FETCH_USER_LOGGED_IN);
 
   const onLoadMore = () => {
     if (!data) return;
@@ -84,7 +84,7 @@ export default function MarketQnAList() {
   return (
     <MarketQnAListUI
       data={data}
-      userData={userData}
+      userInfo={userInfo}
       onLoadMore={onLoadMore}
       onClickDelete={onClickDelete}
     />

@@ -3,18 +3,29 @@ import styled from "@emotion/styled";
 export const Mypage = styled.div`
   width: 100%;
   padding: 150px;
-  background-image: url(/backgroundImages/busstop.jpg);
+  background-image: url(/backgroundImages/park.jpg);
   background-size: cover;
   background-attachment: fixed;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+`;
+export const MypageSubTitleSection = styled.div`
+  font-size: 20px;
+  text-align: center;
+`;
+export const MypageTitleSection = styled.div`
+  color: #fff;
+  font-size: 40px;
+  font-weight: 600;
+  padding-bottom: 30px;
+  text-align: center;
 `;
 export const MypageSection = styled.div`
   max-width: 1200px;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
 `;
 export const MypageUserInfoArticle = styled.div``;
 export const MypageNavigationArticle = styled.div`

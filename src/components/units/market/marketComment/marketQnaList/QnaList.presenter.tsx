@@ -17,7 +17,7 @@ export default function MarketQnAListUI(props: IMarketQnaListProps) {
               key={String(el?._id)}
               el={el}
               data={props.data}
-              userData={props.userData}
+              userInfo={props.userInfo}
               onClickDelete={props.onClickDelete}
             />
           ))}

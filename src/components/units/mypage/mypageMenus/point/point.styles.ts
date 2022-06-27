@@ -28,7 +28,7 @@ export const PointListArticle = styled.div`
   flex-direction: column;
   align-items: center;
   border-top: 2px solid #a6a6a6;
-  padding-top: 10px;
+  padding: 10px 0 60px 0;
 `;
 export const TableHeaderRow = styled.div`
   height: 30px;

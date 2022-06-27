@@ -8,7 +8,7 @@ export default function MarketBestUI(props: IMarketBestProps) {
         <S.MarketBestSection
           key={el?._id}
           id={el._id}
-          onClick={props.onClickToDetail}
+          onClick={props.onClickToDetail(el)}
         >
           <S.ImageArticle>
             <S.ImgBox>

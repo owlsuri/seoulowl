@@ -32,7 +32,7 @@ export default function MarketListUI(props: IMarketListProps) {
                 <S.MarketLists
                   key={el?._id}
                   id={el._id}
-                  onClick={props.onClickToDetail}
+                  onClick={props.onClickToDetail(el)}
                 >
                   <S.ImageArticle>
                     <S.ImgBox>

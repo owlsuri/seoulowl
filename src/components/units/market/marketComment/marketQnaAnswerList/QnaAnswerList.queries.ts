@@ -24,15 +24,3 @@ export const DELETE_USEDITEM_QUESTION_ANSWER = gql`
     )
   }
 `;
-
-export const FETCH_USER_LOGGED_IN = gql`
-  query fetchUserLoggedIn {
-    fetchUserLoggedIn {
-      email
-      name
-      userPoint {
-        amount
-      }
-    }
-  }
-`;

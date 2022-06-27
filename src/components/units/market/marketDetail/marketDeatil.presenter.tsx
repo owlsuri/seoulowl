@@ -12,7 +12,6 @@ import { useState } from "react";
 import MarketWrite from "../marketWrite/marketWrite.container";
 
 export default function MarketDetailUI(props: IMarketReadProps) {
-  console.log(props.data?.fetchUseditem.seller.name);
   const [isEdit, setIsEdit] = useState(false);
 
   const { onClickMoveToPage } = useMoveToPage();
@@ -137,8 +136,7 @@ export default function MarketDetailUI(props: IMarketReadProps) {
             <S.MoveBtn onClick={onClickMoveToPage("/market")}>
               목록으로
             </S.MoveBtn>
-            {props.data?.fetchUseditem.seller.email ===
-            props.userData?.fetchUserLoggedIn.email ? (
+            {props.data?.fetchUseditem.seller.email === props.userInfo.email ? (
               <>
                 <S.MoveBtn onClick={props.onClickMoveEdit}>수정하기</S.MoveBtn>
                 <S.MoveBtn onClick={props.onClickDelete}>삭제하기</S.MoveBtn>

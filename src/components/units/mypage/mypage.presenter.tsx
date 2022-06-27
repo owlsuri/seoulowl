@@ -1,5 +1,7 @@
 import * as S from "./mypage.styles";
 import Buy from "./mypageMenus/buy/buy";
+import Cart from "./mypageMenus/cart/cart";
+import Pick from "./mypageMenus/pick/pick";
 import Point from "./mypageMenus/point/point";
 import Sell from "./mypageMenus/sell/sell";
 import UserInfoCard from "./userInfoCard/userInfoCard.container";
@@ -7,6 +9,10 @@ import UserInfoCard from "./userInfoCard/userInfoCard.container";
 export default function MypageUI(props) {
   return (
     <S.Mypage>
+      <div>
+        <S.MypageSubTitleSection>👦🏾👩🏻👧🏾🧑🏻</S.MypageSubTitleSection>
+        <S.MypageTitleSection>마이페이지</S.MypageTitleSection>
+      </div>
       <S.MypageSection>
         <S.MypageUserInfoArticle>
           <UserInfoCard
@@ -16,9 +22,9 @@ export default function MypageUI(props) {
           />
         </S.MypageUserInfoArticle>
         <S.MypageNavigationArticle>
-          {props.isOpen && <S.Menu>장바구니</S.Menu>}
-          {props.isSelected === "cart" && <S.Menu>장바구니</S.Menu>}
-          {props.isSelected === "pick" && <S.Menu>찜</S.Menu>}
+          {props.isOpen && <Cart />}
+          {props.isSelected === "cart" && <Cart />}
+          {props.isSelected === "pick" && <Pick />}
           {props.isSelected === "buy" && <Buy />}
           {props.isSelected === "sell" && <Sell />}
           {props.isSelected === "point" && <Point />}

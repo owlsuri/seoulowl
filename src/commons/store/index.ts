@@ -8,6 +8,11 @@ export const accessTokenState = atom({
   default: "",
 });
 
+export const userInfoState = atom({
+  key: "userInfoState",
+  default: { name: "", email: "", userPoint: { amount: 0 } },
+});
+
 export const publicBikeState = atom({
   key: "publicBikeState",
   default: [],
@@ -16,5 +21,10 @@ export const publicBikeState = atom({
 
 export const basketItemState = atom({
   key: "basketItems",
+  default: [],
+});
+
+export const watchState = atom({
+  key: "watchState",
   default: [],
 });

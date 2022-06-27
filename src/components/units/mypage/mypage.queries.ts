@@ -1,15 +1,21 @@
 import { gql } from "@apollo/client";
 
-// UserInfo
-export const FETCH_USER_LOGGED_IN = gql`
-  query fetchUserLoggedIn {
-    fetchUserLoggedIn {
-      email
+// pick
+export const FETCH_USED_ITEMS_I_PICKED = gql`
+  query fetchUseditemsIPicked($search: String, $page: Int) {
+    fetchUseditemsIPicked(search: $search, page: $page) {
+      _id
       name
-      userPoint {
-        amount
-      }
+      price
+      pickedCount
+      images
     }
+  }
+`;
+
+export const FETCH_USED_ITEMS_COUNT_I_PICKED = gql`
+  query fetchUseditemsCountIPicked {
+    fetchUseditemsCountIPicked
   }
 `;
 

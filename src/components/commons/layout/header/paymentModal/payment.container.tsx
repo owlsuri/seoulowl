@@ -1,7 +1,8 @@
 import { gql, useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { FETCH_USER_LOGGED_IN } from "../header.queries";
+import { useRecoilState } from "recoil";
+import { userInfoState } from "../../../../../commons/store";
 import ChargePaymentUI from "./payment.presenter";
 
 export const CREATE_POINT_TRANSACTION_OF_LOADING = gql`
@@ -18,6 +19,7 @@ export const CREATE_POINT_TRANSACTION_OF_LOADING = gql`
 export default function ChargePayment(props) {
   const router = useRouter();
 
+  const [userInfo] = useRecoilState(userInfoState);
   const [isOpen, setIsOpen] = useState(false);
   const [amount, setAmount] = useState(0);
 
@@ -28,8 +30,6 @@ export default function ChargePayment(props) {
   const [createPointTransactionOfLoading] = useMutation(
     CREATE_POINT_TRANSACTION_OF_LOADING
   );
-
-  const { data: userData } = useQuery(FETCH_USER_LOGGED_IN);
 
   // 이동모달
   const onClickRoutingModal = () => {
@@ -66,8 +66,8 @@ export default function ChargePayment(props) {
         // merchant_uid: "ORD20180131-0000011", 중복되면 안됨 없으면 랜덤으로 생성됨
         name: "seoulOwlPoint",
         amount: amount,
-        buyer_email: userData?.fetchUserLoggedIn.email,
-        buyer_name: userData?.fetchUserLoggedIn.name,
+        buyer_email: userInfo.email,
+        buyer_name: userInfo.name,
         // buyer_tel: "010-4242-4242",
         // buyer_addr: "코드캠프",
         // buyer_postcode: "01181",

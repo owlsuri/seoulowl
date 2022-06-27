@@ -25,18 +25,6 @@ export const FETCH_USED_ITEM = gql`
   }
 `;
 
-export const FETCH_USER_LOGGED_IN = gql`
-  query fetchUserLoggedIn {
-    fetchUserLoggedIn {
-      email
-      name
-      userPoint {
-        amount
-      }
-    }
-  }
-`;
-
 export const DELETE_USEDITEM = gql`
   mutation deleteUseditem($useditemId: ID!) {
     deleteUseditem(useditemId: $useditemId)

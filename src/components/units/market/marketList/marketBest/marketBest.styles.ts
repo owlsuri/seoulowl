@@ -57,8 +57,8 @@ export const PickedCount = styled.div`
   width: 20px;
   text-align: center;
   z-index: 2;
-  top: 5px;
-  right: 3px;
+  top: 6px;
+  right: 1.5px;
   font-size: 15px;
   font-weight: 600;
   color: white;

@@ -2,7 +2,7 @@ import { MouseEvent } from "react";
 
 export interface IMarketQnaListProps {
   data?: any;
-  userData?: any;
+  userInfo?: any;
   onLoadMore: () => void;
   onClickDelete: (event: MouseEvent<SVGSVGElement, MouseEvent>) => void;
 }
@@ -11,6 +11,6 @@ export interface IMarketQnaListItemProps {
   key: string;
   el: any;
   data?: any;
-  userData?: any;
+  userInfo?: any;
   onClickDelete: (event: MouseEvent<SVGSVGElement, MouseEvent>) => void;
 }

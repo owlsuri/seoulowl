@@ -14,8 +14,8 @@ export default function UserInfoCardUI(props) {
     <S.UserInfoCardSection>
       <S.UserImage src="/images/profile-user.png" />
       <S.UserInfoArticle>
-        <S.UserName>{props.userData?.fetchUserLoggedIn.name}</S.UserName>
-        <S.UserEmail>{props.userData?.fetchUserLoggedIn.email}</S.UserEmail>
+        <S.UserName>{props.userInfo.name}</S.UserName>
+        <S.UserEmail>{props.userInfo.email}</S.UserEmail>
       </S.UserInfoArticle>
       <S.UserNavigationArticle>
         {NAVIGATION_MENU.map((el) => (

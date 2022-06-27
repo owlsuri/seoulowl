@@ -13,7 +13,7 @@ export default function QnaAnswerListUI(props: IMarketQnaAnswerListProps) {
             data={props.data}
             onClickDelete={props.onClickDelete}
             qael={props.qael}
-            userData={props.userData}
+            userInfo={props.userInfo}
           />
         ))}
       </InfiniteScroll>

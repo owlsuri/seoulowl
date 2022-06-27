@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
 import { useAuth } from "../../../../commons/hooks/useAuth";
-import { basketItemState } from "../../../../commons/store";
+import { basketItemState, userInfoState } from "../../../../commons/store";
 import {
   IMutation,
   IMutationCreatePointTransactionOfBuyingAndSellingArgs,
@@ -17,14 +17,14 @@ import {
   CREATE_POINT_TRANSACTION_OF_BUYING_AND_SELLING,
   DELETE_USEDITEM,
   FETCH_USED_ITEM,
-  FETCH_USER_LOGGED_IN,
   TOGGLE_USEDITEM_PICK,
 } from "./marketDeatil.queries";
 
 export default function MarketDetail() {
-  useAuth();
+  // useAuth();
   const router = useRouter();
 
+  const [userInfo] = useRecoilState(userInfoState);
   const [, setBasketItems] = useRecoilState(basketItemState);
 
   const [detailColor, setDetailColor] = useState(true);
@@ -44,9 +44,6 @@ export default function MarketDetail() {
   >(FETCH_USED_ITEM, {
     variables: { useditemId: String(router.query.useditemId) },
   });
-
-  const { data: userData } =
-    useQuery<Pick<IQuery, "fetchUserLoggedIn">>(FETCH_USER_LOGGED_IN);
 
   const [toggleUseditemPick] = useMutation<
     Pick<IMutation, "toggleUseditemPick">,
@@ -134,10 +131,7 @@ export default function MarketDetail() {
 
   // 결제하기
   const onClickPay = async () => {
-    if (
-      userData?.fetchUserLoggedIn?.userPoint.amount >=
-      data?.fetchUseditem?.price
-    ) {
+    if (userInfo.userPoint.amount >= data?.fetchUseditem?.price) {
       try {
         const pay = await createPointTransactionOfBuyingAndSelling({
           variables: {
@@ -178,7 +172,7 @@ export default function MarketDetail() {
   return (
     <MarketDetailUI
       data={data}
-      userData={userData}
+      userInfo={userInfo}
       isShowQnA={isShowQnA}
       detailColor={detailColor}
       qnaColor={qnaColor}

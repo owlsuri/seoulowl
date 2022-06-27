@@ -53,8 +53,8 @@ export const UserArticleCart = styled.div`
   padding-right: 7px;
 `;
 export const CartCount = styled.div`
-  width: 12px;
-  height: 15px;
+  width: 15px;
+  height: 18px;
   font-size: 13px;
   color: #213e6d;
   font-weight: 600;
