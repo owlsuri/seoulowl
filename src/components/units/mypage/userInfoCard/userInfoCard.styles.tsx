@@ -29,7 +29,7 @@ export const UserEmail = styled.div`
   color: #a6a6a6;
 `;
 export const UserNavigationArticle = styled.div`
-  padding: 10px 0 205px 0;
+  padding: 10px 0 245px 0;
 `;
 export const Menu = styled.div`
   width: 200px;

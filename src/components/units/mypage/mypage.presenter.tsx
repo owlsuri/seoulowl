@@ -24,7 +24,7 @@ export default function MypageUI(props) {
         <S.MypageNavigationArticle>
           {props.isOpen && <Cart />}
           {props.isSelected === "cart" && <Cart />}
-          {props.isSelected === "pick" && <Pick />}
+          {/* {props.isSelected === "pick" && <Pick />} */}
           {props.isSelected === "buy" && <Buy />}
           {props.isSelected === "sell" && <Sell />}
           {props.isSelected === "point" && <Point />}

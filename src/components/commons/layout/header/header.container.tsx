@@ -5,7 +5,6 @@ import { useRecoilState } from "recoil";
 import {
   accessTokenState,
   basketItemState,
-  publicBikeState,
   userInfoState,
 } from "../../../../commons/store";
 import LayoutHeaderUI from "./header.presenter";
@@ -17,10 +16,8 @@ export default function LayoutHeader() {
 
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
   const [userInfo] = useRecoilState(userInfoState);
-  const [, setPublicBike] = useRecoilState(publicBikeState);
 
   const [logoutUser] = useMutation(LOGOUT_USER);
-  console.log("😎", userInfo);
 
   // 장바구니아이템 갯수
   const [basketItems, setBasketItems] = useRecoilState(basketItemState);
@@ -31,7 +28,6 @@ export default function LayoutHeader() {
   }, []);
 
   const onClickLogout = async () => {
-    setPublicBike("");
     try {
       await logoutUser();
     } catch (error) {

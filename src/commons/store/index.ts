@@ -10,12 +10,7 @@ export const accessTokenState = atom({
 
 export const userInfoState = atom({
   key: "userInfoState",
-  default: { name: "", email: "", userPoint: { amount: 0 } },
-});
-
-export const publicBikeState = atom({
-  key: "publicBikeState",
-  default: [],
+  default: {},
   effects_UNSTABLE: [persistAtom],
 });
 

@@ -3,7 +3,7 @@ import { useAuth } from "../../../commons/hooks/useAuth";
 import MypageUI from "./mypage.presenter";
 
 export default function Mypage() {
-  // useAuth();
+  useAuth();
 
   const [isSelected, setIsSelected] = useState("");
   const [isOpen, setIsOpen] = useState(true);

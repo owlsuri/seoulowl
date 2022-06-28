@@ -22,7 +22,8 @@ export default function Cart() {
             <S.TableHeaderImage>대표 이미지</S.TableHeaderImage>
             <S.TableHeaderName>상품명</S.TableHeaderName>
             <S.TableHeaderAmount>가격</S.TableHeaderAmount>
-            <S.TableHeaderCheck>☑</S.TableHeaderCheck>
+            {/* <S.TableHeaderCheck>☑</S.TableHeaderCheck> */}
+            <S.ColumnCheck type="checkbox" />
           </S.TableHeaderRow>
           <>
             {basketItems
