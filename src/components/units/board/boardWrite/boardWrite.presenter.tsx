@@ -147,7 +147,6 @@ export default function BoardWriteUI(props: IBoardWriteProps) {
                             onChangeFileUrls={props.onChangeFileUrls}
                           />
                           <S.DeleteBtn
-                            type="button"
                             onClick={props.onClickImageDelete(index)}
                           >
                             x
@@ -165,7 +164,6 @@ export default function BoardWriteUI(props: IBoardWriteProps) {
                             onChangeFileUrls={props.onChangeFileUrls}
                           />
                           <S.DeleteBtn
-                            type="button"
                             onClick={props.onClickImageDelete(index)}
                           >
                             x

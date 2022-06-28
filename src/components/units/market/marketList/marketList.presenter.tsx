@@ -19,7 +19,10 @@ export default function MarketListUI(props: IMarketListProps) {
           <MarketBest />
         </S.MarketListBestArticle>
         <S.MarketListSearch>
-          <SearchBars02 refetch={props.refetch} onChangeKeyword={props.onChangeKeyword}/>
+          <SearchBars02
+            refetch={props.refetch}
+            onChangeKeyword={props.onChangeKeyword}
+          />
         </S.MarketListSearch>
         <S.MarketListArticle>
           <InfiniteScroll
@@ -51,13 +54,19 @@ export default function MarketListUI(props: IMarketListProps) {
                     </S.HeartBox>
                   </S.ImageArticle>
                   <S.TitleArticle>
-                    <S.Title>{el.name.replaceAll(props.keyword, `#$%${props.keyword}#$%`)
-                    .split("#$%")
-                    .map((el: any) => (
-                      <S.Word key={uuidv4()} isMatched={props.keyword === el}>
-                        {el}
-                      </S.Word>
-                    ))}}</S.Title>
+                    <S.Title>
+                      {el.name
+                        .replaceAll(props.keyword, `#$%${props.keyword}#$%`)
+                        .split("#$%")
+                        .map((el: any) => (
+                          <S.Word
+                            key={uuidv4()}
+                            isMatched={props.keyword === el}
+                          >
+                            {el}
+                          </S.Word>
+                        ))}
+                    </S.Title>
                   </S.TitleArticle>
                   <S.RemarkArticle>
                     {el.remarks.length ? el.remarks : "좋은 상품이에요!"}

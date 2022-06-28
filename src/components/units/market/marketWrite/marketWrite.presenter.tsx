@@ -168,10 +168,7 @@ export default function MarketWriteUI(props: IMarketWriteProps) {
                           fileUrl={el}
                           onChangeFileUrls={props.onChangeFileUrls}
                         />
-                        <S.DeleteBtn
-                          type="button"
-                          onClick={props.onClickImageDelete(index)}
-                        >
+                        <S.DeleteBtn onClick={props.onClickImageDelete(index)}>
                           x
                         </S.DeleteBtn>
                       </S.UploadWrapper>
@@ -186,10 +183,7 @@ export default function MarketWriteUI(props: IMarketWriteProps) {
                           fileUrl={el}
                           onChangeFileUrls={props.onChangeFileUrls}
                         />
-                        <S.DeleteBtn
-                          type="button"
-                          onClick={props.onClickImageDelete(index)}
-                        >
+                        <S.DeleteBtn onClick={props.onClickImageDelete(index)}>
                           x
                         </S.DeleteBtn>
                       </S.UploadWrapper>

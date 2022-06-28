@@ -4,7 +4,8 @@ import { MouseEvent } from "react";
 import {
   IQuery,
   IQueryFetchBoardsArgs,
-} from "../../../../../../commons/types/generated/types";
+} from "../../../../../commons/types/generated/types";
+
 import BestBoardUI from "./bestBoard.presenter";
 
 export const FETCH_BOARDS_BEST = gql`

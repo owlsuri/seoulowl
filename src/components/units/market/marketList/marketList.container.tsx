@@ -1,4 +1,5 @@
 import { useQuery } from "@apollo/client";
+import _ from "lodash";
 import { useRouter } from "next/router";
 import { MouseEvent, useState } from "react";
 import { useRecoilState } from "recoil";
@@ -67,7 +68,6 @@ export default function MarketList() {
       refetch={refetch}
       keyword={keyword}
       onChangeKeyword={onChangeKeyword}
-      setKeyword={setKeyword}
     />
   );
 }

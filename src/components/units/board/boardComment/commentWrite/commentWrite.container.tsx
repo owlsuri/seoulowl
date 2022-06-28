@@ -51,7 +51,7 @@ export default function BoardCommentWrite(props: any) {
     setErrorAlertModal(false);
   };
 
-  const onChangeInputs = (event: ChangeEvent<HTMLInputElement>) => {
+  const onChangeInputs = (event: any) => {
     setInputs({
       ...inputs,
       [event.target.id]: event.target.value,

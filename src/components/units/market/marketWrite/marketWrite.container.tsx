@@ -158,9 +158,7 @@ export default function MarketWrite(props) {
     console.log(event.target.value);
   };
 
-  const onClickDeleteHash = (
-    event: MouseEvent<SVGAElement, MouseEvent<Element, MouseEvent>>
-  ) => {
+  const onClickDeleteHash = (event: any) => {
     hashArr.splice(Number(event.target.id), 1);
     setHashArr([...hashArr]);
   };

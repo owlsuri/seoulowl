@@ -5,6 +5,10 @@ import { useRecoilState } from "recoil";
 import { userInfoState } from "../../../../../commons/store";
 import ChargePaymentUI from "./payment.presenter";
 
+declare const window: typeof globalThis & {
+  IMP: any;
+};
+
 export const CREATE_POINT_TRANSACTION_OF_LOADING = gql`
   mutation createPointTransactionOfLoading($impUid: ID!) {
     createPointTransactionOfLoading(impUid: $impUid) {

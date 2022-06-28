@@ -76,13 +76,14 @@ export type ICreateBoardCommentInput = {
 };
 
 export type ICreateBoardInput = {
-  boardAddress?: InputMaybe<IBoardAddressInput>;
-  contents: Scalars["String"];
-  images?: InputMaybe<Array<Scalars["String"]>>;
-  password?: InputMaybe<Scalars["String"]>;
-  title: Scalars["String"];
-  writer?: InputMaybe<Scalars["String"]>;
-  youtubeUrl?: InputMaybe<Scalars["String"]>;
+  addressDetail: any;
+
+  writer: string;
+  password: string;
+  title: string;
+  contents: string;
+  youtubeUrl: string;
+  images: any;
 };
 
 export type ICreateUseditemInput = {
@@ -407,6 +408,8 @@ export type IUpdateBoardCommentInput = {
 };
 
 export type IUpdateBoardInput = {
+  fetchBoard: any;
+  addressDetail: any;
   boardAddress?: InputMaybe<IBoardAddressInput>;
   contents?: InputMaybe<Scalars["String"]>;
   images?: InputMaybe<Array<Scalars["String"]>>;

@@ -12,5 +12,5 @@ export interface IMarketQnaListItemProps {
   el: any;
   data?: any;
   userInfo?: any;
-  onClickDelete: (event: MouseEvent<SVGSVGElement, MouseEvent>) => void;
+  onClickDelete: (event: any) => void;
 }

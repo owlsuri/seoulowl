@@ -57,10 +57,7 @@ export default function BoardWrite(props: any) {
 
   const [boardId, setBoardId] = useState("");
 
-  const [createBoard] = useMutation<
-    Pick<IMutation, "createBoard">,
-    IMutationCreateBoardArgs
-  >(CREATE_BOARD);
+  const [createBoard] = useMutation(CREATE_BOARD);
 
   const { data } = useQuery<Pick<IQuery, "fetchBoard">, IQueryFetchBoardArgs>(
     FETCH_BOARD,
@@ -69,10 +66,7 @@ export default function BoardWrite(props: any) {
     }
   );
 
-  const [updateBoard] = useMutation<
-    Pick<IMutation, "updateBoard">,
-    IMutationUpdateBoardArgs
-  >(UPDATE_BOARD);
+  const [updateBoard] = useMutation(UPDATE_BOARD);
 
   // 이동모달
   const onClickRoutingModal = () => {

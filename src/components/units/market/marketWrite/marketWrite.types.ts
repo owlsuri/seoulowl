@@ -32,9 +32,7 @@ export interface IMarketWriteProps {
   fileUrls: string[];
   hashArr: string[];
   onKeyUpHash: (event) => void;
-  onClickDeleteHash: (
-    event: MouseEvent<SVGAElement, MouseEvent<Element, MouseEvent>>
-  ) => void;
+  onClickDeleteHash: (event: any) => void;
   showModal: () => void;
   handleOk: () => void;
   handleCancel: () => void;

@@ -1,7 +1,12 @@
 import { accessTokenState } from "./../../../../commons/store/index";
 import styled from "@emotion/styled";
 import { HeartFilled } from "@ant-design/icons";
-import { IMarketReadStyleProps } from "./marketDeatil.types";
+
+interface IMarketReadStyleProps {
+  heart?: boolean;
+  detailColor?: boolean;
+  qnaColor?: boolean;
+}
 
 export const MarketDetail = styled.div`
   width: 100%;

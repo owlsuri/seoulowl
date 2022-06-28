@@ -20,9 +20,3 @@ export interface IMarketReadProps {
   errorAlertModal: boolean;
   isRoute: boolean;
 }
-
-export interface IMarketReadStyleProps {
-  heart: boolean;
-  detailColor: boolean;
-  qnaColor: boolean;
-}

@@ -12,7 +12,7 @@ export interface IMarketQnaAnswerListItemProps {
   key: string;
   data?: any;
   qael: any;
-  onClickDelete: (event: MouseEvent<HTMLDivElement, MouseEvent>) => void;
+  onClickDelete: (event: any) => void;
   userInfo?: any;
   el: any;
 }
