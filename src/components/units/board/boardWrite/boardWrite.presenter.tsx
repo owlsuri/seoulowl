@@ -174,7 +174,10 @@ export default function BoardWriteUI(props: IBoardWriteProps) {
                 </S.ImgBox>
               </S.Block>
               <S.Submit>
-                <S.SubmitBtn isActive={props.formState.isValid}>
+                <S.SubmitBtn
+                  isActive={props.formState.isValid}
+                  disabled={props.formState.isSubmitting}
+                >
                   {props.isEdit ? "수정하기" : "등록하기"}
                 </S.SubmitBtn>
               </S.Submit>

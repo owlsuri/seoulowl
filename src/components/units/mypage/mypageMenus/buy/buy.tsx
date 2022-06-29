@@ -25,14 +25,14 @@ export default function Buy() {
         🎁 총 구매건수 :{" "}
         <span>{buyingCount?.fetchPointTransactionsCountOfBuying}</span>건
       </S.BuyingCountArticle>
-      <S.BuyingListArticle>
-        <S.TableHeaderRow>
-          <S.TableHeaderNumber>번호</S.TableHeaderNumber>
-          <S.TableHeaderDate>구매일</S.TableHeaderDate>
-          <S.TableHeaderName>구매한 상품</S.TableHeaderName>
-          <S.TableHeaderAmount>가격</S.TableHeaderAmount>
-        </S.TableHeaderRow>
-        <>
+      <S.TableHeaderRow>
+        <S.TableHeaderNumber>번호</S.TableHeaderNumber>
+        <S.TableHeaderDate>구매일</S.TableHeaderDate>
+        <S.TableHeaderName>구매한 상품</S.TableHeaderName>
+        <S.TableHeaderAmount>가격</S.TableHeaderAmount>
+      </S.TableHeaderRow>
+      {data?.fetchPointTransactionsOfBuying.length ? (
+        <S.BuyingListArticle>
           {data?.fetchPointTransactionsOfBuying.map((el, index) => (
             <S.Row key={el._id}>
               <S.ColumnNumber>{index + 1}</S.ColumnNumber>
@@ -41,8 +41,12 @@ export default function Buy() {
               <S.ColumnAmount>{el.useditem.price}원</S.ColumnAmount>
             </S.Row>
           ))}
-        </>
-      </S.BuyingListArticle>
+        </S.BuyingListArticle>
+      ) : (
+        <S.BuyingListArticleNone>
+          구매한 상품이 없습니다🤨
+        </S.BuyingListArticleNone>
+      )}
       <S.Pagination>
         <Pagination data={data} refetch={refetch} lastPage={lastPage} />
       </S.Pagination>

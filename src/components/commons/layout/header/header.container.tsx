@@ -15,7 +15,7 @@ export default function LayoutHeader() {
   const clickRef = useRef<HTMLInputElement>(null);
 
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
-  const [userInfo] = useRecoilState(userInfoState);
+  const [userInfo, setUserInfo] = useRecoilState(userInfoState);
 
   const [logoutUser] = useMutation(LOGOUT_USER);
 
@@ -34,6 +34,7 @@ export default function LayoutHeader() {
       alert(error);
     }
     setAccessToken("");
+    setUserInfo("");
     router.push("/");
   };
 

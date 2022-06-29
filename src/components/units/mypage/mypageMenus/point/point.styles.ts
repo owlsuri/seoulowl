@@ -27,8 +27,15 @@ export const PointListArticle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-top: 2px solid #a6a6a6;
-  padding: 10px 0 60px 0;
+  padding: 10px 0 55px 0;
+`;
+export const PointListArticleNone = styled.div`
+  width: 700px;
+  height: 462px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 export const TableHeaderRow = styled.div`
   height: 30px;
@@ -36,7 +43,8 @@ export const TableHeaderRow = styled.div`
   display: flex;
   align-items: center;
   border-bottom: 2px solid #bdbdbd;
-  padding-bottom: 10px;
+  border-top: 2px solid #bdbdbd;
+  padding: 20px 0;
 `;
 export const TableHeaderNumber = styled.div`
   width: 100px;

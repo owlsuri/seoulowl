@@ -32,14 +32,14 @@ export default function Sell() {
         🎊 총 판매건수 :{" "}
         <span>{sellingCount?.fetchPointTransactionsCountOfSelling}</span>건
       </S.SellingCountArticle>
-      <S.SellingListArticle>
-        <S.TableHeaderRow>
-          <S.TableHeaderNumber>번호</S.TableHeaderNumber>
-          <S.TableHeaderDate>판매일</S.TableHeaderDate>
-          <S.TableHeaderName>판매한 상품</S.TableHeaderName>
-          <S.TableHeaderAmount>가격</S.TableHeaderAmount>
-        </S.TableHeaderRow>
-        <>
+      <S.TableHeaderRow>
+        <S.TableHeaderNumber>번호</S.TableHeaderNumber>
+        <S.TableHeaderDate>판매일</S.TableHeaderDate>
+        <S.TableHeaderName>판매한 상품</S.TableHeaderName>
+        <S.TableHeaderAmount>가격</S.TableHeaderAmount>
+      </S.TableHeaderRow>
+      {data?.fetchPointTransactionsOfSelling.length ? (
+        <S.SellingListArticle>
           {data?.fetchPointTransactionsOfSelling.map((el, index) => (
             <S.Row key={el._id}>
               <S.ColumnNumber>{index + 1}</S.ColumnNumber>
@@ -48,8 +48,12 @@ export default function Sell() {
               <S.ColumnAmount>{el.useditem.price}원</S.ColumnAmount>
             </S.Row>
           ))}
-        </>
-      </S.SellingListArticle>
+        </S.SellingListArticle>
+      ) : (
+        <S.SellingListArticleNone>
+          아직 판매한 상품이 없습니다😓
+        </S.SellingListArticleNone>
+      )}
       <S.Pagination>
         <Pagination data={data} refetch={refetch} lastPage={lastPage} />
       </S.Pagination>

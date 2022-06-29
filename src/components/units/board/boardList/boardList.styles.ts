@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { IBoardListStyleProps } from "./boardList.types";
 
 export const BoardListSection = styled.div`
+  width: 100%;
   background-image: url(/backgroundImages/wall.jpg);
   background-size: cover;
   background-attachment: fixed;

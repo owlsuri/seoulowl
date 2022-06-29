@@ -21,7 +21,7 @@ import {
 } from "./marketDeatil.queries";
 
 export default function MarketDetail() {
-  // useAuth();
+  useAuth();
   const router = useRouter();
 
   const [userInfo] = useRecoilState(userInfoState);
@@ -91,7 +91,7 @@ export default function MarketDetail() {
   const onClickBasket = (el: any) => () => {
     const baskets = JSON.parse(localStorage.getItem("baskets") || "[]");
 
-    const temp = baskets.filter((basketEl) => basketEl._id === el._id);
+    const temp = baskets.filter((basketEl: any) => basketEl._id === el._id);
 
     if (temp.length === 1) {
       setModalContents("이미 장바구니에 담겨있는 상품입니다.");

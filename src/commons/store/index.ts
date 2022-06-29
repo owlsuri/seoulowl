@@ -22,4 +22,5 @@ export const basketItemState = atom({
 export const watchState = atom({
   key: "watchState",
   default: [],
+  effects_UNSTABLE: [persistAtom],
 });

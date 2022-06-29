@@ -28,15 +28,23 @@ export const CartList = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: scroll;
 `;
 export const CartListArticle = styled.div`
-  width: 700px;
+  width: 730px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-top: 2px solid #a6a6a6;
   padding-top: 10px;
+  overflow: scroll;
+  overflow-x: hidden;
+`;
+export const CartListArticleNone = styled.div`
+  width: 730px;
+  height: 600px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 export const TableHeaderRow = styled.div`
   height: 30px;
@@ -44,7 +52,8 @@ export const TableHeaderRow = styled.div`
   display: flex;
   align-items: center;
   border-bottom: 2px solid #bdbdbd;
-  padding-bottom: 10px;
+  border-top: 2px solid #bdbdbd;
+  padding: 20px 20px 20px 0;
 `;
 export const TableHeaderNumber = styled.div`
   width: 80px;
@@ -74,11 +83,9 @@ export const TableHeaderCheck = styled.div`
 export const Row = styled.div`
   max-width: 800px;
   height: 70px;
-
   display: flex;
-  border-bottom: 1px solid #bdbdbd;
-
   align-items: center;
+  border-bottom: 1px solid #bdbdbd;
 `;
 export const ColumnNumber = styled.div`
   width: 80px;
@@ -113,7 +120,7 @@ export const PayBtn = styled.button`
   border: none;
   background-color: #213e6d;
   color: #ffcd2f;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
 `;
@@ -121,11 +128,12 @@ export const DeleteBtn = styled.button`
   width: 200px;
   height: 40px;
   border: none;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
 `;
 export const ItemImg = styled.img`
   width: 78px;
   height: 60px;
+  cursor: pointer;
 `;

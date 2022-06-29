@@ -192,7 +192,10 @@ export default function MarketWriteUI(props: IMarketWriteProps) {
               </S.ImgBox>
             </S.MarketWriteInputArticle>
             <S.Submit>
-              <S.SubmitBtn isActive={props.formState.isValid}>
+              <S.SubmitBtn
+                isActive={props.formState.isValid}
+                disabled={props.formState.isSubmitting}
+              >
                 {props.isEdit ? "수정하기" : "등록하기"}
               </S.SubmitBtn>
             </S.Submit>

@@ -47,7 +47,7 @@ export default function LayoutHeaderUI(props: IHeaderProps) {
                 <S.UserArticle onClick={onClickMoveToPage("/mypage")}>
                   CART
                 </S.UserArticle>
-                <S.CartCount>5</S.CartCount>
+                <S.CartCount>{props.basketItems?.length}</S.CartCount>
               </S.UserArticleCart>
             </S.HeaderUserSection>
           )}

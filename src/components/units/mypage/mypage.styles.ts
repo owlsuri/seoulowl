@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 export const Mypage = styled.div`
   width: 100%;
   padding: 150px;
-  background-image: url(/backgroundImages/park.jpg);
+  background-image: url(/backgroundImages/seoulnightview.jpg);
   background-size: cover;
   background-attachment: fixed;
   display: flex;

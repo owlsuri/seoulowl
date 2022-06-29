@@ -14,7 +14,7 @@ export const UserImage = styled.img`
 `;
 export const UserInfoArticle = styled.div`
   width: 200px;
-  padding: 10px 0;
+  padding: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,7 +29,7 @@ export const UserEmail = styled.div`
   color: #a6a6a6;
 `;
 export const UserNavigationArticle = styled.div`
-  padding: 10px 0 245px 0;
+  padding: 10px 0 225px 0;
 `;
 export const Menu = styled.div`
   width: 200px;

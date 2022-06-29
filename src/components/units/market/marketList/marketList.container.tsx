@@ -14,7 +14,7 @@ import { FETCH_USED_ITEMS } from "./marketList.queries";
 export default function MarketList() {
   const router = useRouter();
 
-  const [watchItems, setWatchItems] = useRecoilState(watchState);
+  const [, setWatchItems] = useRecoilState(watchState);
   const [keyword, setKeyword] = useState<string>("");
 
   const { data, fetchMore, refetch } = useQuery<

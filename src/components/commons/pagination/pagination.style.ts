@@ -8,10 +8,12 @@ export const Wrapper = styled.div`
 `;
 export const Pre = styled.span`
   text-align: center;
+  cursor: pointer;
 `;
 
 export const Next = styled.span`
   text-align: center;
+  cursor: pointer;
 `;
 export const PageNum = styled.div`
   font-size: 15px;
