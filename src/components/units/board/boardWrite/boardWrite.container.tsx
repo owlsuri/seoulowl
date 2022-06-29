@@ -159,7 +159,17 @@ export default function BoardWrite(props: any) {
     const currentFiles = JSON.stringify(fileUrls);
     const defaultFiles = JSON.stringify(data.fetchBoard?.images);
     const isChangedFiles = currentFiles !== defaultFiles;
-
+    if (
+      !data.title &&
+      !data.contents &&
+      !data.youtubeUrl &&
+      !address &&
+      !data.addressDetail &&
+      !isChangedFiles
+    ) {
+      setModalContents("수정한 내용이 없습니다.");
+      setErrorAlertModal(true);
+    }
     try {
       const updateBoardResult = await updateBoard({
         variables: {

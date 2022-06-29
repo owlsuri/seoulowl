@@ -1,16 +1,20 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
 import { ILoginStyleProps } from "./login.types";
 
 export const LoginSection = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-image: url("/backgroundImages/seoulnight.jpg");
   background-size: cover;
   background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 178px;
+  padding: 500px 178px;
+  @media ${breakPoints.tablet} {
+    height: 100vh;
+  }
 `;
 export const LoginArticle = styled.div`
   width: 800px;
@@ -21,6 +25,14 @@ export const LoginArticle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media ${breakPoints.mobile} {
+    width: 340px;
+    padding: 50px 15px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 750px;
+    padding: 100px 50px;
+  }
 `;
 export const Title = styled.div`
   font-size: 25px;
@@ -31,6 +43,9 @@ export const Title = styled.div`
 
 export const InputContainer = styled.div`
   padding-bottom: 30px;
+  @media ${breakPoints.mobile} {
+    padding-bottom: 10px;
+  }
 `;
 
 export const Box = styled.div`
@@ -50,6 +65,12 @@ export const Input = styled.input`
   border: none;
   border-bottom: 1px solid #e5e5e5;
   padding-left: 10px;
+  @media ${breakPoints.mobile} {
+    width: 300px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 350px;
+  }
 `;
 export const LoginBtn = styled.button`
   width: 400px;
@@ -61,6 +82,12 @@ export const LoginBtn = styled.button`
   letter-spacing: 1px;
   font-weight: 600;
   cursor: pointer;
+  @media ${breakPoints.mobile} {
+    width: 300px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 350px;
+  }
 `;
 export const ToSignup = styled.div`
   padding-top: 30px;
@@ -83,5 +110,11 @@ export const SignupBtn = styled.button`
   :hover {
     background-color: #213e6d;
     color: #ffffff;
+  }
+  @media ${breakPoints.mobile} {
+    width: 300px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 350px;
   }
 `;

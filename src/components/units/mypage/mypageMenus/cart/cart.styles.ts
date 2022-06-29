@@ -111,7 +111,7 @@ export const ColumnCheck = styled.input`
   text-align: center;
 `;
 export const ButtonArticle = styled.div`
-  padding: 30px 0 18px 0;
+  padding: 30px 0 55px 0;
 `;
 export const PayBtn = styled.button`
   width: 200px;

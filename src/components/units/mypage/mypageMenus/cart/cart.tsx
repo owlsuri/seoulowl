@@ -1,7 +1,5 @@
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 import { useRecoilState } from "recoil";
-import { getDate } from "../../../../../commons/libraries/getDate";
 import { basketItemState } from "../../../../../commons/store";
 import * as S from "./cart.styles";
 
@@ -26,7 +24,7 @@ export default function Cart() {
           <S.TableHeaderImage>대표 이미지</S.TableHeaderImage>
           <S.TableHeaderName>상품명</S.TableHeaderName>
           <S.TableHeaderAmount>가격</S.TableHeaderAmount>
-          <S.ColumnCheck type="checkbox" />
+          {/* <S.ColumnCheck type="checkbox" /> */}
         </S.TableHeaderRow>
         {basketItems.length === 0 ? (
           <S.CartListArticleNone>
@@ -51,7 +49,7 @@ export default function Cart() {
                   </S.ColumnImage>
                   <S.ColumnName>{el.name}</S.ColumnName>
                   <S.ColumnAmount>{el.price}원</S.ColumnAmount>
-                  <S.ColumnCheck type="checkbox" id={el._id} />
+                  {/* <S.ColumnCheck type="checkbox" id={el._id} /> */}
                 </S.Row>
               ))
               .reverse()}
@@ -59,8 +57,8 @@ export default function Cart() {
         )}
       </S.CartList>
       <S.ButtonArticle>
-        <S.PayBtn>선택한 상품 결제하기</S.PayBtn>
-        <S.DeleteBtn>선택한 상품 삭제하기</S.DeleteBtn>
+        {/* <S.PayBtn>선택한 상품 결제하기</S.PayBtn>
+        <S.DeleteBtn>선택한 상품 삭제하기</S.DeleteBtn> */}
       </S.ButtonArticle>
     </S.CartSection>
   );

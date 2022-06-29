@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
 
 export const LandingPageSection = styled.div`
   width: 100%;
-  height: 1000px;
+  height: 100vh;
   background-image: url("/backgroundImages/seoul3.jpg");
   background-size: cover;
   background-attachment: fixed;
@@ -10,18 +11,38 @@ export const LandingPageSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media ${breakPoints.mobile} {
+    width: 100vh;
+    height: 100vh;
+  }
+  @media ${breakPoints.tablet} {
+    width: 100vh;
+    height: 102vh;
+  }
 `;
 export const LandingPageLogoArticle = styled.div`
   padding: 100px 0 20px 0;
 `;
 export const Logo = styled.img`
   width: 700px;
+  @media ${breakPoints.mobile} {
+    width: 350px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 600px;
+  }
 `;
 export const LandingPageIntroArticle = styled.div`
   .container {
     width: 450px;
     position: relative;
     text-align: center;
+    @media ${breakPoints.mobile} {
+      width: 250px;
+    }
+    @media ${breakPoints.tablet} {
+      width: 400px;
+    }
   }
 
   h1,
@@ -30,9 +51,14 @@ export const LandingPageIntroArticle = styled.div`
     font-weight: 600;
     text-shadow: 5px 5px 10px rgba(3, 3, 3, 0.5);
     text-transform: uppercase;
+    @media ${breakPoints.mobile} {
+      font-size: 30px;
+    }
+    @media ${breakPoints.tablet} {
+      font-size: 50px;
+    }
 
     span {
-      /* font-family: "jalnan"; */
       width: 100%;
       float: left;
       color: #ffffff;
@@ -118,21 +144,32 @@ export const MenuContainer = styled.div`
   margin: 30px;
   border-radius: 10px;
   opacity: 0.9;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
   cursor: pointer;
   overflow: hidden;
-  /* :hover {
-    transform: translateY(-100%);
-  } */
+  @media ${breakPoints.mobile} {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 180px;
+    height: 180px;
+    margin: 15px;
+  }
 `;
 export const Menu = styled.div`
   width: 200px;
   height: 200px;
   :hover {
     transform: translateY(-100%);
+  }
+  @media ${breakPoints.mobile} {
+    width: 100px;
+    height: 100px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 180px;
+    height: 180px;
   }
 `;
 export const UpperBox = styled.div`
@@ -142,6 +179,14 @@ export const UpperBox = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  @media ${breakPoints.mobile} {
+    width: 100px;
+    height: 100px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 180px;
+    height: 180px;
+  }
 `;
 export const BottomBox = styled.div`
   width: 200px;
@@ -153,21 +198,42 @@ export const BottomBox = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  @media ${breakPoints.mobile} {
+    width: 100px;
+    height: 100px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 180px;
+    height: 180px;
+  }
 `;
 export const MenuImage = styled.img`
   width: 100px;
   opacity: 1;
+  @media ${breakPoints.mobile} {
+    width: 50px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 80px;
+  }
 `;
 export const MenuName = styled.div`
   font-size: 25px;
   font-weight: 600;
   opacity: 1;
   padding-bottom: 20px;
+  @media ${breakPoints.mobile} {
+    font-size: 15px;
+    padding-bottom: 10px;
+  }
 `;
 export const MenuSubName = styled.div`
   font-size: 12px;
   font-weight: 600;
   opacity: 1;
+  @media ${breakPoints.mobile} {
+    font-size: 7px;
+  }
 `;
 export const MoveBtn = styled.div`
   width: 40px;
@@ -184,5 +250,10 @@ export const MoveBtn = styled.div`
   cursor: pointer;
   :hover {
     background-color: #ffcd2f;
+  }
+  @media ${breakPoints.mobile} {
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
   }
 `;

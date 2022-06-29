@@ -15,15 +15,17 @@ const Watch = styled.div`
   position: absolute;
   position: fixed;
   top: 370px;
-  right: 7%;
+  left: 90%;
 `;
 
 const HIDDEN_HEADERS = ["/"];
+const HIDDEN_FOOTERS = ["/"];
 const SHOW_WATCHLIST = ["/market", "/market/[useditemId]", "/mypage"];
 
 export default function Layout(props) {
   const router = useRouter();
   const isHiddenHeader = HIDDEN_HEADERS.includes(router.asPath);
+  const isHiddenFooter = HIDDEN_FOOTERS.includes(router.asPath);
   const isShowWatchList = SHOW_WATCHLIST.includes(router.pathname);
 
   return (
@@ -37,7 +39,7 @@ export default function Layout(props) {
           </Watch>
         )}
       </Children>
-      <LayoutFooter />
+      {!isHiddenFooter && <LayoutFooter />}
     </LayoutSection>
   );
 }

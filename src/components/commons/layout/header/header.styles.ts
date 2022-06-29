@@ -1,3 +1,4 @@
+import { breakPoints } from "./../../../../commons/styles/media";
 import styled from "@emotion/styled";
 
 export const Header = styled.div`
@@ -15,16 +16,28 @@ export const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media ${breakPoints.mobile} {
+    flex-direction: column;
+  }
 `;
 export const HeaderMenu = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  @media ${breakPoints.mobile} {
+    align-items: center;
+  }
 `;
 export const HeaderLogoSection = styled.div``;
 export const HeaderLogo = styled.img`
   width: 250px;
   cursor: pointer;
+  @media ${breakPoints.mobile} {
+    width: 200px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 225px;
+  }
 `;
 export const HeaderUserSection = styled.div`
   color: #ffffff;
@@ -32,6 +45,9 @@ export const HeaderUserSection = styled.div`
   letter-spacing: 1px;
   display: flex;
   align-items: center;
+  @media ${breakPoints.mobile} {
+    padding: 3px 0;
+  }
 `;
 export const HeaderMenuSection = styled.div`
   color: #ffffff;
@@ -43,6 +59,12 @@ export const UserArticle = styled.div`
   cursor: pointer;
   :hover {
     text-shadow: 0 0 2px, 0 0 5px;
+  }
+  @media ${breakPoints.mobile} {
+    font-size: 11px;
+  }
+  @media ${breakPoints.tablet} {
+    font-size: 13px;
   }
 `;
 export const UserArticleCart = styled.div`
@@ -72,6 +94,12 @@ export const UserArticlePoint = styled.div`
   cursor: pointer;
   font-weight: 600;
   color: #ffcd2f;
+  @media ${breakPoints.mobile} {
+    font-size: 12px;
+  }
+  @media ${breakPoints.tablet} {
+    font-size: 14px;
+  }
 `;
 export const MenuArticle = styled.span`
   padding: 10px;
@@ -80,4 +108,7 @@ export const MenuArticle = styled.span`
     text-shadow: 0 0 2px, 0 0 5px;
   }
   cursor: pointer;
+  @media ${breakPoints.mobile} {
+    font-size: 15px;
+  }
 `;
