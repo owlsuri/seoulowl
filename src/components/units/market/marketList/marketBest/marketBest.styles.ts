@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { HeartFilled } from "@ant-design/icons";
+import { breakPoints } from "../../../../../commons/styles/media";
 
 export const MarketBest = styled.div`
   width: 100%;
@@ -8,6 +9,18 @@ export const MarketBest = styled.div`
   align-items: center;
   justify-content: center;
   padding: 15px 0;
+  @media ${breakPoints.mobile} {
+    width: 350px;
+    overflow: scroll;
+    overflow-y: hidden;
+    justify-content: flex-start;
+  }
+  @media ${breakPoints.tablet} {
+    width: 740px;
+    overflow: scroll;
+    overflow-y: hidden;
+    justify-content: flex-start;
+  }
 `;
 export const MarketBestSection = styled.div`
   width: 240px;

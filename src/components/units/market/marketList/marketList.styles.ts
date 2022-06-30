@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { HeartFilled } from "@ant-design/icons";
 import { IMarketListStyleProps } from "./marketList.types";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const MarketList = styled.div`
   width: 100%;
@@ -13,15 +14,27 @@ export const MarketList = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media ${breakPoints.mobile} {
+    padding-top: 200px;
+  }
 `;
 export const MarketListSubtitleSection = styled.div`
   text-align: center;
+  @media ${breakPoints.mobile} {
+    font-size: 8px;
+  }
 `;
 export const MarketListTitleSection = styled.div`
   font-size: 40px;
   color: #ffffff;
   font-weight: 600;
   padding-bottom: 30px;
+  @media ${breakPoints.mobile} {
+    font-size: 30px;
+    width: 360px;
+    text-align: center;
+    padding-bottom: 15px;
+  }
 `;
 export const MarketNew = styled.div`
   font-size: 30px;
@@ -33,15 +46,34 @@ export const MarketNew = styled.div`
   padding: 10px 0 0 7px;
   cursor: pointer;
   margin-bottom: 50px;
+  @media ${breakPoints.mobile} {
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    padding: 5px 0 0 5px;
+    margin-bottom: 30px;
+  }
 `;
 export const MarketListSection = styled.div`
   max-width: 1200px;
   border-radius: 10px;
   background-color: #ffffff;
+  @media ${breakPoints.mobile} {
+    width: 355px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 750px;
+  }
 `;
 export const MarketListBestArticle = styled.div`
   max-width: 1200px;
   padding-top: 20px;
+  @media ${breakPoints.mobile} {
+    width: 360px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 760px;
+  }
 `;
 export const MarketListSearch = styled.div`
   max-width: 1120px;
@@ -54,6 +86,18 @@ export const ListWrapper = styled.div`
   max-width: 1200px;
   display: grid;
   grid-template-columns: 280px 280px 280px 280px;
+  @media ${breakPoints.mobile} {
+    max-width: 360px;
+    grid-template-columns: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  @media ${breakPoints.tablet} {
+    max-width: 740px;
+    grid-template-columns: 235px 235px 235px;
+  }
 `;
 export const MarketLists = styled.div`
   width: 240px;
@@ -94,6 +138,9 @@ export const HeartBox = styled.div`
   cursor: pointer;
   top: 5px;
   left: 200px;
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 export const Heart = styled(HeartFilled)`
   cursor: pointer;

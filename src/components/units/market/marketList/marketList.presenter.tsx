@@ -11,7 +11,7 @@ export default function MarketListUI(props: IMarketListProps) {
   const { onClickMoveToPage } = useMoveToPage();
   return (
     <S.MarketList>
-      <S.MarketListSubtitleSection>🛒👖👜👟⚽🥊🥕</S.MarketListSubtitleSection>
+      <S.MarketListSubtitleSection>🛒👖👜👟🥊🥕</S.MarketListSubtitleSection>
       <S.MarketListTitleSection>중고마켓</S.MarketListTitleSection>
       <S.MarketNew onClick={onClickMoveToPage("/market/new")}>📝</S.MarketNew>
       <S.MarketListSection>

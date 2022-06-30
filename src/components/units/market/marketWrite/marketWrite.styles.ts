@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import "react-quill/dist/quill.snow.css";
 import dynamic from "next/dynamic";
 import { IMarketWriteStyleProps } from "./marketWrite.types";
+import { breakPoints } from "../../../../commons/styles/media";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 export const MarketWrite = styled.div`
@@ -15,18 +16,34 @@ export const MarketWrite = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media ${breakPoints.mobile} {
+    padding-top: 200px;
+  }
 `;
 export const MarketWriteTitleSection = styled.div`
   font-size: 40px;
   color: #ffffff;
   font-weight: 600;
   padding-bottom: 40px;
+  @media ${breakPoints.mobile} {
+    font-size: 30px;
+    width: 360px;
+    text-align: center;
+  }
 `;
 export const MarketWriteSection = styled.div`
   max-width: 1200px;
   border-radius: 20px;
   background-color: #ffffff;
   padding: 50px;
+  @media ${breakPoints.mobile} {
+    width: 360px;
+    padding: 20px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 750px;
+    padding: 30px;
+  }
 `;
 export const MarketWriteInputArticle = styled.div`
   padding: 15px 0;
@@ -44,6 +61,12 @@ export const Input = styled.input`
   border: 1px solid #dbdbdb;
   padding: 10px;
   margin-top: 5px;
+  @media ${breakPoints.mobile} {
+    width: 330px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 700px;
+  }
 `;
 export const RQuill = styled(ReactQuill)`
   .ql-editor {
@@ -61,6 +84,12 @@ export const Tags = styled.div`
   display: flex;
   align-items: center;
   padding: 15px 0 0 15px;
+  @media ${breakPoints.mobile} {
+    width: 330px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 730px;
+  }
 `;
 export const TagPreview = styled.div`
   font-size: 14px;

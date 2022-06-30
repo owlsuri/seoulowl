@@ -29,13 +29,14 @@ export const UserEmail = styled.div`
   color: #a6a6a6;
 `;
 export const UserNavigationArticle = styled.div`
-  padding: 10px 0 225px 0;
+  padding: 10px 0 155px 0;
 `;
 export const Menu = styled.div`
   width: 200px;
-  height: 40px;
+  height: 50px;
   text-align: center;
   padding: 10px 0;
+  font-size: 20px;
   font-weight: 600;
   cursor: pointer;
   :hover {

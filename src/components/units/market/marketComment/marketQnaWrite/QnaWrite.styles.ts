@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../../commons/styles/media";
 
 export const MarketQnA = styled.div`
   width: 100%;
@@ -6,6 +7,12 @@ export const MarketQnA = styled.div`
 `;
 export const MarketQnASection = styled.div`
   max-width: 1130px;
+  @media ${breakPoints.mobile} {
+    width: 320px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 730px;
+  }
 `;
 export const MarketQnATitleArticle = styled.div`
   display: flex;
@@ -24,6 +31,12 @@ export const Star = styled.div`
 export const MarketQnAInputArticle = styled.div`
   width: 1125px;
   border: 1px solid #bdbdbd;
+  @media ${breakPoints.mobile} {
+    width: 322px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 722px;
+  }
 `;
 export const CommentInput = styled.textarea`
   width: 1120px;
@@ -33,6 +46,12 @@ export const CommentInput = styled.textarea`
   color: #bdbdbd;
   border: none;
   resize: none;
+  @media ${breakPoints.mobile} {
+    width: 320px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 720px;
+  }
 `;
 export const CommentInputBottom = styled.div`
   border-top: 1px solid #bdbdbe;

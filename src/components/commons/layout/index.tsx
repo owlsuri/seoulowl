@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { useRouter } from "next/router";
+import { breakPoints } from "../../../commons/styles/media";
 import LayoutFooter from "./footer";
 import LayoutHeader from "./header/header.container";
 import WatchList from "./watch/watch";
@@ -16,11 +17,22 @@ const Watch = styled.div`
   position: fixed;
   top: 370px;
   left: 90%;
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
 `;
 
 const HIDDEN_HEADERS = ["/"];
 const HIDDEN_FOOTERS = ["/"];
-const SHOW_WATCHLIST = ["/market", "/market/[useditemId]", "/mypage"];
+const SHOW_WATCHLIST = [
+  "/market",
+  "/market/[useditemId]",
+  "/mypage",
+  "/market/new",
+];
 
 export default function Layout(props) {
   const router = useRouter();

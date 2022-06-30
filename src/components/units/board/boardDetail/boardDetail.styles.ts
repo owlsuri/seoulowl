@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { LikeOutlined, DislikeOutlined } from "@ant-design/icons";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const BoardDetailSection = styled.div`
   width: 100%;
@@ -7,12 +8,23 @@ export const BoardDetailSection = styled.div`
   background-image: url(/backgroundImages/wall.jpg);
   background-size: cover;
   background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media ${breakPoints.mobile} {
+    padding-top: 200px;
+  }
 `;
 export const BoardDetailArticle = styled.div`
   max-width: 1200px;
   background-color: #ffffff;
   border-radius: 15px;
   padding: 30px;
+  @media ${breakPoints.mobile} {
+    width: 370px;
+    padding: 15px;
+  }
 `;
 export const UserInfoContainer = styled.div`
   max-width: 1200px;
@@ -104,7 +116,7 @@ export const LikeBox = styled.div`
   justify-content: center;
 `;
 export const Like = styled.div`
-  margin-right: 50px;
+  margin: 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -122,7 +134,7 @@ export const LikeNum = styled.div`
   color: #6888b2;
 `;
 export const DisLike = styled.div`
-  margin-right: 50px;
+  margin: 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -144,4 +156,11 @@ export const BoardCommentArticle = styled.div`
   border-radius: 15px;
   padding: 30px;
   margin-top: 20px;
+  @media ${breakPoints.mobile} {
+    width: 370px;
+    padding: 15px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 760px;
+  }
 `;

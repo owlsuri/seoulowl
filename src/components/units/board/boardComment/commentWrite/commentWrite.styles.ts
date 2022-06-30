@@ -1,11 +1,12 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../../commons/styles/media";
 
 export const CommentWrite = styled.div`
   width: 100%;
   padding-top: 20px;
 `;
 export const CommentWriteSection = styled.div`
-  max-width: 1200px;
+  max-width: 100%;
 `;
 export const CommentTitleArticle = styled.div`
   display: flex;
@@ -19,6 +20,9 @@ export const CommentTitle = styled.div`
 `;
 export const CommentStarArticle = styled.div`
   padding-left: 10px;
+  @media ${breakPoints.mobile} {
+    padding: 10px;
+  }
 `;
 export const CommentInputArticle = styled.div`
   width: 100%;
@@ -38,6 +42,13 @@ export const CommentUserArticle = styled.div`
   flex-direction: row;
   align-items: center;
   padding: 15px 0;
+  @media ${breakPoints.mobile} {
+    width: 360px;
+    flex-direction: column;
+  }
+  @media ${breakPoints.tablet} {
+    width: 730px;
+  }
 `;
 export const CommentUserInput = styled.input`
   width: 180px;
@@ -45,6 +56,10 @@ export const CommentUserInput = styled.input`
   margin-right: 20px;
   padding: 10px;
   border: 1px solid #bdbdbd;
+  @media ${breakPoints.mobile} {
+    width: 330px;
+    margin-bottom: 5px;
+  }
 `;
 export const CommentInputBottom = styled.div`
   border-top: 1px solid #bdbdbe;

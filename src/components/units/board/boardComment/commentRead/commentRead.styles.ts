@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../../commons/styles/media";
 
 export const ModalSection = styled.div`
   display: flex;
@@ -40,6 +41,9 @@ export const CommentUserInfo = styled.div`
 `;
 export const CommentStar = styled.div`
   margin-left: 20px;
+  @media ${breakPoints.mobile} {
+    margin-left: 0px;
+  }
 `;
 export const Comment = styled.div`
   padding-top: 10px;
@@ -50,6 +54,10 @@ export const CommentDate = styled.div`
 export const CommentUserImg = styled.div`
   width: 5.5%;
   padding-bottom: 30px;
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 export const CommentDesc = styled.div``;
 export const BoardCommentArticle = styled.div`
@@ -65,4 +73,8 @@ export const CommentUserProfile = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  @media ${breakPoints.mobile} {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;

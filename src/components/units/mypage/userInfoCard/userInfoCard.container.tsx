@@ -5,7 +5,7 @@ import UserInfoCardUI from "./userInfoCard.presenter";
 export default function UserInfoCard(props: any) {
   const [userInfo] = useRecoilState(userInfoState);
 
-  const onClickSelectMenu = (event) => {
+  const onClickSelectMenu = (event: any) => {
     props.setIsSelected(event.target.id);
     props.setIsOpen(false);
   };

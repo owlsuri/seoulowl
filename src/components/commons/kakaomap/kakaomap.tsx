@@ -1,9 +1,25 @@
+import styled from "@emotion/styled";
 import { useEffect } from "react";
+import { breakPoints } from "../../../commons/styles/media";
+
+const Map = styled.div`
+  width: 1100px;
+  height: 548px;
+  @media ${breakPoints.mobile} {
+    width: 320px;
+    height: 250px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 720px;
+    height: 450px;
+  }
+`;
 
 declare const window: typeof globalThis & {
   kakao: any;
 };
 export default function KakaoMapPage(props: any) {
+  console.log(props);
   useEffect(() => {
     const script = document.createElement("script"); // <script></script>
     script.src =
@@ -55,9 +71,11 @@ export default function KakaoMapPage(props: any) {
 
               // 인포윈도우로 장소에 대한 설명을 표시합니다
               const infowindow = new window.kakao.maps.InfoWindow({
-                content: `<div style="padding:6px 0;background-color:#213e6d;"><div style="width:200px;text-align:center;font-size:17px;font-weight:600;color:#ffe004;">거래장소</div><div style="text-align:center;font-size=15px;color:#FFFFFF">${
+                content: `<div style="padding:6px 0;background-color:#213e6d;"><div style="width:250px;text-align:center;font-size:17px;font-weight:600;color:#ffe004;">거래장소</div><div style="text-align:center;font-size=15px;color:#FFFFFF">${
                   props.address ||
                   props.data?.fetchUseditem.useditemAddress.address
+                }</div><div style="color:white;text-align:center">${
+                  props.data?.fetchUseditem.useditemAddress.addressDetail
                 }</div></div>`,
               });
               infowindow.open(map, marker);
@@ -73,7 +91,7 @@ export default function KakaoMapPage(props: any) {
 
   return (
     <div>
-      <div id="map" style={{ width: "1100px", height: "548px" }}></div>
+      <Map id="map"></Map>
     </div>
   );
 }

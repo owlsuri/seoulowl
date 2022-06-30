@@ -9,6 +9,7 @@ export const FETCH_USED_ITEMS_I_PICKED = gql`
       price
       pickedCount
       images
+      soldAt
     }
   }
 `;
@@ -30,9 +31,6 @@ export const FETCH_POINT_TRANSACTIONS_OF_BUYING = gql`
         name
         price
         soldAt
-        # seller {
-        #   name
-        # }
       }
     }
   }

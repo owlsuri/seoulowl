@@ -3,10 +3,15 @@ import { baseUrl } from "./config";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../../commons/styles/media";
 
 const Img = styled.img`
   width: 550px;
   height: 450px;
+  @media ${breakPoints.mobile} {
+    width: 320px;
+    height: 280px;
+  }
 `;
 const PreImg = styled.img`
   width: 30px;

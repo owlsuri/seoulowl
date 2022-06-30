@@ -1,10 +1,17 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../../commons/styles/media";
 
 export const MarketQnAList = styled.div`
   width: 100%;
 `;
 export const MarketQnAListSection = styled.div`
   width: 1110px;
+  @media ${breakPoints.mobile} {
+    width: 320px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 750px;
+  }
 `;
 export const PasswordInput = styled.input`
   width: 200px;
@@ -17,6 +24,12 @@ export const MarketQnAListArticle = styled.div`
   align-items: center;
   padding: 10px;
   border-bottom: 1px solid #bdbdbd;
+  @media ${breakPoints.mobile} {
+    width: 320px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 720px;
+  }
 `;
 export const CommentUserName = styled.div`
   font-weight: 600;
@@ -25,9 +38,6 @@ export const CommentUserName = styled.div`
 export const CommentUserInfo = styled.div`
   display: flex;
   justify-content: space-between;
-`;
-export const CommentStar = styled.div`
-  margin-left: 20px;
 `;
 export const Comment = styled.div`
   padding-top: 10px;
@@ -38,6 +48,12 @@ export const CommentDate = styled.div`
 export const CommentUserImg = styled.div`
   width: 5.5%;
   padding-bottom: 30px;
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
+  @media ${breakPoints.tablet} {
+    /* width: 3.5%; */
+  }
 `;
 export const CommentDesc = styled.div``;
 export const CommentDescBox = styled.div`

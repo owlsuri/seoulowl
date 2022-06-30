@@ -24,7 +24,7 @@ export const CartCountArticle = styled.div`
 `;
 export const CartList = styled.div`
   width: 750px;
-  height: 420px;
+  height: 560px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,6 +37,20 @@ export const CartListArticle = styled.div`
   padding-top: 10px;
   overflow: scroll;
   overflow-x: hidden;
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    height: 0rem;
+    background: #213e6d90;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #ededed;
+  }
 `;
 export const CartListArticleNone = styled.div`
   width: 730px;
