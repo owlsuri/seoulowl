@@ -31,7 +31,7 @@ export const SellingListArticle = styled.div`
 `;
 export const SellingListArticleNone = styled.div`
   width: 700px;
-  height: 400px;
+  height: 420px;
   font-size: 16px;
   display: flex;
   justify-content: center;

@@ -76,3 +76,22 @@ export const FETCH_POINT_TRANSACTIONS = gql`
     }
   }
 `;
+
+export const FETCH_POINT_TRANSACTIONS_COUNT_OF_LOADING = gql`
+  query fetchPointTransactionsCountOfLoading {
+    fetchPointTransactionsCountOfLoading
+  }
+`;
+
+export const FETCH_POINT_TRANSACTIONS_OF_LOADING = gql`
+  query fetchPointTransactionsOfLoading($search: String, $page: Int) {
+    fetchPointTransactionsOfLoading(search: $search, page: $page) {
+      _id
+      amount
+      balance
+      status
+      statusDetail
+      createdAt
+    }
+  }
+`;

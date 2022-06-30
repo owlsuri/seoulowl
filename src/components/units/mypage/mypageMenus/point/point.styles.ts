@@ -27,11 +27,11 @@ export const PointListArticle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px 0 55px 0;
+  padding: 10px 0;
 `;
 export const PointListArticleNone = styled.div`
   width: 700px;
-  height: 462px;
+  height: 420px;
   font-size: 16px;
   display: flex;
   justify-content: center;
@@ -90,4 +90,7 @@ export const ColumnStatus = styled.div`
 export const ColumnAmount = styled.div`
   width: 200px;
   text-align: center;
+`;
+export const Pagination = styled.div`
+  padding: 20px 0;
 `;

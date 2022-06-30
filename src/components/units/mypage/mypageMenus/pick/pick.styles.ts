@@ -26,6 +26,14 @@ export const PickCountArticle = styled.div`
 export const PickListArticle = styled.div`
   width: 750px;
 `;
+export const PickListArticleNone = styled.div`
+  width: 750px;
+  height: 535px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+`;
 export const Sale = styled.div`
   padding: 10px 0;
 `;

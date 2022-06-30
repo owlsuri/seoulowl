@@ -54,7 +54,7 @@ export const CartListArticle = styled.div`
 `;
 export const CartListArticleNone = styled.div`
   width: 730px;
-  height: 600px;
+  height: 400px;
   font-size: 16px;
   display: flex;
   align-items: center;
