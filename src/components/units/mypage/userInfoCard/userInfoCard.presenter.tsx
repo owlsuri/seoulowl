@@ -39,7 +39,7 @@ export default function UserInfoCardUI(props: IUserInfoCardProps) {
     <>
       <S.UserInfoCardSection>
         <S.UserInfoArticle>
-          SeoulOwL <span>{props.userInfo.name}</span>님의 마이페이지
+          SeoulOwL <span>{props.userInfo.name}</span>님의 페이지
         </S.UserInfoArticle>
         <S.UserDataArticle>
           {NAVIGATION_MENU.map((el) => (

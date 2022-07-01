@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
+import { Tooltip } from "antd";
 
 const Footer = styled.div`
   padding: 30px 0;
@@ -43,14 +44,23 @@ const FooterSnsSection = styled.div`
 `;
 const FooterSnsArticle = styled.img`
   width: 80px;
-  margin: 5px;
+  margin: 10px 15px;
   @media ${breakPoints.mobile} {
     width: 30px;
     margin: 0 3px;
   }
+  cursor: pointer;
 `;
 
 export default function LayoutFooter() {
+  const onClickToGithub = () => {
+    window.location.href = "https://github.com/owlsuri";
+  };
+
+  const onClickToVelog = () => {
+    window.location.href = "https://velog.io/@owlsuri";
+  };
+
   return (
     <Footer>
       <FooterMenuSection>
@@ -62,9 +72,20 @@ export default function LayoutFooter() {
         <FooterMenuArticleLast>기타안내</FooterMenuArticleLast>
       </FooterMenuSection>
       <FooterSnsSection>
-        <FooterSnsArticle src="/images/facebook.png" />
-        <FooterSnsArticle src="/images/youtube.png" />
-        <FooterSnsArticle src="/images/instagram.png" />
+        <FooterSnsArticle src="/images/github.png" onClick={onClickToGithub} />
+        <FooterSnsArticle src="/images/blogger.png" onClick={onClickToVelog} />
+        <Tooltip
+          overlayInnerStyle={{
+            borderRadius: "8px",
+            textAlign: "center",
+            fontSize: "18px",
+          }}
+          placement="right"
+          title={"imsimple2563@gmail.com"}
+        >
+          <FooterSnsArticle src="/images/email.png" />
+        </Tooltip>
+        ;
       </FooterSnsSection>
     </Footer>
   );

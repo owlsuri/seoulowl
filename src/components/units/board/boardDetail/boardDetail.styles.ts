@@ -154,7 +154,7 @@ export const BoardCommentArticle = styled.div`
   max-width: 1200px;
   background-color: #ffffff;
   border-radius: 15px;
-  padding: 30px;
+  padding: 20px;
   margin-top: 20px;
   @media ${breakPoints.mobile} {
     width: 370px;

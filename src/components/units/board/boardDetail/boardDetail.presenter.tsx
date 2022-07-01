@@ -108,11 +108,11 @@ export default function BoardDetailUI(props: IBoardDetailProps) {
             <S.Btn onClick={props.onClickDelete}>삭제하기</S.Btn>
             <S.Btn onClick={onClickMoveToPage("/board")}>목록으로</S.Btn>
           </S.Buttons>
+          <S.BoardCommentArticle>
+            <BoardCommentWrite />
+            <BoardCommentRead />
+          </S.BoardCommentArticle>
         </S.BoardDetailArticle>
-        <S.BoardCommentArticle>
-          <BoardCommentWrite />
-          <BoardCommentRead />
-        </S.BoardCommentArticle>
       </S.BoardDetailSection>
       {isEdit && (
         <BoardWrite isEdit={true} data={props.data} setIsEdit={setIsEdit} />
