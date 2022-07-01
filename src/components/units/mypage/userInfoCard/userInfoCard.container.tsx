@@ -7,7 +7,6 @@ export default function UserInfoCard(props: any) {
 
   const onClickSelectMenu = (event: any) => {
     props.setIsSelected(event.target.id);
-    props.setIsOpen(false);
   };
 
   return (
@@ -15,6 +14,10 @@ export default function UserInfoCard(props: any) {
       userInfo={userInfo}
       onClickSelectMenu={onClickSelectMenu}
       isSelected={props.isSelected}
+      buyingCount={props.buyingCount}
+      basketItems={props.basketItems}
+      pickedCount={props.pickedCount}
+      sellingCount={props.sellingCount}
     />
   );
 }

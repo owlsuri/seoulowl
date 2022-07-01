@@ -6,31 +6,30 @@ import {
 } from "../../../../../commons/types/generated/types";
 import Pagination from "../../../../commons/pagination/Pagination";
 import {
-  FETCH_POINT_TRANSACTIONS_COUNT_OF_SELLING,
   FETCH_POINT_TRANSACTIONS_OF_SELLING,
+  FETCH_USED_ITEMS_I_SOLD,
 } from "../../mypage.queries";
 import * as S from "./sell.styles";
 
-export default function Sell() {
-  const { data: sellingCount } = useQuery<
-    Pick<IQuery, "fetchPointTransactionsCountOfSelling">
-  >(FETCH_POINT_TRANSACTIONS_COUNT_OF_SELLING);
-
+export default function Sell(props) {
   const { data, refetch } = useQuery<
     Pick<IQuery, "fetchPointTransactionsOfSelling">,
     IQueryFetchPointTransactionsOfSellingArgs
   >(FETCH_POINT_TRANSACTIONS_OF_SELLING);
 
+  const { data: soldData } = useQuery(FETCH_USED_ITEMS_I_SOLD);
+
   const lastPage = Math.ceil(
-    sellingCount?.fetchPointTransactionsCountOfSelling / 10
+    props.sellingCount?.fetchPointTransactionsCountOfSelling / 10
   );
 
   return (
     <S.SellingSection>
       <S.SellingTitleArticle>판매한 상품</S.SellingTitleArticle>
       <S.SellingCountArticle>
-        🎊 총 판매건수 :{" "}
-        <span>{sellingCount?.fetchPointTransactionsCountOfSelling}</span>건
+        🎊 총
+        <span> {props.sellingCount?.fetchPointTransactionsCountOfSelling}</span>
+        건 판매하셨습니다.
       </S.SellingCountArticle>
       <S.TableHeaderRow>
         <S.TableHeaderNumber>번호</S.TableHeaderNumber>

@@ -19,7 +19,6 @@ declare const window: typeof globalThis & {
   kakao: any;
 };
 export default function KakaoMapPage(props: any) {
-  console.log(props);
   useEffect(() => {
     const script = document.createElement("script"); // <script></script>
     script.src =

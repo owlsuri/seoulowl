@@ -93,7 +93,6 @@ export default function ChargePayment(props) {
             setModalContents(error.message);
             setErrorAlertModal(true);
           }
-          console.log(rsp);
         } else {
           // 결제 실패 시 로직,
           setModalContents("결제에 실패했습니다. 다시 시도해주세요.");

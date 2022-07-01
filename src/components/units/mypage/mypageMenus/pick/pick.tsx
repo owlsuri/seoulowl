@@ -3,10 +3,7 @@ import {
   IQuery,
   IQueryFetchUseditemsIPickedArgs,
 } from "../../../../../commons/types/generated/types";
-import {
-  FETCH_USED_ITEMS_COUNT_I_PICKED,
-  FETCH_USED_ITEMS_I_PICKED,
-} from "../../mypage.queries";
+import { FETCH_USED_ITEMS_I_PICKED } from "../../mypage.queries";
 import InfiniteScroll from "react-infinite-scroller";
 
 import * as S from "./pick.styles";
@@ -14,7 +11,7 @@ import { useRouter } from "next/router";
 import ErrorModal from "../../../../commons/modal/error/errorModal";
 import { useState } from "react";
 
-export default function Pick() {
+export default function Pick(props: any) {
   const router = useRouter();
 
   const [modalContents, setModalContents] = useState("");
@@ -26,10 +23,6 @@ export default function Pick() {
   >(FETCH_USED_ITEMS_I_PICKED, {
     variables: { search: "" },
   });
-
-  const { data: pickedCount } = useQuery<
-    Pick<IQuery, "fetchUseditemsCountIPicked">
-  >(FETCH_USED_ITEMS_COUNT_I_PICKED);
 
   const onLoadMore = () => {
     if (!data) return;
@@ -72,8 +65,8 @@ export default function Pick() {
       <S.PickSection>
         <S.PickTitleArticle>Pick한 상품</S.PickTitleArticle>
         <S.PickCountArticle>
-          Pick한 상품 총 <span>{pickedCount?.fetchUseditemsCountIPicked}</span>
-          개
+          Pick한 상품은 총{" "}
+          <span>{props.pickedCount?.fetchUseditemsCountIPicked}</span>개 입니다
         </S.PickCountArticle>
         {data?.fetchUseditemsIPicked.length ? (
           <S.PickListArticle>

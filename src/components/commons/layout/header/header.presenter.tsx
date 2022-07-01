@@ -19,7 +19,7 @@ export default function LayoutHeaderUI(props: IHeaderProps) {
             <S.HeaderUserSection>
               <S.UserArticlePoint>
                 {props.userInfo?.name}님의 포인트 :{" "}
-                {props.userInfo?.userPoint?.amount}P
+                {props.userInfo?.userPoint?.amount.toLocaleString("ko-KR")}P
               </S.UserArticlePoint>
               <S.UserArticle onClick={props.onClickCharge}>
                 CHARGE

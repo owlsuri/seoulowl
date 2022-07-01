@@ -37,6 +37,7 @@ export const LandingPageIntroArticle = styled.div`
     width: 450px;
     position: relative;
     text-align: center;
+
     @media ${breakPoints.mobile} {
       width: 250px;
     }
@@ -51,6 +52,7 @@ export const LandingPageIntroArticle = styled.div`
     font-weight: 600;
     text-shadow: 5px 5px 10px rgba(3, 3, 3, 0.5);
     text-transform: uppercase;
+
     @media ${breakPoints.mobile} {
       font-size: 30px;
     }
@@ -146,6 +148,7 @@ export const MenuContainer = styled.div`
   opacity: 0.9;
   cursor: pointer;
   overflow: hidden;
+
   @media ${breakPoints.mobile} {
     width: 100px;
     height: 100px;
@@ -163,6 +166,7 @@ export const Menu = styled.div`
   :hover {
     transform: translateY(-100%);
   }
+
   @media ${breakPoints.mobile} {
     width: 100px;
     height: 100px;
@@ -179,6 +183,7 @@ export const UpperBox = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
   @media ${breakPoints.mobile} {
     width: 100px;
     height: 100px;
@@ -198,6 +203,7 @@ export const BottomBox = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
   @media ${breakPoints.mobile} {
     width: 100px;
     height: 100px;
@@ -210,6 +216,7 @@ export const BottomBox = styled.div`
 export const MenuImage = styled.img`
   width: 100px;
   opacity: 1;
+
   @media ${breakPoints.mobile} {
     width: 50px;
   }
@@ -222,6 +229,7 @@ export const MenuName = styled.div`
   font-weight: 600;
   opacity: 1;
   padding-bottom: 20px;
+
   @media ${breakPoints.mobile} {
     font-size: 15px;
     padding-bottom: 10px;
@@ -231,6 +239,7 @@ export const MenuSubName = styled.div`
   font-size: 12px;
   font-weight: 600;
   opacity: 1;
+
   @media ${breakPoints.mobile} {
     font-size: 7px;
   }
@@ -251,6 +260,7 @@ export const MoveBtn = styled.div`
   :hover {
     background-color: #ffcd2f;
   }
+
   @media ${breakPoints.mobile} {
     width: 30px;
     height: 30px;

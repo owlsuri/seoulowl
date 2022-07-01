@@ -1,22 +1,24 @@
 import { useRouter } from "next/router";
-import { useRecoilState } from "recoil";
-import { basketItemState } from "../../../../../commons/store";
 import * as S from "./cart.styles";
 
-export default function Cart() {
+export default function Cart(props) {
   const router = useRouter();
-
-  const [basketItems] = useRecoilState(basketItemState);
 
   const onClickDetail = (event: any) => {
     router.push(`/market/${event.target.id}`);
   };
 
+  const total = props.basketItems.reduce((acc, cur) => {
+    acc += cur.price;
+    return acc;
+  }, 0);
+
   return (
     <S.CartSection>
       <S.CartTitleArticle>장바구니</S.CartTitleArticle>
       <S.CartCountArticle>
-        🛒 장바구니 상품 : <span>{basketItems.length}</span>개
+        🛒 장바구니 상품은 총 <span>{props.basketItems.length}</span>개이고, 총
+        금액은 <span>{total.toLocaleString("ko-KR")}</span>원 입니다.
       </S.CartCountArticle>
       <S.CartList>
         <S.TableHeaderRow>
@@ -26,13 +28,13 @@ export default function Cart() {
           <S.TableHeaderAmount>가격</S.TableHeaderAmount>
           {/* <S.ColumnCheck type="checkbox" /> */}
         </S.TableHeaderRow>
-        {basketItems.length === 0 ? (
+        {props.basketItems.length === 0 ? (
           <S.CartListArticleNone>
             장바구니가 비어있습니다😥
           </S.CartListArticleNone>
         ) : (
           <S.CartListArticle>
-            {basketItems
+            {props.basketItems
               .map((el, index) => (
                 <S.Row key={el._id}>
                   <S.ColumnNumber>{index + 1}</S.ColumnNumber>

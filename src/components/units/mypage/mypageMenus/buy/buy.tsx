@@ -1,29 +1,30 @@
 import { useQuery } from "@apollo/client";
 import { getDate } from "../../../../../commons/libraries/getDate";
-import Pagination from "../../../../commons/pagination/Pagination";
 import {
-  FETCH_POINT_TRANSACTIONS_COUNT_OF_BUYING,
-  FETCH_POINT_TRANSACTIONS_OF_BUYING,
-} from "../../mypage.queries";
+  IQuery,
+  IQueryFetchPointTransactionsOfBuyingArgs,
+} from "../../../../../commons/types/generated/types";
+import Pagination from "../../../../commons/pagination/Pagination";
+import { FETCH_POINT_TRANSACTIONS_OF_BUYING } from "../../mypage.queries";
 import * as S from "./buy.styles";
 
-export default function Buy() {
-  const { data, refetch } = useQuery(FETCH_POINT_TRANSACTIONS_OF_BUYING);
-
-  const { data: buyingCount } = useQuery(
-    FETCH_POINT_TRANSACTIONS_COUNT_OF_BUYING
-  );
+export default function Buy(props: any) {
+  const { data, refetch } = useQuery<
+    Pick<IQuery, "fetchPointTransactionsOfBuying">,
+    IQueryFetchPointTransactionsOfBuyingArgs
+  >(FETCH_POINT_TRANSACTIONS_OF_BUYING);
 
   const lastPage = Math.ceil(
-    buyingCount?.fetchPointTransactionsCountOfBuying / 10
+    props.buyingCount?.fetchPointTransactionsCountOfBuying / 10
   );
 
   return (
     <S.BuyingSection>
       <S.BuyingTitleArticle>구매한 상품</S.BuyingTitleArticle>
       <S.BuyingCountArticle>
-        🎁 총 구매건수 :{" "}
-        <span>{buyingCount?.fetchPointTransactionsCountOfBuying}</span>건
+        🎁 총
+        <span> {props.buyingCount?.fetchPointTransactionsCountOfBuying}</span>건
+        구매하셨습니다.
       </S.BuyingCountArticle>
       <S.TableHeaderRow>
         <S.TableHeaderNumber>번호</S.TableHeaderNumber>

@@ -1,19 +1,29 @@
 import { HeartFilled } from "@ant-design/icons";
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../../commons/styles/media";
 
 export const PickSection = styled.div`
-  width: 800px;
+  width: 1000px;
   background-color: #fff;
   border-radius: 20px;
-  padding: 30px;
+  padding: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media ${breakPoints.mobile} {
+    width: 360px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 760px;
+  }
 `;
 export const PickTitleArticle = styled.div`
   font-size: 23px;
   font-weight: 600;
   text-align: center;
+  @media ${breakPoints.mobile} {
+    font-size: 21px;
+  }
 `;
 export const PickCountArticle = styled.div`
   font-size: 18px;
@@ -22,9 +32,15 @@ export const PickCountArticle = styled.div`
   span {
     font-weight: 600;
   }
+  @media ${breakPoints.mobile} {
+    font-size: 16px;
+  }
 `;
 export const PickListArticle = styled.div`
   width: 750px;
+  @media ${breakPoints.mobile} {
+    width: 330px;
+  }
 `;
 export const PickListArticleNone = styled.div`
   width: 750px;
@@ -33,6 +49,9 @@ export const PickListArticleNone = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 16px;
+  @media ${breakPoints.mobile} {
+    width: 330px;
+  }
 `;
 export const Sale = styled.div`
   padding: 10px 0;
@@ -56,6 +75,9 @@ export const Items = styled.div`
 
   ::-webkit-scrollbar-track {
     background: #ededed;
+  }
+  @media ${breakPoints.mobile} {
+    width: 330px;
   }
 `;
 export const Label = styled.div`

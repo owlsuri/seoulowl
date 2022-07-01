@@ -95,3 +95,14 @@ export const FETCH_POINT_TRANSACTIONS_OF_LOADING = gql`
     }
   }
 `;
+
+export const FETCH_USED_ITEMS_I_SOLD = gql`
+  query fetchUseditemsISold($search: String, $page: Int) {
+    fetchUseditemsISold(search: $search, page: $page) {
+      _id
+      name
+      price
+      soldAt
+    }
+  }
+`;

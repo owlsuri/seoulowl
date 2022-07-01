@@ -1,18 +1,28 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../../commons/styles/media";
 
 export const CartSection = styled.div`
-  width: 800px;
+  width: 1000px;
   background-color: #fff;
   border-radius: 20px;
-  padding: 30px;
+  padding: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media ${breakPoints.mobile} {
+    width: 360px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 760px;
+  }
 `;
 export const CartTitleArticle = styled.div`
   font-size: 23px;
   font-weight: 600;
   text-align: center;
+  @media ${breakPoints.mobile} {
+    font-size: 21px;
+  }
 `;
 export const CartCountArticle = styled.div`
   font-size: 18px;
@@ -21,6 +31,9 @@ export const CartCountArticle = styled.div`
   span {
     font-weight: 600;
   }
+  @media ${breakPoints.mobile} {
+    font-size: 16px;
+  }
 `;
 export const CartList = styled.div`
   width: 750px;
@@ -28,6 +41,9 @@ export const CartList = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media ${breakPoints.mobile} {
+    width: 330px;
+  }
 `;
 export const CartListArticle = styled.div`
   width: 730px;
@@ -51,6 +67,9 @@ export const CartListArticle = styled.div`
   ::-webkit-scrollbar-track {
     background: #ededed;
   }
+  @media ${breakPoints.mobile} {
+    width: 330px;
+  }
 `;
 export const CartListArticleNone = styled.div`
   width: 730px;
@@ -59,15 +78,22 @@ export const CartListArticleNone = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media ${breakPoints.mobile} {
+    width: 330px;
+  }
 `;
 export const TableHeaderRow = styled.div`
   height: 30px;
-  max-width: 1200px;
+  max-width: 1000px;
   display: flex;
   align-items: center;
+  justify-content: center;
   border-bottom: 2px solid #bdbdbd;
   border-top: 2px solid #bdbdbd;
   padding: 20px 20px 20px 0;
+  @media ${breakPoints.mobile} {
+    width: 330px;
+  }
 `;
 export const TableHeaderNumber = styled.div`
   width: 80px;
@@ -100,6 +126,9 @@ export const Row = styled.div`
   display: flex;
   align-items: center;
   border-bottom: 1px solid #bdbdbd;
+  @media ${breakPoints.mobile} {
+    width: 330px;
+  }
 `;
 export const ColumnNumber = styled.div`
   width: 80px;

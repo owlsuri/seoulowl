@@ -155,7 +155,6 @@ export default function MarketWrite(props) {
 
       event.target.value = "";
     }
-    console.log(event.target.value);
   };
 
   const onClickDeleteHash = (event: any) => {

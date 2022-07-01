@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
 
 export const Mypage = styled.div`
   width: 100%;
@@ -10,10 +11,19 @@ export const Mypage = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media ${breakPoints.mobile} {
+    padding: 200px 0 100px 0;
+  }
 `;
 export const MypageSubTitleSection = styled.div`
   font-size: 20px;
   text-align: center;
+  @media ${breakPoints.mobile} {
+    font-size: 15px;
+  }
+  @media ${breakPoints.tablet} {
+    font-size: 13px;
+  }
 `;
 export const MypageTitleSection = styled.div`
   color: #fff;
@@ -21,19 +31,17 @@ export const MypageTitleSection = styled.div`
   font-weight: 600;
   padding-bottom: 30px;
   text-align: center;
+  @media ${breakPoints.mobile} {
+    font-size: 20px;
+    width: 360px;
+  }
+  @media ${breakPoints.tablet} {
+    font-size: 30px;
+    width: 760px;
+  }
 `;
 export const MypageSection = styled.div`
   max-width: 1200px;
-  display: flex;
-  justify-content: center;
 `;
 export const MypageUserInfoArticle = styled.div``;
-export const MypageNavigationArticle = styled.div`
-  padding-left: 50px;
-`;
-export const Menu = styled.div`
-  background-color: white;
-  width: 800px;
-  height: 500px;
-  border-radius: 20px;
-`;
+export const MypageDetailArticle = styled.div``;

@@ -21,10 +21,9 @@ export default function Point() {
     IQueryFetchPointTransactionsOfLoadingArgs
   >(FETCH_POINT_TRANSACTIONS_OF_LOADING);
 
-  const { data: pointCount } = useQuery<
-    Pick<IQuery, "fetchPointTransactionsCountOfLoading">,
-    IQueryFetchPointTransactionsOfLoadingArgs
-  >(FETCH_POINT_TRANSACTIONS_COUNT_OF_LOADING);
+  const { data: pointCount } = useQuery(
+    FETCH_POINT_TRANSACTIONS_COUNT_OF_LOADING
+  );
 
   const lastPage = Math.ceil(
     pointCount?.fetchPointTransactionsCountOfLoading / 10
@@ -34,7 +33,11 @@ export default function Point() {
     <S.PointSection>
       <S.PointTitleArticle>포인트 충전 내역</S.PointTitleArticle>
       <S.PointCurrentArticle>
-        💰 현재 보유 포인트 : <span>{userInfo?.userPoint.amount}</span>원{" "}
+        💰 포인트를 총{" "}
+        <span>{pointCount?.fetchPointTransactionsCountOfLoading}</span>번 충전
+        하셨으며, 현재 포인트는{" "}
+        <span>{userInfo?.userPoint.amount.toLocaleString("ko-KR")}</span>원
+        입니다.
       </S.PointCurrentArticle>
       <S.TableHeaderRow>
         <S.TableHeaderNumber>번호</S.TableHeaderNumber>
@@ -48,7 +51,7 @@ export default function Point() {
             <S.Row key={el._id}>
               <S.ColumnNumber>{index + 1}</S.ColumnNumber>
               <S.ColumnDate>{getDate(el.createdAt)}</S.ColumnDate>
-              <S.ColumnStatus>{el.status}</S.ColumnStatus>
+              <S.ColumnStatus>{el.statusDetail}</S.ColumnStatus>
               <S.ColumnAmount>{el.amount}원</S.ColumnAmount>
             </S.Row>
           ))}
