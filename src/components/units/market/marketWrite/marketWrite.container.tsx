@@ -17,7 +17,6 @@ import {
   IQuery,
   IQueryFetchUseditemArgs,
 } from "../../../../commons/types/generated/types";
-import { useAuth } from "../../../../commons/hooks/useAuth";
 
 const schema = yup.object({
   name: yup
@@ -52,8 +51,6 @@ const editSchema = yup.object({
 });
 
 export default function MarketWrite(props) {
-  useAuth();
-
   const router = useRouter();
 
   const [fileUrls, setFileUrls] = useState(["", "", "", ""]);

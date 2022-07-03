@@ -1,5 +1,5 @@
+import { IMarketBestProps } from "../marketList.types";
 import * as S from "./marketBest.styles";
-import { IMarketBestProps } from "./marketBest.types";
 
 export default function MarketBestUI(props: IMarketBestProps) {
   return (
@@ -8,7 +8,9 @@ export default function MarketBestUI(props: IMarketBestProps) {
         <S.MarketBestSection
           key={el?._id}
           id={el._id}
-          onClick={props.onClickToDetail(el)}
+          onClick={
+            props.userInfo ? props.onClickToDetail(el) : props.onClickToLogin
+          }
         >
           <S.ImageArticle>
             <S.ImgBox>

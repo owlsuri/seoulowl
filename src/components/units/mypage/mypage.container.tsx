@@ -1,7 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
-import { useAuth } from "../../../commons/hooks/useAuth";
 import { basketItemState } from "../../../commons/store";
 import MypageUI from "./mypage.presenter";
 import {
@@ -11,8 +10,6 @@ import {
 } from "./mypage.queries";
 
 export default function Mypage() {
-  useAuth();
-
   const [isSelected, setIsSelected] = useState("cart");
 
   const [basketItems] = useRecoilState(basketItemState);

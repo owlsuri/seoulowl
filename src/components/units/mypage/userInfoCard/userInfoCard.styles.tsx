@@ -25,6 +25,7 @@ export const UserInfoArticle = styled.div`
     font-weight: 600;
     font-size: 24px;
     color: #213e6d;
+    padding-left: 7px;
     @media ${breakPoints.mobile} {
       padding: 5px;
       font-size: 14px;
@@ -34,6 +35,12 @@ export const UserInfoArticle = styled.div`
   @media ${breakPoints.mobile} {
     padding: 5px;
     font-size: 12px;
+  }
+`;
+export const Owl = styled.img`
+  width: 35px;
+  @media ${breakPoints.mobile} {
+    width: 18px;
   }
 `;
 export const UserDataArticle = styled.div`

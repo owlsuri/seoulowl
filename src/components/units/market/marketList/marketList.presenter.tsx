@@ -13,7 +13,15 @@ export default function MarketListUI(props: IMarketListProps) {
     <S.MarketList>
       <S.MarketListSubtitleSection>🛒👖👜👟🥊🥕</S.MarketListSubtitleSection>
       <S.MarketListTitleSection>중고마켓</S.MarketListTitleSection>
-      <S.MarketNew onClick={onClickMoveToPage("/market/new")}>📝</S.MarketNew>
+      <S.MarketNew
+        onClick={
+          props.userInfo
+            ? onClickMoveToPage("/market/new")
+            : props.onClickToLogin
+        }
+      >
+        📝
+      </S.MarketNew>
       <S.MarketListSection>
         <S.MarketListBestArticle>
           <MarketBest />
@@ -35,7 +43,11 @@ export default function MarketListUI(props: IMarketListProps) {
                 <S.MarketLists
                   key={el?._id}
                   id={el._id}
-                  onClick={props.onClickToDetail(el)}
+                  onClick={
+                    props.userInfo
+                      ? props.onClickToDetail(el)
+                      : props.onClickToLogin
+                  }
                 >
                   <S.ImageArticle>
                     <S.ImgBox>

@@ -38,6 +38,11 @@ export default function LayoutHeader() {
     clickRef.current?.click();
   };
 
+  const onClickToLogin = () => {
+    alert("로그인 후 이용해주세요.");
+    router.push("/login");
+  };
+
   return (
     <LayoutHeaderUI
       accessToken={accessToken}
@@ -46,6 +51,7 @@ export default function LayoutHeader() {
       onClickCharge={onClickCharge}
       clickRef={clickRef}
       basketItems={basketItems}
+      onClickToLogin={onClickToLogin}
     />
   );
 }

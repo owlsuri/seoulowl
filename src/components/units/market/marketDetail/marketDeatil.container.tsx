@@ -2,8 +2,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
-import { useAuth } from "../../../../commons/hooks/useAuth";
-import { basketItemState } from "../../../../commons/store";
+import { basketItemState, pickState } from "../../../../commons/store";
 import {
   IMutation,
   IMutationCreatePointTransactionOfBuyingAndSellingArgs,
@@ -23,7 +22,6 @@ import {
 } from "./marketDeatil.queries";
 
 export default function MarketDetail() {
-  useAuth();
   const router = useRouter();
 
   const [, setBasketItems] = useRecoilState(basketItemState);
@@ -136,11 +134,22 @@ export default function MarketDetail() {
     }
   };
 
+  const pickedId = [];
+  useEffect(() => {
+    pickedData?.fetchUseditemsIPicked.map((el: any) => {
+      pickedId.push(el._id);
+
+      if (pickedId.includes(router.query.useditemId)) {
+        setHeart(true);
+      }
+    });
+  }, [pickedId]);
+
   // 결제하기
   const onClickPay = async () => {
     if (userInfo.userPoint.amount >= data?.fetchUseditem?.price) {
       try {
-        const pay = await createPointTransactionOfBuyingAndSelling({
+        await createPointTransactionOfBuyingAndSelling({
           variables: {
             useritemId: String(router.query.useditemId),
           },
@@ -175,17 +184,6 @@ export default function MarketDetail() {
       setErrorAlertModal(true);
     }
   };
-
-  useEffect(() => {
-    const pickedId = [];
-    pickedData?.fetchUseditemsIPicked.map((el: any) => {
-      pickedId.push(el._id);
-
-      if (pickedId.includes(router.query.useditemId)) {
-        setHeart(true);
-      }
-    });
-  }, []);
 
   return (
     <MarketDetailUI

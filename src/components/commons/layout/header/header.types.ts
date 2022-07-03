@@ -5,4 +5,5 @@ export interface IHeaderProps {
   onClickCharge: () => void;
   clickRef: any;
   basketItems: any[];
+  onClickToLogin: () => void;
 }

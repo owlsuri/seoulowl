@@ -8,6 +8,7 @@ import {
   IQuery,
   IQueryFetchUseditemsArgs,
 } from "../../../../commons/types/generated/types";
+import { FETCH_USER_LOGGED_IN } from "../../login/login.queries";
 import MarketListUI from "./marketList.presenter";
 import { FETCH_USED_ITEMS } from "./marketList.queries";
 
@@ -16,6 +17,8 @@ export default function MarketList() {
 
   const [, setWatchItems] = useRecoilState(watchState);
   const [keyword, setKeyword] = useState<string>("");
+
+  const { data: userInfo } = useQuery(FETCH_USER_LOGGED_IN);
 
   const { data, fetchMore, refetch } = useQuery<
     Pick<IQuery, "fetchUseditems">,
@@ -60,14 +63,21 @@ export default function MarketList() {
     setWatchItems(ccc);
   };
 
+  const onClickToLogin = () => {
+    alert("로그인 후 이용해주세요.");
+    router.push("/login");
+  };
+
   return (
     <MarketListUI
       data={data}
+      userInfo={userInfo}
       onLoadMore={onLoadMore}
       onClickToDetail={onClickToDetail}
       refetch={refetch}
       keyword={keyword}
       onChangeKeyword={onChangeKeyword}
+      onClickToLogin={onClickToLogin}
     />
   );
 }

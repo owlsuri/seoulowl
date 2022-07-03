@@ -8,13 +8,16 @@ import {
   IQuery,
   IQueryFetchUseditemsArgs,
 } from "../../../../../commons/types/generated/types";
+import { FETCH_USER_LOGGED_IN } from "../../../login/login.queries";
 import MarketBestUI from "./marketBest.presenter";
 import { FETCH_USED_ITEMS_BEST } from "./marketBest.queries";
 
 export default function MarketBest() {
   const router = useRouter();
 
-  const [watchItems, setWatchItems] = useRecoilState(watchState);
+  const [, setWatchItems] = useRecoilState(watchState);
+
+  const { data: userInfo } = useQuery(FETCH_USER_LOGGED_IN);
 
   const { data } = useQuery<
     Pick<IQuery, "fetchUseditemsOfTheBest">,
@@ -37,5 +40,17 @@ export default function MarketBest() {
     setWatchItems(ccc);
   };
 
-  return <MarketBestUI data={data} onClickToDetail={onClickToDetail} />;
+  const onClickToLogin = () => {
+    alert("로그인 후 이용해주세요.");
+    router.push("/login");
+  };
+
+  return (
+    <MarketBestUI
+      data={data}
+      userInfo={userInfo}
+      onClickToDetail={onClickToDetail}
+      onClickToLogin={onClickToLogin}
+    />
+  );
 }

@@ -29,7 +29,13 @@ export default function LayoutHeaderUI(props: IHeaderProps) {
               </S.UserArticle>
               <ChargePayment clickRef={props.clickRef} />
               <S.UserArticleCart>
-                <S.UserArticle onClick={onClickMoveToPage("/mypage")}>
+                <S.UserArticle
+                  onClick={
+                    props.userInfo
+                      ? onClickMoveToPage("/mypage")
+                      : props.onClickToLogin
+                  }
+                >
                   CART
                 </S.UserArticle>
                 <S.CartCount>{props.basketItems.length}</S.CartCount>
@@ -47,7 +53,13 @@ export default function LayoutHeaderUI(props: IHeaderProps) {
                 SIGN UP
               </S.UserArticle>
               <S.UserArticleCart>
-                <S.UserArticle onClick={onClickMoveToPage("/mypage")}>
+                <S.UserArticle
+                  onClick={
+                    props.userInfo
+                      ? onClickMoveToPage("/mypage")
+                      : props.onClickToLogin
+                  }
+                >
                   CART
                 </S.UserArticle>
                 <S.CartCount>{props.basketItems?.length}</S.CartCount>
@@ -62,7 +74,13 @@ export default function LayoutHeaderUI(props: IHeaderProps) {
               중고마켓
             </S.MenuArticle>
             {/* <S.MenuArticle>한줄맛집</S.MenuArticle> */}
-            <S.MenuArticle onClick={onClickMoveToPage("/mypage")}>
+            <S.MenuArticle
+              onClick={
+                props.userInfo
+                  ? onClickMoveToPage("/mypage")
+                  : props.onClickToLogin
+              }
+            >
               마이페이지
             </S.MenuArticle>
           </S.HeaderMenuSection>

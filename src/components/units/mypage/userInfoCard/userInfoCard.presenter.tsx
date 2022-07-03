@@ -39,8 +39,8 @@ export default function UserInfoCardUI(props: IUserInfoCardProps) {
     <>
       <S.UserInfoCardSection>
         <S.UserInfoArticle>
-          SeoulOwL <span>{props.userInfo?.fetchUserLoggedIn.name}</span>님의
-          페이지
+          <S.Owl src="/images/owl.png" />
+          <span>{props.userInfo?.fetchUserLoggedIn.name}</span>님의 페이지
         </S.UserInfoArticle>
         <S.UserDataArticle>
           {NAVIGATION_MENU.map((el) => (
