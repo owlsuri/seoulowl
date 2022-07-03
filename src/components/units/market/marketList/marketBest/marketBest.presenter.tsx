@@ -35,7 +35,7 @@ export default function MarketBestUI(props: IMarketBestProps) {
           <S.RemarkArticle>
             {el.remarks.length ? el.remarks : "좋은 상품이에요!"}
           </S.RemarkArticle>
-          <S.PriceArticle>{el.price}원</S.PriceArticle>
+          <S.PriceArticle>{el.price.toLocaleString("ko-KR")}원</S.PriceArticle>
         </S.MarketBestSection>
       ))}
     </S.MarketBest>

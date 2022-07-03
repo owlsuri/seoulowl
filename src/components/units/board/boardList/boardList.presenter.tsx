@@ -35,7 +35,7 @@ export default function BoardListUI(props: IBoardListUIProps) {
           <>
             {props.data?.fetchBoards.map((el: any, index: number) => (
               <S.Row key={el._id}>
-                <S.ColumnNumber>{10 - index}</S.ColumnNumber>
+                <S.ColumnNumber>{index + 1}</S.ColumnNumber>
                 <S.ColumnTitle id={el._id} onClick={props.onClickDetail}>
                   {el.title
                     .replaceAll(props.keyword, `#$%${props.keyword}#$%`)

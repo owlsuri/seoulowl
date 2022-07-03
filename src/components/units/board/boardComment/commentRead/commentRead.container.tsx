@@ -1,4 +1,5 @@
 import { useMutation, useQuery } from "@apollo/client";
+import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { ChangeEvent, MouseEvent, useState } from "react";
 import {
@@ -68,7 +69,7 @@ export default function BoardCommentRead() {
 
   const onClickDelete = async () => {
     try {
-      const result = await deleteBoardComment({
+      await deleteBoardComment({
         variables: {
           boardCommentId,
           password,
@@ -80,11 +81,13 @@ export default function BoardCommentRead() {
           },
         ],
       });
-      alert("댓글이 삭제되었습니다!");
       setIsOpenModal(false);
       setBoardCommentId("");
     } catch (error) {
-      alert(error.message);
+      if (error instanceof Error)
+        Modal.error({
+          content: error.message,
+        });
     }
   };
 

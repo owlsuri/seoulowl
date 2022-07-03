@@ -1,18 +1,30 @@
-import { ChangeEvent } from "react";
+import {
+  FieldValues,
+  UseFormHandleSubmit,
+  UseFormRegister,
+  UseFormWatch,
+} from "react-hook-form";
+import {
+  ICreateBoardCommentInput,
+  IUpdateBoardCommentInput,
+} from "../../../../../commons/types/generated/types";
+
+export interface FormValues {
+  writer?: string;
+  password?: string;
+  contents?: string;
+}
 
 export interface IBoardCommentWriteProps {
-  onChangeInputs?: (event: any) => void;
   onChangeRating?: (value: number) => void;
   rating?: number;
-  inputs?: {
-    writer?: string;
-    password?: string;
-    contents?: string;
-  };
+  register: UseFormRegister<FormValues>;
+  handleSubmit: UseFormHandleSubmit<FieldValues>;
+  watch: UseFormWatch<FormValues>;
   el?: any;
   isCommentEdit?: boolean;
-  onClickComment?: () => void;
-  onClickCommentEdit?: () => void;
+  onClickComment?: (data: ICreateBoardCommentInput) => void;
+  onClickCommentEdit?: (data: any) => void;
   onClickRoutingModal?: () => void;
   onClickErrorModal?: () => void;
   alertModal?: boolean;

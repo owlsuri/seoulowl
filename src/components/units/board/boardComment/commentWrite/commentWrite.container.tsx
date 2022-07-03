@@ -2,8 +2,10 @@ import { useMutation } from "@apollo/client";
 import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { ChangeEvent, useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 
 import {
+  ICreateBoardCommentInput,
   IMutation,
   IMutationCreateBoardCommentArgs,
   IMutationUpdateBoardCommentArgs,
@@ -17,12 +19,6 @@ import {
 
 export default function BoardCommentWrite(props: any) {
   const router = useRouter();
-
-  const [inputs, setInputs] = useState({
-    writer: "",
-    password: "",
-    contents: "",
-  });
 
   const [rating, setRating] = useState(0);
 
@@ -43,7 +39,6 @@ export default function BoardCommentWrite(props: any) {
   // 이동모달
   const onClickRoutingModal = () => {
     setAlertModal(false);
-    location.reload();
   };
 
   // 에러모달
@@ -51,41 +46,46 @@ export default function BoardCommentWrite(props: any) {
     setErrorAlertModal(false);
   };
 
-  const onChangeInputs = (event: any) => {
-    setInputs({
-      ...inputs,
-      [event.target.id]: event.target.value,
-    });
-  };
+  const { register, handleSubmit, reset, watch } = useForm({
+    mode: "onChange",
+  });
 
   const onChangeRating = (value: number) => {
     setRating(value);
   };
 
-  const onClickComment = async () => {
+  const onClickComment = async (data: ICreateBoardCommentInput) => {
     try {
       await createBoardComment({
         variables: {
           boardId: String(router.query.boardId),
           createBoardCommentInput: {
-            writer: inputs.writer,
-            password: inputs.password,
-            contents: inputs.contents,
+            writer: data.writer,
+            password: data.password,
+            contents: data.contents,
             rating,
           },
         },
+        refetchQueries: [
+          {
+            query: FETCH_BOARD_COMMENTS,
+            variables: { boardId: router.query.boardId },
+          },
+        ],
       });
 
       setAlertModal(true);
       setModalContents("댓글 등록이 완료되었습니다!");
+      setRating(5);
+      reset();
     } catch (error) {
       setModalContents(error.message);
       setErrorAlertModal(true);
     }
   };
 
-  const onClickCommentEdit = async () => {
-    if (!inputs.contents) {
+  const onClickCommentEdit = async (data: any) => {
+    if (!data.contents) {
       setModalContents("수정한 내용이 없습니다!");
       setErrorAlertModal(true);
       return;
@@ -94,10 +94,10 @@ export default function BoardCommentWrite(props: any) {
       await updateBoardComment({
         variables: {
           boardCommentId: props.el?._id,
-          password: inputs.password,
+          password: data.password,
           updateBoardCommentInput: {
-            contents: inputs.contents,
-            rating: rating,
+            contents: data.contents,
+            rating,
           },
         },
         refetchQueries: [
@@ -123,10 +123,8 @@ export default function BoardCommentWrite(props: any) {
 
   return (
     <BoardCommentWriteUI
-      onChangeInputs={onChangeInputs}
       onChangeRating={onChangeRating}
       rating={rating}
-      inputs={inputs}
       el={props.el}
       isCommentEdit={props.isCommentEdit}
       onClickComment={onClickComment}
@@ -136,6 +134,9 @@ export default function BoardCommentWrite(props: any) {
       alertModal={alertModal}
       modalContents={modalContents}
       errorAlertModal={errorAlertModal}
+      register={register}
+      handleSubmit={handleSubmit}
+      watch={watch}
     />
   );
 }

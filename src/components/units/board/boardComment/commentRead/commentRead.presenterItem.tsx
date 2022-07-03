@@ -7,6 +7,7 @@ import * as S from "./commentRead.styles";
 import { useState } from "react";
 import BoardCommentWrite from "../commentWrite/commentWrite.container";
 import { IBoardCommentReadProps } from "./commentRead.types";
+import ErrorModal from "../../../../commons/modal/error/errorModal";
 
 export default function BoardCommentReadItemUI(props: IBoardCommentReadProps) {
   const [isCommentEdit, setIsCommentEdit] = useState(false);
