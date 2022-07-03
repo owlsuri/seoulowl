@@ -8,12 +8,6 @@ export const accessTokenState = atom({
   default: "",
 });
 
-export const userInfoState = atom({
-  key: "userInfoState",
-  default: {},
-  effects_UNSTABLE: [persistAtom],
-});
-
 export const basketItemState = atom({
   key: "basketItems",
   default: [],

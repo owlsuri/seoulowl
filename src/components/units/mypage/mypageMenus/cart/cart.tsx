@@ -50,7 +50,9 @@ export default function Cart(props) {
                     />
                   </S.ColumnImage>
                   <S.ColumnName>{el.name}</S.ColumnName>
-                  <S.ColumnAmount>{el.price}원</S.ColumnAmount>
+                  <S.ColumnAmount>
+                    {el.price.toLocaleString("ko-KR")}원
+                  </S.ColumnAmount>
                   {/* <S.ColumnCheck type="checkbox" id={el._id} /> */}
                 </S.Row>
               ))

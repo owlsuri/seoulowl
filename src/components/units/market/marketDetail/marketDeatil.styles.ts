@@ -103,20 +103,19 @@ export const SellerName = styled.span`
 export const Tags = styled.div`
   width: 540px;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   border-bottom: 1px solid #c0c0c0;
   padding: 20px 0;
   margin-bottom: 30px;
-  word-break: break-all;
   @media ${breakPoints.mobile} {
     width: 320px;
     word-break: break-all;
   }
 `;
 export const Tag = styled.div`
-  max-width: 100px;
   font-weight: 600;
   padding: 5px 10px;
+  margin: 5px 0;
   background: #ffe004;
   border-radius: 15px;
   display: flex;

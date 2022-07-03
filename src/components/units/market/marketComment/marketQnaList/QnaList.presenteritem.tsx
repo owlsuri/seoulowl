@@ -36,7 +36,8 @@ export default function MarketQnAListItem(props: IMarketQnaListItemProps) {
                     <S.CommentUserName>{props.el?.user.name}</S.CommentUserName>
                   </S.CommentUserProfile>
                   <S.CommentIcon>
-                    {props.userInfo.email === props.el.user.email ? (
+                    {props.userInfo.fetchUserLoggedIn.email ===
+                    props.el.user.email ? (
                       <>
                         <FontAwesomeIcon
                           onClick={onClickQnaEdit}

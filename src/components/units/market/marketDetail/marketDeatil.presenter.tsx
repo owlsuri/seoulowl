@@ -50,7 +50,9 @@ export default function MarketDetailUI(props: IMarketReadProps) {
                   {props.data?.fetchUseditem.seller.name}
                 </S.SellerName>
               </S.Seller>
-              <S.Price>{props.data?.fetchUseditem.price}원</S.Price>
+              <S.Price>
+                {props.data?.fetchUseditem.price.toLocaleString("ko-KR")}원
+              </S.Price>
               <S.Tags>
                 {props.data?.fetchUseditem.tags.map((el: any, i: number) => (
                   <S.Tag key={i}>{el}</S.Tag>
@@ -136,7 +138,8 @@ export default function MarketDetailUI(props: IMarketReadProps) {
             <S.MoveBtn onClick={onClickMoveToPage("/market")}>
               목록으로
             </S.MoveBtn>
-            {props.data?.fetchUseditem.seller.email === props.userInfo.email ? (
+            {props.data?.fetchUseditem.seller.email ===
+            props.userInfo?.fetchUserLoggedIn.email ? (
               <>
                 <S.MoveBtn onClick={props.onClickMoveEdit}>수정하기</S.MoveBtn>
                 <S.MoveBtn onClick={props.onClickDelete}>삭제하기</S.MoveBtn>

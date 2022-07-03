@@ -3,13 +3,13 @@ import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { MouseEvent, useState } from "react";
 import { useRecoilState } from "recoil";
-import { userInfoState } from "../../../../../commons/store";
 import {
   IMutation,
   IMutationDeleteUseditemQuestionAnswerArgs,
   IQuery,
   IQueryFetchUseditemQuestionAnswersArgs,
 } from "../../../../../commons/types/generated/types";
+import { FETCH_USER_LOGGED_IN } from "../../../login/login.queries";
 
 import QnaAnswerListUI from "./QnaAnswerList.presenter";
 import {
@@ -18,7 +18,7 @@ import {
 } from "./QnaAnswerList.queries";
 
 export default function QnaAnswerList(props: any) {
-  const [userInfo] = useRecoilState(userInfoState);
+  const { data: userInfo } = useQuery(FETCH_USER_LOGGED_IN);
 
   const { data: qadata, fetchMore } = useQuery<
     Pick<IQuery, "fetchUseditemQuestionAnswers">,

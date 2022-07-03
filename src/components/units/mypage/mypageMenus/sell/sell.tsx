@@ -44,7 +44,9 @@ export default function Sell(props) {
               <S.ColumnNumber>{index + 1}</S.ColumnNumber>
               <S.ColumnDate>{getDate(el.useditem.soldAt)}</S.ColumnDate>
               <S.ColumnName>{el.useditem.name}</S.ColumnName>
-              <S.ColumnAmount>{el.useditem.price}원</S.ColumnAmount>
+              <S.ColumnAmount>
+                {el.useditem.price.toLocaleString("ko-KR")}원
+              </S.ColumnAmount>
             </S.Row>
           ))}
         </S.SellingListArticle>

@@ -20,7 +20,7 @@ declare const window: typeof globalThis & {
 };
 export default function KakaoMapPage(props: any) {
   useEffect(() => {
-    const script = document.createElement("script"); // <script></script>
+    const script = document.createElement("script");
     script.src =
       "//dapi.kakao.com/v2/maps/sdk.js?appkey=f2354913af21df03ad4d0ed912052c38&libraries=services&autoload=false";
     document.head.appendChild(script);

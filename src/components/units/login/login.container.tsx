@@ -3,7 +3,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { useRecoilState } from "recoil";
-import { accessTokenState, userInfoState } from "../../../commons/store";
+import { accessTokenState } from "../../../commons/store";
 import { useApolloClient, useMutation } from "@apollo/client";
 import { FETCH_USER_LOGGED_IN, LOGIN_USER } from "./login.queries";
 import {
@@ -31,7 +31,6 @@ export default function Login() {
   const client = useApolloClient();
 
   const [, setAccessToken] = useRecoilState(accessTokenState);
-  const [, setUserInfo] = useRecoilState(userInfoState);
 
   const [loginUser] = useMutation<
     Pick<IMutation, "loginUser">,
@@ -78,7 +77,6 @@ export default function Login() {
       });
 
       const userInfo = resultUserInfo.data.fetchUserLoggedIn;
-      setUserInfo(userInfo);
 
       setAlertModal(true);
       setModalContents(`${userInfo.name}님 환영합니다!`);

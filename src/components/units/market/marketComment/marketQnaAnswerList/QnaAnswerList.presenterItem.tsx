@@ -37,7 +37,8 @@ export default function QnaAnswerListItem(
                       </S.CommentUserName>
                     </S.CommentUserProfile>
                     <S.CommentIcon>
-                      {props.userInfo.email === props.el?.user.email ? (
+                      {props.userInfo.fetchUserLoggedIn.email ===
+                      props.el?.user.email ? (
                         <>
                           <FontAwesomeIcon
                             onClick={onClicktoUpdate}

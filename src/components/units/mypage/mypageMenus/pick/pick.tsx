@@ -89,7 +89,9 @@ export default function Pick(props: any) {
                           <S.Detail>
                             <div>
                               <S.Name>{el.name}</S.Name>
-                              <S.Price>{el.price}원</S.Price>
+                              <S.Price>
+                                {el.price.toLocaleString("ko-KR")}원
+                              </S.Price>
                             </div>
                             <S.HeartBox>
                               <S.Heart />
@@ -119,7 +121,9 @@ export default function Pick(props: any) {
                           <S.Detail>
                             <div>
                               <S.Name>{el.name}</S.Name>
-                              <S.Price>{el.price}</S.Price>
+                              <S.Price>
+                                {el.price.toLocaleString("ko-KR")}원
+                              </S.Price>
                             </div>
                             <S.SoldMark>판매완료</S.SoldMark>
                           </S.Detail>

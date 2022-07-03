@@ -6,15 +6,15 @@ import {
 import { getDate } from "../../../../../commons/libraries/getDate";
 import * as S from "./point.styles";
 import { useRecoilState } from "recoil";
-import { userInfoState } from "../../../../../commons/store";
 import {
   IQuery,
   IQueryFetchPointTransactionsOfLoadingArgs,
 } from "../../../../../commons/types/generated/types";
 import Pagination from "../../../../commons/pagination/Pagination";
+import { FETCH_USER_LOGGED_IN } from "../../../login/login.queries";
 
 export default function Point() {
-  const [userInfo] = useRecoilState(userInfoState);
+  const { data: userInfo } = useQuery(FETCH_USER_LOGGED_IN);
 
   const { data, refetch } = useQuery<
     Pick<IQuery, "fetchPointTransactionsOfLoading">,
@@ -36,8 +36,10 @@ export default function Point() {
         💰 포인트를 총{" "}
         <span>{pointCount?.fetchPointTransactionsCountOfLoading}</span>번 충전
         하셨으며, 현재 포인트는{" "}
-        <span>{userInfo?.userPoint.amount.toLocaleString("ko-KR")}</span>원
-        입니다.
+        <span>
+          {userInfo?.fetchUserLoggedIn.userPoint.amount.toLocaleString("ko-KR")}
+        </span>
+        원 입니다.
       </S.PointCurrentArticle>
       <S.TableHeaderRow>
         <S.TableHeaderNumber>번호</S.TableHeaderNumber>
@@ -52,7 +54,9 @@ export default function Point() {
               <S.ColumnNumber>{index + 1}</S.ColumnNumber>
               <S.ColumnDate>{getDate(el.createdAt)}</S.ColumnDate>
               <S.ColumnStatus>{el.statusDetail}</S.ColumnStatus>
-              <S.ColumnAmount>{el.amount}원</S.ColumnAmount>
+              <S.ColumnAmount>
+                {el.amount.toLocaleString("ko-KR")}원
+              </S.ColumnAmount>
             </S.Row>
           ))}
         </S.PointListArticle>

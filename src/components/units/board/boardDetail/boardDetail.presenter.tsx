@@ -23,7 +23,6 @@ export default function BoardDetailUI(props: IBoardDetailProps) {
           contents={props.modalContents}
         />
       )}
-
       {props.errorAlertModal && (
         <ErrorModal
           onClickExit={props.onClickErrorModal}

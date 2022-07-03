@@ -6,7 +6,7 @@ import * as S from "./payment.styles";
 
 export default function ChargePaymentUI(props) {
   return (
-    <>
+    <div>
       <button
         onClick={props.onToggleModal}
         ref={props.clickRef}
@@ -28,12 +28,10 @@ export default function ChargePaymentUI(props) {
         />
       )}
       <Head>
-        {/* <!-- jQuery --> */}
         <script
           type="text/javascript"
           src="https://code.jquery.com/jquery-1.12.4.min.js"
         ></script>
-        {/* <!-- iamport.payment.js --> */}
         <script
           type="text/javascript"
           src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"
@@ -58,6 +56,6 @@ export default function ChargePaymentUI(props) {
           <S.ChargeBtn onClick={props.requestPay}>충전하기</S.ChargeBtn>
         </Modal>
       )}
-    </>
+    </div>
   );
 }

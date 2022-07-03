@@ -1,9 +1,9 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { useAuth } from "../../../../commons/hooks/useAuth";
-import { basketItemState, userInfoState } from "../../../../commons/store";
+import { basketItemState } from "../../../../commons/store";
 import {
   IMutation,
   IMutationCreatePointTransactionOfBuyingAndSellingArgs,
@@ -12,6 +12,8 @@ import {
   IQuery,
   IQueryFetchUseditemArgs,
 } from "../../../../commons/types/generated/types";
+import { FETCH_USER_LOGGED_IN } from "../../login/login.queries";
+import { FETCH_USED_ITEMS_I_PICKED } from "../../mypage/mypage.queries";
 import MarketDetailUI from "./marketDeatil.presenter";
 import {
   CREATE_POINT_TRANSACTION_OF_BUYING_AND_SELLING,
@@ -24,7 +26,6 @@ export default function MarketDetail() {
   useAuth();
   const router = useRouter();
 
-  const [userInfo] = useRecoilState(userInfoState);
   const [, setBasketItems] = useRecoilState(basketItemState);
 
   const [detailColor, setDetailColor] = useState(true);
@@ -38,11 +39,17 @@ export default function MarketDetail() {
   const [errorAlertModal, setErrorAlertModal] = useState(false);
   const [isRoute, setIsRoute] = useState(false);
 
+  const { data: userInfo } = useQuery(FETCH_USER_LOGGED_IN);
+
   const { data } = useQuery<
     Pick<IQuery, "fetchUseditem">,
     IQueryFetchUseditemArgs
   >(FETCH_USED_ITEM, {
     variables: { useditemId: String(router.query.useditemId) },
+  });
+
+  const { data: pickedData } = useQuery(FETCH_USED_ITEMS_I_PICKED, {
+    variables: { search: "" },
   });
 
   const [toggleUseditemPick] = useMutation<
@@ -168,6 +175,17 @@ export default function MarketDetail() {
       setErrorAlertModal(true);
     }
   };
+
+  useEffect(() => {
+    const pickedId = [];
+    pickedData?.fetchUseditemsIPicked.map((el: any) => {
+      pickedId.push(el._id);
+
+      if (pickedId.includes(router.query.useditemId)) {
+        setHeart(true);
+      }
+    });
+  }, []);
 
   return (
     <MarketDetailUI

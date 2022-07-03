@@ -104,9 +104,18 @@ export const Detail = styled.div`
   padding: 5px;
 `;
 export const Name = styled.div`
+  width: 120px;
   font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
-export const Price = styled.div``;
+export const Price = styled.div`
+  width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
 export const HeartBox = styled.div`
   height: 50px;
   font-size: 17px;

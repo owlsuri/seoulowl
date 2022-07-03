@@ -1,12 +1,9 @@
-import { useMutation } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useEffect, useRef } from "react";
 import { useRecoilState } from "recoil";
-import {
-  accessTokenState,
-  basketItemState,
-  userInfoState,
-} from "../../../../commons/store";
+import { accessTokenState, basketItemState } from "../../../../commons/store";
+import { FETCH_USER_LOGGED_IN } from "../../../units/login/login.queries";
 import LayoutHeaderUI from "./header.presenter";
 import { LOGOUT_USER } from "./header.queries";
 
@@ -15,11 +12,11 @@ export default function LayoutHeader() {
   const clickRef = useRef<HTMLInputElement>(null);
 
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
-  const [userInfo, setUserInfo] = useRecoilState(userInfoState);
 
   const [logoutUser] = useMutation(LOGOUT_USER);
 
-  // 장바구니아이템 갯수
+  const { data: userInfo } = useQuery(FETCH_USER_LOGGED_IN);
+
   const [basketItems, setBasketItems] = useRecoilState(basketItemState);
 
   useEffect(() => {
@@ -34,7 +31,6 @@ export default function LayoutHeader() {
       alert(error);
     }
     setAccessToken("");
-    setUserInfo("");
     router.push("/");
   };
 

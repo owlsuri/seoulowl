@@ -2,14 +2,13 @@ import { useMutation, useQuery } from "@apollo/client";
 import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { MouseEvent } from "react";
-import { useRecoilState } from "recoil";
-import { userInfoState } from "../../../../../commons/store";
 import {
   IMutation,
   IMutationDeleteUseditemQuestionArgs,
   IQuery,
   IQueryFetchUseditemQuestionsArgs,
 } from "../../../../../commons/types/generated/types";
+import { FETCH_USER_LOGGED_IN } from "../../../login/login.queries";
 
 import MarketQnAListUI from "./QnaList.presenter";
 import {
@@ -20,7 +19,7 @@ import {
 export default function MarketQnAList() {
   const router = useRouter();
 
-  const [userInfo] = useRecoilState(userInfoState);
+  const { data: userInfo } = useQuery(FETCH_USER_LOGGED_IN);
 
   const { data, fetchMore } = useQuery<
     Pick<IQuery, "fetchUseditemQuestions">,
