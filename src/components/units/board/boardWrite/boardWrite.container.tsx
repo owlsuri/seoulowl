@@ -7,9 +7,6 @@ import { useMutation, useQuery } from "@apollo/client";
 import { CREATE_BOARD, UPDATE_BOARD } from "./boardWrite.queries";
 import {
   ICreateBoardInput,
-  IMutation,
-  IMutationCreateBoardArgs,
-  IMutationUpdateBoardArgs,
   IQuery,
   IQueryFetchBoardArgs,
   IUpdateBoardInput,

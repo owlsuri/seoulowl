@@ -74,7 +74,7 @@ export default function KakaoMapPage(props: any) {
                   props.address ||
                   props.data?.fetchUseditem.useditemAddress.address
                 }</div><div style="color:white;text-align:center">${
-                  props.data?.fetchUseditem.useditemAddress.addressDetail
+                  props.data?.fetchUseditem.useditemAddress.addressDetail || ""
                 }</div></div>`,
               });
               infowindow.open(map, marker);
