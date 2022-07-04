@@ -88,7 +88,7 @@ export default function MarketDetailUI(props: IMarketReadProps) {
               detailColor={props.detailColor}
               onClick={props.onClickShowDetail}
             >
-              상품정보 자세히 보기
+              상품정보
             </S.Detail>
             <S.Qna qnaColor={props.qnaColor} onClick={props.onClickQnA}>
               Q & A
@@ -135,14 +135,12 @@ export default function MarketDetailUI(props: IMarketReadProps) {
             )}
           </S.MarketMoreDetailArticle>
           <S.MoveBtnArticle>
-            <S.MoveBtn onClick={onClickMoveToPage("/market")}>
-              목록으로
-            </S.MoveBtn>
+            <S.MoveBtn onClick={onClickMoveToPage("/market")}>목록</S.MoveBtn>
             {props.data?.fetchUseditem.seller.email ===
             props.userInfo?.fetchUserLoggedIn.email ? (
               <>
-                <S.MoveBtn onClick={props.onClickMoveEdit}>수정하기</S.MoveBtn>
-                <S.MoveBtn onClick={props.onClickDelete}>삭제하기</S.MoveBtn>
+                <S.MoveBtn onClick={props.onClickMoveEdit}>수정</S.MoveBtn>
+                <S.MoveBtn onClick={props.onClickDelete}>삭제</S.MoveBtn>
               </>
             ) : (
               ""

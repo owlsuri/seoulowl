@@ -27,9 +27,7 @@ export default function LayoutHeader() {
   const onClickLogout = async () => {
     try {
       await logoutUser();
-    } catch (error) {
-      alert(error);
-    }
+    } catch (error) {}
     setAccessToken("");
     router.push("/");
   };

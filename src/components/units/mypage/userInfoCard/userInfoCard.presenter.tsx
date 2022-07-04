@@ -17,13 +17,13 @@ export default function UserInfoCardUI(props: IUserInfoCardProps) {
     },
     {
       index: 3,
-      name: "구매한 상품",
+      name: "구매상품",
       page: "buy",
       total: props.buyingCount?.fetchPointTransactionsCountOfBuying,
     },
     {
       index: 4,
-      name: "판매한 상품",
+      name: "판매상품",
       page: "sell",
       total: props.sellingCount?.fetchPointTransactionsCountOfSelling,
     },

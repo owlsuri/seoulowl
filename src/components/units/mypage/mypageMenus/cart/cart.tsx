@@ -23,7 +23,7 @@ export default function Cart(props) {
       <S.CartList>
         <S.TableHeaderRow>
           <S.TableHeaderNumber>번호</S.TableHeaderNumber>
-          <S.TableHeaderImage>대표 이미지</S.TableHeaderImage>
+          <S.TableHeaderImage>대표사진</S.TableHeaderImage>
           <S.TableHeaderName>상품명</S.TableHeaderName>
           <S.TableHeaderAmount>가격</S.TableHeaderAmount>
           {/* <S.ColumnCheck type="checkbox" /> */}
