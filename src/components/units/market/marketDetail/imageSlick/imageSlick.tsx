@@ -25,8 +25,8 @@ export default function UsedItemImages(props: any) {
         <a>
           <PreImg
             src={
-              `${props.data?.fetchUseditem.images[i - 1 + 1]}`
-                ? `${baseUrl}${props.data?.fetchUseditem?.images[i - 1 + 1]}`
+              `${props.data?.images[i - 1 + 1]}`
+                ? `${baseUrl}${props.data?.images[i - 1 + 1]}`
                 : "/images/noimages.jpg"
             }
           />
@@ -44,7 +44,7 @@ export default function UsedItemImages(props: any) {
   return (
     <div>
       <Slider {...settings}>
-        {props.data?.fetchUseditem.images
+        {props.data?.images
           ?.filter((el: string) => el)
           .map((el: string) => (
             <div key={el}>

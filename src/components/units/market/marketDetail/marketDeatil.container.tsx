@@ -8,8 +8,6 @@ import {
   IMutationCreatePointTransactionOfBuyingAndSellingArgs,
   IMutationDeleteUseditemArgs,
   IMutationToggleUseditemPickArgs,
-  IQuery,
-  IQueryFetchUseditemArgs,
 } from "../../../../commons/types/generated/types";
 import { FETCH_USER_LOGGED_IN } from "../../login/login.queries";
 import { FETCH_USED_ITEMS_I_PICKED } from "../../mypage/mypage.queries";
@@ -17,11 +15,10 @@ import MarketDetailUI from "./marketDeatil.presenter";
 import {
   CREATE_POINT_TRANSACTION_OF_BUYING_AND_SELLING,
   DELETE_USEDITEM,
-  FETCH_USED_ITEM,
   TOGGLE_USEDITEM_PICK,
 } from "./marketDeatil.queries";
 
-export default function MarketDetail() {
+export default function MarketDetail(props: any) {
   const router = useRouter();
 
   const [, setBasketItems] = useRecoilState(basketItemState);
@@ -38,13 +35,6 @@ export default function MarketDetail() {
   const [isRoute, setIsRoute] = useState(false);
 
   const { data: userInfo } = useQuery(FETCH_USER_LOGGED_IN);
-
-  const { data } = useQuery<
-    Pick<IQuery, "fetchUseditem">,
-    IQueryFetchUseditemArgs
-  >(FETCH_USED_ITEM, {
-    variables: { useditemId: String(router.query.useditemId) },
-  });
 
   const { data: pickedData } = useQuery(FETCH_USED_ITEMS_I_PICKED, {
     variables: { search: "" },
@@ -120,12 +110,12 @@ export default function MarketDetail() {
     try {
       await toggleUseditemPick({
         variables: { useditemId: String(router.query.useditemId) },
-        refetchQueries: [
-          {
-            query: FETCH_USED_ITEM,
-            variables: { useditemId: String(router.query.useditemId) },
-          },
-        ],
+        // refetchQueries: [
+        //   {
+        //     query: FETCH_USED_ITEM,
+        //     variables: { useditemId: String(router.query.useditemId) },
+        //   },
+        // ],
       });
       setHeart((prev) => !prev);
     } catch (error) {
@@ -147,7 +137,7 @@ export default function MarketDetail() {
 
   // 결제하기
   const onClickPay = async () => {
-    if (userInfo.userPoint.amount >= data?.fetchUseditem?.price) {
+    if (userInfo.userPoint.amount >= props.data?.price) {
       try {
         await createPointTransactionOfBuyingAndSelling({
           variables: {
@@ -187,7 +177,7 @@ export default function MarketDetail() {
 
   return (
     <MarketDetailUI
-      data={data}
+      data={props.data}
       userInfo={userInfo}
       isShowQnA={isShowQnA}
       detailColor={detailColor}

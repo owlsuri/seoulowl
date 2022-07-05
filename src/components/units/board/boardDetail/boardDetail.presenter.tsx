@@ -36,12 +36,10 @@ export default function BoardDetailUI(props: IBoardDetailProps) {
               <S.UserImg src="/images/profile-user.png" />
               <S.WriteInfo>
                 <S.Writer>
-                  {props.data ? props.data?.fetchBoard.writer : "loading..."}
+                  {props.data ? props.data?.writer : "loading..."}
                 </S.Writer>
                 <S.CreatedAt>
-                  {props.data
-                    ? getDate(props.data?.fetchBoard.createdAt)
-                    : "loading..."}
+                  {props.data ? getDate(props.data?.createdAt) : "loading..."}
                 </S.CreatedAt>
               </S.WriteInfo>
             </S.UserInfo>
@@ -51,18 +49,16 @@ export default function BoardDetailUI(props: IBoardDetailProps) {
                 textAlign: "center",
               }}
               placement="left"
-              title={`${props.data?.fetchBoard?.boardAddress?.address}
-                    ${props.data?.fetchBoard?.boardAddress?.addressDetail}`}
+              title={`${props.data?.boardAddress?.address}
+                    ${props.data?.boardAddress?.addressDetail}`}
             >
               <S.Location src="/images/pin.png" />
             </Tooltip>
           </S.UserInfoContainer>
           <S.ContentsContainer>
-            <S.Title>
-              {props.data ? props.data?.fetchBoard.title : "loading..."}
-            </S.Title>
+            <S.Title>{props.data ? props.data?.title : "loading..."}</S.Title>
             <S.Images>
-              {props.data?.fetchBoard.images
+              {props.data?.images
                 ?.filter((el: string) => el)
                 .map((el: string, index: number) => (
                   <S.Img
@@ -75,29 +71,27 @@ export default function BoardDetailUI(props: IBoardDetailProps) {
               {typeof window !== "undefined" && (
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: Dompurify.sanitize(props.data?.fetchBoard.contents),
+                    __html: Dompurify.sanitize(props.data?.contents),
                   }}
                 />
               )}
             </S.Contents>
             <S.Youtube>
-              {props.data?.fetchBoard.youtubeUrl && (
-                <ReactPlayer url={String(props.data?.fetchBoard.youtubeUrl)} />
+              {props.data?.youtubeUrl && (
+                <ReactPlayer url={String(props.data?.youtubeUrl)} />
               )}
             </S.Youtube>
             <S.LikeBox>
               <S.Like onClick={props.onClickLike}>
                 <S.LikeIcon />
                 <S.LikeNum>
-                  {props.data ? props.data.fetchBoard.likeCount : "loading..."}
+                  {props.data ? props.data.likeCount : "loading..."}
                 </S.LikeNum>
               </S.Like>
               <S.DisLike>
                 <S.DisLikeIcon onClick={props.onClickDisLike} />
                 <S.DisLikeNum>
-                  {props.data
-                    ? props.data.fetchBoard.dislikeCount
-                    : "loading..."}
+                  {props.data ? props.data.dislikeCount : "loading..."}
                 </S.DisLikeNum>
               </S.DisLike>
             </S.LikeBox>

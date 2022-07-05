@@ -41,7 +41,7 @@ export default function KakaoMapPage(props: any) {
 
         // 주소로 좌표를 검색합니다
         geocoder.addressSearch(
-          props.address || props.data?.fetchUseditem.useditemAddress.address,
+          props.address || props.data?.useditemAddress.address,
           function (result, status) {
             // 정상적으로 검색이 완료됐으면
             if (status === window.kakao.maps.services.Status.OK) {
@@ -71,10 +71,9 @@ export default function KakaoMapPage(props: any) {
               // 인포윈도우로 장소에 대한 설명을 표시합니다
               const infowindow = new window.kakao.maps.InfoWindow({
                 content: `<div style="padding:6px 0;background-color:#213e6d;"><div style="width:250px;text-align:center;font-size:17px;font-weight:600;color:#ffe004;">거래장소</div><div style="text-align:center;font-size=15px;color:#FFFFFF">${
-                  props.address ||
-                  props.data?.fetchUseditem.useditemAddress.address
+                  props.address || props.data?.useditemAddress.address
                 }</div><div style="color:white;text-align:center">${
-                  props.data?.fetchUseditem.useditemAddress.addressDetail || ""
+                  props.data?.useditemAddress.addressDetail || ""
                 }</div></div>`,
               });
               infowindow.open(map, marker);
@@ -86,7 +85,7 @@ export default function KakaoMapPage(props: any) {
         );
       });
     };
-  }, [props.data?.fetchUseditem?.useditemAddress?.address, props.address]);
+  }, [props.data?.useditemAddress?.address, props.address]);
 
   return (
     <div>

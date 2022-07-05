@@ -42,19 +42,14 @@ export default function MarketDetailUI(props: IMarketReadProps) {
               <UsedItemImages data={props.data} />
             </S.MarketDetailImgArticle>
             <S.MarketDetailInfoArticle>
-              <S.Remarks>{props.data?.fetchUseditem.remarks}</S.Remarks>
-              <S.Name>{props.data?.fetchUseditem.name}</S.Name>
+              <S.Remarks>{props.data?.remarks}</S.Remarks>
+              <S.Name>{props.data?.name}</S.Name>
               <S.Seller>
-                판매자 :
-                <S.SellerName>
-                  {props.data?.fetchUseditem.seller.name}
-                </S.SellerName>
+                판매자 :<S.SellerName>{props.data?.seller.name}</S.SellerName>
               </S.Seller>
-              <S.Price>
-                {props.data?.fetchUseditem.price.toLocaleString("ko-KR")}원
-              </S.Price>
+              <S.Price>{props.data?.price.toLocaleString("ko-KR")}원</S.Price>
               <S.Tags>
-                {props.data?.fetchUseditem.tags.map((el: any, i: number) => (
+                {props.data?.tags.map((el: any, i: number) => (
                   <S.Tag key={i}>{el}</S.Tag>
                 ))}
               </S.Tags>
@@ -62,9 +57,7 @@ export default function MarketDetailUI(props: IMarketReadProps) {
                 {typeof window !== "undefined" && (
                   <div
                     dangerouslySetInnerHTML={{
-                      __html: Dompurify.sanitize(
-                        props.data?.fetchUseditem.contents
-                      ),
+                      __html: Dompurify.sanitize(props.data?.contents),
                     }}
                   />
                 )}
@@ -102,7 +95,7 @@ export default function MarketDetailUI(props: IMarketReadProps) {
             ) : (
               <>
                 <div>
-                  {props.data?.fetchUseditem.images
+                  {props.data?.images
                     ?.filter((el: string) => el)
                     .map((el: string) => (
                       <S.DetailImg
@@ -119,9 +112,7 @@ export default function MarketDetailUI(props: IMarketReadProps) {
                   {typeof window !== "undefined" && (
                     <div
                       dangerouslySetInnerHTML={{
-                        __html: Dompurify.sanitize(
-                          props.data?.fetchUseditem.contents
-                        ),
+                        __html: Dompurify.sanitize(props.data?.contents),
                       }}
                     />
                   )}
@@ -136,7 +127,7 @@ export default function MarketDetailUI(props: IMarketReadProps) {
           </S.MarketMoreDetailArticle>
           <S.MoveBtnArticle>
             <S.MoveBtn onClick={onClickMoveToPage("/market")}>목록</S.MoveBtn>
-            {props.data?.fetchUseditem.seller.email ===
+            {props.data?.seller.email ===
             props.userInfo?.fetchUserLoggedIn.email ? (
               <>
                 <S.MoveBtn onClick={props.onClickMoveEdit}>수정</S.MoveBtn>
