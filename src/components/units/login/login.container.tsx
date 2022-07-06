@@ -76,10 +76,10 @@ export default function Login() {
         },
       });
 
-      const userInfo = resultUserInfo.data.fetchUserLoggedIn;
+      const userInfo = resultUserInfo.data?.fetchUserLoggedIn;
 
       setAlertModal(true);
-      setModalContents(`${userInfo.name}님 환영합니다!`);
+      setModalContents(`${userInfo?.name}님 환영합니다!`);
     } catch (error) {
       setModalContents(error.message);
       setErrorAlertModal(true);
