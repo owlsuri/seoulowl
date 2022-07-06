@@ -110,12 +110,6 @@ export default function MarketDetail(props: any) {
     try {
       await toggleUseditemPick({
         variables: { useditemId: String(router.query.useditemId) },
-        // refetchQueries: [
-        //   {
-        //     query: FETCH_USED_ITEM,
-        //     variables: { useditemId: String(router.query.useditemId) },
-        //   },
-        // ],
       });
       setHeart((prev) => !prev);
     } catch (error) {

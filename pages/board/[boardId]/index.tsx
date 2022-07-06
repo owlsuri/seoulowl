@@ -1,11 +1,11 @@
 import BoardDetail from "../../../src/components/units/board/boardDetail/boardDetail.container";
 import { request, gql } from "graphql-request";
 
-export default function BoardDetailPage(props) {
+export default function BoardDetailPage(props: any) {
   return <BoardDetail data={props.myBoardData} />;
 }
 
-export const FETCH_BOARD = gql`
+export const FETCH_BOARD: any = gql`
   query fetchBoard($boardId: ID!) {
     fetchBoard(boardId: $boardId) {
       _id
@@ -26,7 +26,7 @@ export const FETCH_BOARD = gql`
   }
 `;
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = async (context: any) => {
   const result = await request(
     "https://backend06.codebootcamp.co.kr/graphql11",
     FETCH_BOARD,

@@ -194,7 +194,7 @@ export const MarketMoreDetailArticle = styled.div`
   }
 `;
 export const Detail = styled.button`
-  width: 550px;
+  width: 555px;
   height: 52px;
   font-size: 16px;
   font-weight: 600;
@@ -215,7 +215,7 @@ export const Detail = styled.button`
   }
 `;
 export const Qna = styled.button`
-  width: 550px;
+  width: 555px;
   height: 52px;
   font-size: 16px;
   font-weight: 600;
@@ -235,7 +235,7 @@ export const Qna = styled.button`
   }
 `;
 export const DetailImg = styled.img`
-  width: 100%;
+  width: 97%;
   padding: 5px 0;
   @media ${breakPoints.mobile} {
     width: 320px;
