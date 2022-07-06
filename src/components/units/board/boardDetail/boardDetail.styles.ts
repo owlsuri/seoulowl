@@ -107,6 +107,9 @@ export const Btn = styled.button`
     background-color: #213e6d;
     color: #ffffff;
   }
+  @media ${breakPoints.mobile} {
+    font-size: 12px;
+  }
 `;
 export const LikeBox = styled.div`
   padding: 100px 0 50px 0;

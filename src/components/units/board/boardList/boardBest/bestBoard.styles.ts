@@ -25,6 +25,7 @@ export const BestBox = styled.div`
   background: #ffffff;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
+  margin: 10px;
   cursor: pointer;
   @media ${breakPoints.mobile} {
     margin: 5px;
@@ -39,8 +40,12 @@ export const BestImg = styled.img`
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   @media ${breakPoints.mobile} {
-    width: 125px;
-    height: 65px;
+    width: 175px;
+    height: 105px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 220px;
+    height: 115px;
   }
 `;
 export const Best = styled.div`
@@ -48,8 +53,12 @@ export const Best = styled.div`
   height: 110px;
   padding: 10px 15px 10px 15px;
   @media ${breakPoints.mobile} {
-    width: 125px;
-    height: 55px;
+    width: 175px;
+    height: 75px;
+  }
+  @media ${breakPoints.tablet} {
+    width: 220px;
+    height: 105px;
   }
 `;
 export const TitleBox = styled.span`
@@ -79,7 +88,7 @@ export const Info = styled.div`
   justify-content: space-between;
   padding-top: 10px;
   @media ${breakPoints.mobile} {
-    padding-top: 0px;
+    padding-top: 5px;
   }
 `;
 export const WriterBox = styled.div`
@@ -105,9 +114,6 @@ export const CreatedAt = styled.div`
   font-size: 12px;
   color: #828282;
   padding-top: 5px;
-  @media ${breakPoints.mobile} {
-    display: none;
-  }
 `;
 export const Like = styled.div`
   color: #6888b2;

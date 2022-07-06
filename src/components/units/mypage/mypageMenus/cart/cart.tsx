@@ -17,8 +17,10 @@ export default function Cart(props) {
     <S.CartSection>
       <S.CartTitleArticle>장바구니</S.CartTitleArticle>
       <S.CartCountArticle>
-        🛒 장바구니 상품은 총 <span>{props.basketItems.length}</span>개이고, 총
-        금액은 <span>{total.toLocaleString("ko-KR")}</span>원 입니다.
+        🛒 장바구니 상품은 총 <span>{props.basketItems.length}</span>개이고,{" "}
+        <div>
+          총 금액은 <span>{total.toLocaleString("ko-KR")}</span>원 입니다.
+        </div>
       </S.CartCountArticle>
       <S.CartList>
         <S.TableHeaderRow>

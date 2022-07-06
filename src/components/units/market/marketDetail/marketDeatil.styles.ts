@@ -297,4 +297,7 @@ export const MoveBtn = styled.button`
     color: #ffffff;
     background-color: #213e6d;
   }
+  @media ${breakPoints.mobile} {
+    font-size: 12px;
+  }
 `;

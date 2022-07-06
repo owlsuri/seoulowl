@@ -1,4 +1,4 @@
-import { useMutation } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import {
@@ -6,16 +6,30 @@ import {
   IMutationDeleteBoardArgs,
   IMutationDislikeBoardArgs,
   IMutationLikeBoardArgs,
+  IQuery,
+  IQueryFetchBoardArgs,
 } from "../../../../commons/types/generated/types";
 import BoardDetailUI from "./boardDetail.presenter";
-import { DELETE_BOARD, DISLIKE_BOARD, LIKE_BOARD } from "./boardDetail.queries";
+import {
+  DELETE_BOARD,
+  DISLIKE_BOARD,
+  FETCH_BOARD,
+  LIKE_BOARD,
+} from "./boardDetail.queries";
 
-export default function BoardDetail(props: any) {
+export default function BoardDetail() {
   const router = useRouter();
 
   const [alertModal, setAlertModal] = useState(false);
   const [modalContents, setModalContents] = useState("");
   const [errorAlertModal, setErrorAlertModal] = useState(false);
+
+  const { data } = useQuery<Pick<IQuery, "fetchBoard">, IQueryFetchBoardArgs>(
+    FETCH_BOARD,
+    {
+      variables: { boardId: String(router.query.boardId) },
+    }
+  );
 
   const [deleteBoard] = useMutation<
     Pick<IMutation, "deleteBoard">,
@@ -47,24 +61,23 @@ export default function BoardDetail(props: any) {
     try {
       await likeBoard({
         variables: { boardId: String(router.query.boardId) },
-        // optimisticResponse: {
-        //   likeBoard: (props.data?.likeCount || 0) + 1,
-        // },
-        // update(cache, { data }) {
-        //   cache.writeQuery({
-        //     query: FETCH_BOARD,
-        //     variables: { boardId: String(router.query.boardId) },
-        //     data: {
-        //       fetchBoard: {
-        //         _id: String(router.query.boardId),
-        //         __typename: "Board",
-        //         likeCount: data?.likeBoard,
-        //       },
-        //     },
-        //   });
-        // },
+        optimisticResponse: {
+          likeBoard: (data?.fetchBoard.likeCount || 0) + 1,
+        },
+        update(cache, { data }) {
+          cache.writeQuery({
+            query: FETCH_BOARD,
+            variables: { boardId: String(router.query.boardId) },
+            data: {
+              fetchBoard: {
+                _id: String(router.query.boardId),
+                __typename: "Board",
+                likeCount: data?.likeBoard,
+              },
+            },
+          });
+        },
       });
-      router.replace(`/board/${router.query.boardId}`);
     } catch (error) {
       setModalContents(error.message);
       setErrorAlertModal(true);
@@ -75,24 +88,23 @@ export default function BoardDetail(props: any) {
     try {
       await dislikeBoard({
         variables: { boardId: String(router.query.boardId) },
-        // optimisticResponse: {
-        //   dislikeBoard: (props.data?.dislikeCount || 0) + 1,
-        // },
-        // update(cache, { data }) {
-        //   cache.writeQuery({
-        //     query: FETCH_BOARD,
-        //     variables: { boardId: String(router.query.boardId) },
-        //     data: {
-        //       fetchBoard: {
-        //         _id: String(router.query.boardId),
-        //         __typename: "Board",
-        //         dislikeCount: data?.dislikeBoard,
-        //       },
-        //     },
-        //   });
-        // },
+        optimisticResponse: {
+          dislikeBoard: (data?.fetchBoard.dislikeCount || 0) + 1,
+        },
+        update(cache, { data }) {
+          cache.writeQuery({
+            query: FETCH_BOARD,
+            variables: { boardId: String(router.query.boardId) },
+            data: {
+              fetchBoard: {
+                _id: String(router.query.boardId),
+                __typename: "Board",
+                dislikeCount: data?.dislikeBoard,
+              },
+            },
+          });
+        },
       });
-      router.replace(`/board/${router.query.boardId}`);
     } catch (error) {
       setModalContents(error.message);
       setErrorAlertModal(true);
@@ -118,7 +130,7 @@ export default function BoardDetail(props: any) {
   };
   return (
     <BoardDetailUI
-      data={props.data}
+      data={data}
       onClickLike={onClickLike}
       onClickDisLike={onClickDisLike}
       onClickToEdit={onClickToEdit}

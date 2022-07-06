@@ -73,7 +73,6 @@ export default function LayoutHeaderUI(props: IHeaderProps) {
             <S.MenuArticle onClick={onClickMoveToPage("/market")}>
               중고마켓
             </S.MenuArticle>
-            {/* <S.MenuArticle>한줄맛집</S.MenuArticle> */}
             <S.MenuArticle
               onClick={
                 props.userInfo

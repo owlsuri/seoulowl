@@ -16,6 +16,7 @@ import MarketDetailUI from "./marketDeatil.presenter";
 import {
   CREATE_POINT_TRANSACTION_OF_BUYING_AND_SELLING,
   DELETE_USEDITEM,
+  FETCH_USED_ITEM,
   TOGGLE_USEDITEM_PICK,
 } from "./marketDeatil.queries";
 
@@ -34,6 +35,10 @@ export default function MarketDetail(props: any) {
   const [modalContents, setModalContents] = useState("");
   const [errorAlertModal, setErrorAlertModal] = useState(false);
   const [isRoute, setIsRoute] = useState(false);
+
+  const { data } = useQuery(FETCH_USED_ITEM, {
+    variables: { useditemId: router.query.useditemId },
+  });
 
   const { data: userInfo } = useQuery(FETCH_USER_LOGGED_IN);
 
@@ -128,11 +133,11 @@ export default function MarketDetail(props: any) {
         setHeart(true);
       }
     });
-  }, [pickedId]);
+  }, [pickedData?.fetchUseditemsIPicked]);
 
   // 결제하기
   const onClickPay = async () => {
-    if (userInfo.userPoint.amount >= props.data?.price) {
+    if (userInfo?.userPoint?.amount >= props.data?.price) {
       try {
         await createPointTransactionOfBuyingAndSelling({
           variables: {
@@ -172,7 +177,7 @@ export default function MarketDetail(props: any) {
 
   return (
     <MarketDetailUI
-      data={props.data}
+      data={data}
       userInfo={userInfo}
       isShowQnA={isShowQnA}
       detailColor={detailColor}

@@ -144,10 +144,14 @@ export const ColumnName = styled.div`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding: 0 7px;
 `;
 export const ColumnAmount = styled.div`
   width: 140px;
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 export const ColumnCheck = styled.input`
   width: 30px;

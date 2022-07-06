@@ -73,6 +73,9 @@ export const UserArticleCart = styled.div`
   justify-content: center;
   cursor: pointer;
   padding-right: 7px;
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 export const CartCount = styled.div`
   width: 15px;

@@ -34,11 +34,16 @@ export default function Point() {
       <S.PointCurrentArticle>
         💰 포인트를 총{" "}
         <span>{pointCount?.fetchPointTransactionsCountOfLoading}</span>번 충전
-        하셨으며, 현재 포인트는{" "}
-        <span>
-          {userInfo?.fetchUserLoggedIn.userPoint.amount.toLocaleString("ko-KR")}
-        </span>
-        원 입니다.
+        하셨으며,{" "}
+        <div>
+          현재 포인트는{" "}
+          <span>
+            {userInfo?.fetchUserLoggedIn.userPoint.amount.toLocaleString(
+              "ko-KR"
+            )}
+          </span>
+          원 입니다.
+        </div>
       </S.PointCurrentArticle>
       <S.TableHeaderRow>
         <S.TableHeaderNumber>번호</S.TableHeaderNumber>
