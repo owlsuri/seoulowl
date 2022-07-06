@@ -30,6 +30,11 @@ export const MarketWriteTitleSection = styled.div`
     width: 360px;
     text-align: center;
   }
+  @media ${breakPoints.tablet} {
+    font-size: 35px;
+    width: 760px;
+    text-align: center;
+  }
 `;
 export const MarketWriteSection = styled.div`
   max-width: 1200px;

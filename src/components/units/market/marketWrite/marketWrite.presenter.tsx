@@ -120,7 +120,7 @@ export default function MarketWriteUI(props: IMarketWriteProps) {
               </Modal>
             )}
             <S.MarketWriteInputArticle>
-              <S.Label>거래위치</S.Label>
+              <S.Label>거래장소</S.Label>
               <S.ZipcodeInput
                 id="zipcode"
                 placeholder="Click ➡➡"
