@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import KakaoMapPage from "../../../commons/kakaomap/kakaomap";
 import { v4 as uuidv4 } from "uuid";
 import { Modal } from "antd";
