@@ -34,7 +34,7 @@ export default function QnaAnswerWrite(props) {
   const onClickAnswer = async () => {
     props.setIsAnswer(false);
     try {
-      const result = await createUseditemQuestionAnswer({
+      await createUseditemQuestionAnswer({
         variables: {
           createUseditemQuestionAnswerInput: {
             contents,

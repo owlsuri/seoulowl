@@ -2,7 +2,6 @@ import {
   ICreateUseditemInput,
   IUpdateUseditemInput,
 } from "./../../../../commons/types/generated/types";
-import { MouseEvent } from "react";
 import {
   FieldValues,
   UseFormHandleSubmit,

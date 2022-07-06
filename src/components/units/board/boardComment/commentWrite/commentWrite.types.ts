@@ -4,10 +4,7 @@ import {
   UseFormRegister,
   UseFormWatch,
 } from "react-hook-form";
-import {
-  ICreateBoardCommentInput,
-  IUpdateBoardCommentInput,
-} from "../../../../../commons/types/generated/types";
+import { ICreateBoardCommentInput } from "../../../../../commons/types/generated/types";
 
 export interface FormValues {
   writer?: string;

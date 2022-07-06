@@ -5,7 +5,6 @@ import {
 } from "../../mypage.queries";
 import { getDate } from "../../../../../commons/libraries/getDate";
 import * as S from "./point.styles";
-import { useRecoilState } from "recoil";
 import {
   IQuery,
   IQueryFetchPointTransactionsOfLoadingArgs,

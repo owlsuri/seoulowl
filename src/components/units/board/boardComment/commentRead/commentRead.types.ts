@@ -1,10 +1,10 @@
-import { ChangeEvent, MouseEvent } from "react";
+import { ChangeEvent } from "react";
 
 export interface IBoardCommentReadProps {
   onLoadMore?: () => void;
   data?: any;
   isOpenModal?: Boolean;
-  onClickOpenModal?: (event: MouseEvent<HTMLOrSVGElement>) => void;
+  onClickOpenModal?: (event: any) => void;
   onChangePassword?: (event: ChangeEvent<HTMLInputElement>) => void;
   handleCancel?: () => void;
   onClickDelete?: () => void;

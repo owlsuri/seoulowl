@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import { useEffect } from "react";
 import Uploads01 from "../../../commons/uploads/01/Uploads01.container";
 import * as S from "./boardWrite.styles";

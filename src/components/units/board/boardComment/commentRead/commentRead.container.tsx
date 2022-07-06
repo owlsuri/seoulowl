@@ -1,7 +1,7 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { Modal } from "antd";
 import { useRouter } from "next/router";
-import { ChangeEvent, MouseEvent, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import {
   IMutation,
   IMutationDeleteBoardCommentArgs,
@@ -53,7 +53,7 @@ export default function BoardCommentRead() {
     });
   };
 
-  const onClickOpenModal = (event: MouseEvent<HTMLOrSVGElement>) => {
+  const onClickOpenModal = (event: any) => {
     setIsOpenModal(true);
     if (event.currentTarget instanceof Element)
       setBoardCommentId(event.currentTarget.id);

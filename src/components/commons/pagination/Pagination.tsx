@@ -17,7 +17,7 @@ interface IPropsPagination {
 export default function Pagination(props: IPropsPagination) {
   const [startPage, setStartPage] = useState(1);
   const [current, setCurrent] = useState(1);
-  const [idNum, setIdNum] = useState(0);
+  const [, setIdNum] = useState(0);
 
   useEffect(() => {
     setCurrent(1);

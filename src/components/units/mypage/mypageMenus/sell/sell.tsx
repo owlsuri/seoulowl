@@ -5,10 +5,7 @@ import {
   IQueryFetchPointTransactionsOfSellingArgs,
 } from "../../../../../commons/types/generated/types";
 import Pagination from "../../../../commons/pagination/Pagination";
-import {
-  FETCH_POINT_TRANSACTIONS_OF_SELLING,
-  FETCH_USED_ITEMS_I_SOLD,
-} from "../../mypage.queries";
+import { FETCH_POINT_TRANSACTIONS_OF_SELLING } from "../../mypage.queries";
 import * as S from "./sell.styles";
 
 export default function Sell(props) {
@@ -16,8 +13,6 @@ export default function Sell(props) {
     Pick<IQuery, "fetchPointTransactionsOfSelling">,
     IQueryFetchPointTransactionsOfSellingArgs
   >(FETCH_POINT_TRANSACTIONS_OF_SELLING);
-
-  const { data: soldData } = useQuery(FETCH_USED_ITEMS_I_SOLD);
 
   const lastPage = Math.ceil(
     props.sellingCount?.fetchPointTransactionsCountOfSelling / 10

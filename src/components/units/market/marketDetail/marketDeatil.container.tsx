@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
