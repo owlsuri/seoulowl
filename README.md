@@ -53,6 +53,7 @@ localhost:3000에서 yarn install => graphql endpoint graphql11을 graphql로 �
 - react-player 적용으로 유튜브 영상이 재생 가능합니다.
 - optimistic UI의 적용으로 좋아요 갯수를 추가 렌더링 없이 바로 확인할 수 있습니다.
 - 댓글 기능이 있습니다.
+- 툴팁으로 등록한 주소를 띄웁니다.
 
 6. 수다방(댓글기능)
 
@@ -68,6 +69,13 @@ localhost:3000에서 yarn install => graphql endpoint graphql11을 graphql로 �
 > 익명으로 작성할 수 있습니다.
 - yup을 적용해 필수값이 누락되지 않도록 했습니다.
 - kakao-map을 상세보기 페이지와 공통 컴포넌트로 사용하고 있습니다.
+- react-quill이 적용되어 있습니다.
+
+8. 수다글 수정 & 삭제
+
+![ezgif com-gif-maker (7)](https://user-images.githubusercontent.com/98316357/177809957-20389d67-2413-456d-9111-6252e3054c57.gif)
+> 작성할때 사용한 비밀번호와 일치할때 수정이 가능합니다.
+- 게시글 등록하기와 공통 컴포넌트를 사용합니다.
 
 
 
