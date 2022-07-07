@@ -14,3 +14,6 @@ localhost:3000에서 yarn install => graphql endpoint graphql11을 graphql로 �
 <img width="748" alt="image" src="https://user-images.githubusercontent.com/98316357/177791989-f1e0ae64-8a00-4506-8c2f-8369cafee073.png">
 
 ## 페이지 구성
+1. 랜딩 페이지
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/98316357/177793417-30de3adf-a397-445a-bd19-d29a9f831ab7.gif)
+> 수다방과 중고마켓, 로그인 화면으로 이동할 수 있습니다.
