@@ -20,7 +20,7 @@ import {
   TOGGLE_USEDITEM_PICK,
 } from "./marketDeatil.queries";
 
-export default function MarketDetail(props: any) {
+export default function MarketDetail() {
   const router = useRouter();
 
   const [, setBasketItems] = useRecoilState(basketItemState);
