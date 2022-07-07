@@ -33,3 +33,15 @@ localhost:3000에서 yarn install => graphql endpoint graphql11을 graphql로 �
 > 랜딩페이지의 메뉴와 헤더의 메뉴를 통해 로그인으로 이동이 가능합니다.
 - yup을 적용해 올바르지 않은 값을 입력한 경우, 로그인 버튼이 활성화되지 않습니다.
 - useApolloClient를 이용해 로그인한 회원의 이름을 담은 모달을 띄웁니다.
+
+4. 수다방(List)
+
+![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/98316357/177800080-79095927-71d1-4621-84c8-48f49108ef0d.gif)
+
+> 수다방 리스트 페이지 입니다.
+> 윗 부분의 글은 `좋아요` 순의 Best 게시글 입니다.
+
+- 페이지네이션이 적용되어있어 리스트의 글을 확인할 수 있습니다.
+- 제목으로 게시글을 검색할 수 있습니다. debouncing이 적용되어있어, 일정 시간 경과 후 확인할 수 있습니다.
+
+
