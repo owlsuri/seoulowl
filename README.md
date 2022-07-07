@@ -40,8 +40,15 @@ localhost:3000에서 yarn install => graphql endpoint graphql11을 graphql로 �
 
 > 수다방 리스트 페이지 입니다.
 > 윗 부분의 글은 `좋아요` 순의 Best 게시글 입니다.
-
 - 페이지네이션이 적용되어있어 리스트의 글을 확인할 수 있습니다.
 - 제목으로 게시글을 검색할 수 있습니다. debouncing이 적용되어있어, 일정 시간 경과 후 확인할 수 있습니다.
+
+5. 수다방(게시글 상세보기)
+
+![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/98316357/177802023-3f0e96c9-14e2-44f2-8f6e-da6fbdeee2bb.gif)
+
+> 수다방 게시글 상세보기 페이지입니다.
+- kakao-map이 적용되어 있습니다.
+- react-player 적용으로 유튜브 영상이 재생 가능합니다.
 
 
