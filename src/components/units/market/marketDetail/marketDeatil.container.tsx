@@ -142,26 +142,28 @@ export default function MarketDetail() {
     ) {
       setModalContents("본인의 상품은 구매하실 수 없습니다.");
       setErrorAlertModal(true);
-    }
-    if (
-      userInfo?.fetchUserLoggedIn.userPoint?.amount >= data?.fetchUseditem.price
-    ) {
-      try {
-        await createPointTransactionOfBuyingAndSelling({
-          variables: {
-            useritemId: String(router.query.useditemId),
-          },
-        });
-        setAlertModal(true);
-        setModalContents("결제가 완료되었습니다!");
-        setIsRoute(true);
-      } catch (error) {
-        setModalContents(error.message);
+    } else {
+      if (
+        userInfo?.fetchUserLoggedIn.userPoint?.amount >=
+        data?.fetchUseditem.price
+      ) {
+        try {
+          await createPointTransactionOfBuyingAndSelling({
+            variables: {
+              useritemId: String(router.query.useditemId),
+            },
+          });
+          setAlertModal(true);
+          setModalContents("결제가 완료되었습니다!");
+          setIsRoute(true);
+        } catch (error: any) {
+          setModalContents(error.message);
+          setErrorAlertModal(true);
+        }
+      } else {
+        setModalContents("충전을 먼저 해주세요.");
         setErrorAlertModal(true);
       }
-    } else {
-      setModalContents("충전을 먼저 해주세요.");
-      setErrorAlertModal(true);
     }
   };
 
@@ -177,7 +179,7 @@ export default function MarketDetail() {
       setAlertModal(true);
       setModalContents("삭제되었습니다!");
       setIsRoute(true);
-    } catch (error) {
+    } catch (error: any) {
       setModalContents(error.message);
       setErrorAlertModal(true);
     }
