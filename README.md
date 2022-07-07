@@ -24,4 +24,10 @@ localhost:3000에서 yarn install => graphql endpoint graphql11을 graphql로 �
 
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/98316357/177796784-ffc338d8-7127-42d9-aac4-c08b1b519c34.gif)
 > 헤더의 메뉴를 통해 회원가입이 가능합니다.
-- yup 적용으로 에러를 사전에 방지하였습니다.
+- yup 적용으로 에러를 사전에 방지하였습니다. 
+- 올바르지 못한 값을 입력한 경우에 회원가입 버튼이 활성화 되지 않습니다.
+
+3. 로그인 & 로그아웃
+
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/98316357/177797847-57e084fb-06e1-4850-ac20-0ab99b02afbd.gif)
+> yup을 적용해 올바르지 않은 값을 입력한 경우, 로그인 버튼이 활성화되지 않습니다.
