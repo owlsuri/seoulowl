@@ -50,5 +50,6 @@ localhost:3000에서 yarn install => graphql endpoint graphql11을 graphql로 �
 > 수다방 게시글 상세보기 페이지입니다.
 - kakao-map이 적용되어 있습니다.
 - react-player 적용으로 유튜브 영상이 재생 가능합니다.
+- optimistic UI의 적용으로 좋아요 갯수를 추가 렌더링 없이 바로 확인할 수 있습니다.
 
 
