@@ -34,7 +34,7 @@ localhost:3000에서 yarn install => graphql endpoint graphql11을 graphql로 �
 - yup을 적용해 올바르지 않은 값을 입력한 경우, 로그인 버튼이 활성화되지 않습니다.
 - useApolloClient를 이용해 로그인한 회원의 이름을 담은 모달을 띄웁니다.
 
-4. 수다방(List)
+4. 수다방 리스트(자유게시판)
 
 ![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/98316357/177800080-79095927-71d1-4621-84c8-48f49108ef0d.gif)
 
@@ -49,16 +49,16 @@ localhost:3000에서 yarn install => graphql endpoint graphql11을 graphql로 �
 
 > 수다방 게시글 상세보기 페이지입니다. 
 > 비회원도 이용이 가능합니다. 
-- kakao-map이 적용되어 있습니다.
 - react-player 적용으로 유튜브 영상이 재생 가능합니다.
 - optimistic UI의 적용으로 좋아요 갯수를 추가 렌더링 없이 바로 확인할 수 있습니다.
 - 댓글 기능이 있습니다.
 - 툴팁으로 등록한 주소를 띄웁니다.
 
-6. 수다방(댓글기능)
+6. 수다방 댓글
 
 ![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/98316357/177805771-397f52c6-d001-4aea-8457-2ddcdb5a2d2a.gif)
 > 댓글을 등록, 수정, 삭제할 수 있습니다.
+> 비회원도 이용이 가능합니다.
 - 댓글 수정, 삭제시 모달을 띄워 비밀번호를 입력받아 비밀번호가 일치할 경우에만 수정, 삭제가 가능합니다.
 - 별점을 줄 수 있습니다.
 
@@ -68,7 +68,6 @@ localhost:3000에서 yarn install => graphql endpoint graphql11을 graphql로 �
 > 비회원도 이용이 가능합니다.
 > 익명으로 작성할 수 있습니다.
 - yup을 적용해 필수값이 누락되지 않도록 했습니다.
-- kakao-map을 상세보기 페이지와 공통 컴포넌트로 사용하고 있습니다.
 - react-quill이 적용되어 있습니다.
 
 8. 수다글 수정 & 삭제
@@ -76,6 +75,16 @@ localhost:3000에서 yarn install => graphql endpoint graphql11을 graphql로 �
 ![ezgif com-gif-maker (7)](https://user-images.githubusercontent.com/98316357/177809957-20389d67-2413-456d-9111-6252e3054c57.gif)
 > 작성할때 사용한 비밀번호와 일치할때 수정이 가능합니다.
 - 게시글 등록하기와 공통 컴포넌트를 사용합니다.
+
+9. 중고마켓 리스트
+
+![ezgif com-gif-maker (8)](https://user-images.githubusercontent.com/98316357/177811631-6061ec62-81a2-4e8c-94e0-bd363720546c.gif)
+> 중고마켓 게시글 리스트 입니다.
+- 무한스크롤로 이전 게시글을 모두 보여줍니다.
+- 상품명으로 검색이 가능합니다. debouncing이 적용되어 있습니다.
+- 검색바 위의 게시글은 pick이 많은 순서로 정렬됩니다.
+- 최근 본 상품 3개가 순서대로 오른쪽에 나타납니다.  
+- 하트를 호버하면 pick한 숫자가 나타납니다.
 
 
 
