@@ -22,6 +22,6 @@ localhost:3000에서 yarn install => graphql endpoint graphql11을 graphql로 �
 
 2. 회원가입 페이지
 
-![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/98316357/177795076-9c056223-2dc6-4769-9211-d29862fe5bd6.gif)
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/98316357/177796784-ffc338d8-7127-42d9-aac4-c08b1b519c34.gif)
 > 헤더의 메뉴를 통해 회원가입이 가능합니다.
 - yup 적용으로 에러를 사전에 방지하였습니다.
