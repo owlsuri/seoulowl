@@ -20,7 +20,7 @@ import {
 export default function BoardCommentWrite(props: any) {
   const router = useRouter();
 
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState(5);
 
   const [alertModal, setAlertModal] = useState(false);
   const [modalContents, setModalContents] = useState("");

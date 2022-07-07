@@ -142,9 +142,8 @@ export default function MarketDetail(props: any) {
     ) {
       setModalContents("본인의 상품은 구매하실 수 없습니다.");
       setErrorAlertModal(true);
-    } else if (
-      userInfo?.fetchUserLoggedIn.userPoint?.amount >= props.data?.price
-    ) {
+    }
+    if (userInfo?.fetchUserLoggedIn.userPoint?.amount >= props.data?.price) {
       try {
         await createPointTransactionOfBuyingAndSelling({
           variables: {

@@ -35,7 +35,6 @@ export const CommentInput = styled.textarea`
   height: 108px;
   padding: 10px;
   border: 1px solid #bdbdbd;
-  color: #bdbdbd;
   border: none;
   resize: none;
   @media ${breakPoints.mobile} {
