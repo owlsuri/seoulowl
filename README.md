@@ -47,9 +47,18 @@ localhost:3000에서 yarn install => graphql endpoint graphql11을 graphql로 �
 
 ![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/98316357/177802023-3f0e96c9-14e2-44f2-8f6e-da6fbdeee2bb.gif)
 
-> 수다방 게시글 상세보기 페이지입니다.
+> 수다방 게시글 상세보기 페이지입니다. 
+> 비회원도 이용이 가능합니다. 
 - kakao-map이 적용되어 있습니다.
 - react-player 적용으로 유튜브 영상이 재생 가능합니다.
 - optimistic UI의 적용으로 좋아요 갯수를 추가 렌더링 없이 바로 확인할 수 있습니다.
+- 댓글 기능이 있습니다.
+
+6. 수다방(댓글기능)
+
+![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/98316357/177805771-397f52c6-d001-4aea-8457-2ddcdb5a2d2a.gif)
+> 댓글을 등록, 수정, 삭제할 수 있습니다.
+- 댓글 삭제시 모달을 띄워 비밀번호를 입력받아 비밀번호가 일치할 경우에만 삭제가 가능합니다.
+- 별점을 줄 수 있습니다.
 
 
