@@ -30,5 +30,6 @@ localhost:3000에서 yarn install => graphql endpoint graphql11을 graphql로 �
 3. 로그인 & 로그아웃
 
 ![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/98316357/177797847-57e084fb-06e1-4850-ac20-0ab99b02afbd.gif)
+> 랜딩페이지의 메뉴와 헤더의 메뉴를 통해 로그인으로 이동이 가능합니다.
 - yup을 적용해 올바르지 않은 값을 입력한 경우, 로그인 버튼이 활성화되지 않습니다.
 - useApolloClient를 이용해 로그인한 회원의 이름을 담은 모달을 띄웁니다.
