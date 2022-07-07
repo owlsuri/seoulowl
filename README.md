@@ -58,7 +58,19 @@ localhost:3000에서 yarn install => graphql endpoint graphql11을 graphql로 �
 
 ![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/98316357/177805771-397f52c6-d001-4aea-8457-2ddcdb5a2d2a.gif)
 > 댓글을 등록, 수정, 삭제할 수 있습니다.
-- 댓글 삭제시 모달을 띄워 비밀번호를 입력받아 비밀번호가 일치할 경우에만 삭제가 가능합니다.
+- 댓글 수정, 삭제시 모달을 띄워 비밀번호를 입력받아 비밀번호가 일치할 경우에만 수정, 삭제가 가능합니다.
 - 별점을 줄 수 있습니다.
+
+7. 수다글 등록하기
+
+![ezgif com-gif-maker (6)](https://user-images.githubusercontent.com/98316357/177808491-b2728d88-cee5-489b-8015-18f42e1c0ab6.gif)
+> 비회원도 이용이 가능합니다.
+> 익명으로 작성할 수 있습니다.
+- yup을 적용해 필수값이 누락되지 않도록 했습니다.
+- kakao-map을 상세보기 페이지와 공통 컴포넌트로 사용하고 있습니다.
+
+
+
+
 
 
