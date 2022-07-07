@@ -69,6 +69,7 @@ localhost:3000에서 yarn install => graphql endpoint graphql11을 graphql로 �
 > 익명으로 작성할 수 있습니다.
 - yup을 적용해 필수값이 누락되지 않도록 했습니다.
 - react-quill이 적용되어 있습니다.
+- daum-post-code로 주소를 입력받습니다.
 
 8. 수다글 수정 & 삭제
 
@@ -86,7 +87,18 @@ localhost:3000에서 yarn install => graphql endpoint graphql11을 graphql로 �
 - 최근 본 상품 3개가 순서대로 오른쪽에 나타납니다.  
 - 하트를 호버하면 pick한 숫자가 나타납니다.
 
+10. 중고마켓 게시글 상세보기
 
+![ezgif com-gif-maker (9)](https://user-images.githubusercontent.com/98316357/177813940-d9d15031-341d-42d6-9959-073cd510ba72.gif)
+> 중고마켓 게시글 상세보기 입니다.
+> 회원만 이용이 가능합니다. 권한 분기가 되어있습니다.
+- kakao-map과 daum-post-code가 적용되어 있습니다.
+- 로컬스토리지를 이용한 장바구니 담기 기능이 있으며, 중복으로 담기지 않습니다.
+- pick(찜하기)기능이 있습니다(토글버튼).
+- 결제하기 기능이 있습니다.
+- Q&A부분을 분리했습니다.
+- 작성자와 로그인한 유저가 다를 경우 수정, 삭제 버튼이 보이지 않습니다.
+- 작성자가 본인의 상품을 구매할 수 없습니다.
 
 
 
