@@ -3,12 +3,17 @@ import BasicModal from "../../commons/modal/basic/basicModal";
 import ErrorModal from "../../commons/modal/error/errorModal";
 import * as S from "./signup.styles";
 import { ISignupUIProps } from "./signup.types";
+import Head from "next/head";
 
 export default function SignupUI(props: ISignupUIProps) {
   const { onClickMoveToPage } = useMoveToPage();
 
   return (
     <>
+      <Head>
+        <title>🦉회원가입 </title>
+      </Head>
+
       {props.alertModal && (
         <BasicModal
           onClickExit={props.onClickRoutingModal}

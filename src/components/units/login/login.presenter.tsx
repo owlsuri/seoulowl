@@ -2,12 +2,17 @@ import { useMoveToPage } from "../../../commons/hooks/useMoveToPage";
 import BasicModal from "../../commons/modal/basic/basicModal";
 import ErrorModal from "../../commons/modal/error/errorModal";
 import * as S from "./login.styles";
+import Head from "next/head";
 
 export default function LoginUI(props) {
   const { onClickMoveToPage } = useMoveToPage();
 
   return (
     <>
+      <Head>
+        <title>✨로그인</title>
+      </Head>
+
       {props.alertModal && (
         <BasicModal
           onClickExit={props.onClickRoutingModal}
@@ -21,7 +26,6 @@ export default function LoginUI(props) {
           contents={props.modalContents}
         />
       )}
-
       <S.LoginSection>
         <S.LoginArticle>
           <form onSubmit={props.handleSubmit(props.onClickLogin)}>

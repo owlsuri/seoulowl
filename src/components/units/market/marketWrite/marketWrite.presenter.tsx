@@ -11,6 +11,7 @@ import BasicModal from "../../../commons/modal/basic/basicModal";
 import ErrorModal from "../../../commons/modal/error/errorModal";
 import { useEffect } from "react";
 import { IMarketWriteProps } from "./marketWrite.types";
+import Head from "next/head";
 
 export default function MarketWriteUI(props: IMarketWriteProps) {
   useEffect(() => {
@@ -19,6 +20,9 @@ export default function MarketWriteUI(props: IMarketWriteProps) {
 
   return (
     <>
+      <Head>
+        <title>{props.isEdit ? "🛒중고상품 수정" : "🛒중고상품 등록"}</title>
+      </Head>
       {props.alertModal && (
         <BasicModal
           onClickExit={

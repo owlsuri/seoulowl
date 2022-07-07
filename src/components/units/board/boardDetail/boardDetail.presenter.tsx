@@ -11,12 +11,25 @@ import BoardWrite from "../boardWrite/boardWrite.container";
 import { IBoardDetailProps } from "./boardDetail.types";
 import BoardCommentWrite from "../boardComment/commentWrite/commentWrite.container";
 import BoardCommentRead from "../boardComment/commentRead/commentRead.container";
+import Head from "next/head";
 
 export default function BoardDetailUI(props: IBoardDetailProps) {
   const [isEdit, setIsEdit] = useState(false);
   const { onClickMoveToPage } = useMoveToPage();
   return (
     <>
+      <Head>
+        <title>{`${props.data?.fetchBoard.writer}님의 글`}</title>
+        <meta property="og:title" content={props.data?.fetchBoard.title}></meta>
+        <meta
+          property="og:description"
+          content={props.data?.fetchBoard.contents}
+        ></meta>
+        <meta
+          property="og:image"
+          content={`https://storage.googleapis.com/${props.data?.fetchBoard.images[0]}`}
+        ></meta>
+      </Head>
       {props.alertModal && (
         <BasicModal
           onClickExit={props.onClickRoutingModal}

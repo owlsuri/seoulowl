@@ -9,6 +9,7 @@ import { IMarketReadProps } from "./marketDeatil.types";
 import MarketQnaWrite from "../marketComment/marketQnaWrite/QnaWrite.container";
 import MarketQnAList from "../marketComment/marketQnaList/QnaList.container";
 import { useState } from "react";
+import Head from "next/head";
 import MarketWrite from "../marketWrite/marketWrite.container";
 
 export default function MarketDetailUI(props: IMarketReadProps) {
@@ -18,6 +19,21 @@ export default function MarketDetailUI(props: IMarketReadProps) {
 
   return (
     <>
+      <Head>
+        <title>{`${props.data?.fetchUseditem.seller.name}님의 상품`}</title>
+        <meta
+          property="og:title"
+          content={props.data?.fetchUseditem.name}
+        ></meta>
+        <meta
+          property="og:description"
+          content={props.data?.fetchUseditem.remarks}
+        ></meta>
+        <meta
+          property="og:image"
+          content={`https://storage.googleapis.com/${props.data?.fetchUseditem.images[0]}`}
+        ></meta>
+      </Head>
       {props.alertModal && (
         <BasicModal
           onClickExit={
@@ -35,6 +51,7 @@ export default function MarketDetailUI(props: IMarketReadProps) {
           contents={props.modalContents}
         />
       )}
+
       <S.MarketDetail>
         <S.MarketDetailSection>
           <S.MarketDetailSectionDiv>

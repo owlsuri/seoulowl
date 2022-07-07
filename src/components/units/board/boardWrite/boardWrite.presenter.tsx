@@ -8,6 +8,7 @@ import DaumPostcode from "react-daum-postcode";
 import BasicModal from "../../../commons/modal/basic/basicModal";
 import ErrorModal from "../../../commons/modal/error/errorModal";
 import { IBoardWriteProps } from "./boardWrite.types";
+import Head from "next/head";
 
 export default function BoardWriteUI(props: IBoardWriteProps) {
   useEffect(() => {
@@ -16,6 +17,10 @@ export default function BoardWriteUI(props: IBoardWriteProps) {
 
   return (
     <>
+      <Head>
+        <title>{props.isEdit ? "💬수다글 수정" : "💬수다글 작성"}</title>
+      </Head>
+
       {props.alertModal && (
         <BasicModal
           onClickExit={props.onClickRoutingModal}
