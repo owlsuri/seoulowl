@@ -92,6 +92,7 @@ localhost:3000에서 yarn install => graphql endpoint graphql11을 graphql로 �
 ![ezgif com-gif-maker (9)](https://user-images.githubusercontent.com/98316357/177813940-d9d15031-341d-42d6-9959-073cd510ba72.gif)
 > 중고마켓 게시글 상세보기 입니다.
 > 회원만 이용이 가능합니다. 권한 분기가 되어있습니다.
+- carousel이 적용되어 있습니다.
 - kakao-map과 daum-post-code가 적용되어 있습니다.
 - 로컬스토리지를 이용한 장바구니 담기 기능이 있으며, 중복으로 담기지 않습니다.
 - pick(찜하기)기능이 있습니다(토글버튼).
