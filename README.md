@@ -159,7 +159,6 @@ localhost:3000에서 yarn install => graphql endpoint graphql11을 graphql로 �
 ### 18. 반응형
 
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/98316357/177911504-48d14cce-0b21-4ee3-be96-3f43b1cf54f1.gif)
-
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/98316357/177911422-f40d1169-8d08-4086-a321-ff5bda3ac9ba.gif)
 > 380px의 모바일 사이즈와, 768px의 태블릿 사이즈의 환경에서 만나볼 수 있습니다.
 
