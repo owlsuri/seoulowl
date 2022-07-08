@@ -20,7 +20,7 @@ import {
 export default function BoardCommentWrite(props: any) {
   const router = useRouter();
 
-  const [rating, setRating] = useState(5);
+  const [rating, setRating] = useState(0);
 
   const [alertModal, setAlertModal] = useState(false);
   const [modalContents, setModalContents] = useState("");
@@ -76,10 +76,10 @@ export default function BoardCommentWrite(props: any) {
 
       setAlertModal(true);
       setModalContents("댓글 등록이 완료되었습니다!");
-      setRating(5);
+      setRating(0.5);
       reset();
     } catch (error) {
-      setModalContents(error.message);
+      setModalContents("입력되지 않은 항목이 있습니다.");
       setErrorAlertModal(true);
     }
   };
